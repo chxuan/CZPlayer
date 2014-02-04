@@ -275,6 +275,7 @@
     <ClCompile Include="downloadWidget\musicdownload.cpp" />
     <ClCompile Include="Engine\engine.cpp" />
     <ClCompile Include="Engine\frequencyspectrum.cpp" />
+    <ClCompile Include="Engine\SoundControl.cpp" />
     <ClCompile Include="Engine\spectrograph.cpp" />
     <ClCompile Include="Engine\spectrumanalyser.cpp" />
     <ClCompile Include="Engine\tonegenerator.cpp" />
@@ -405,7 +406,6 @@
     </ClCompile>
     <ClCompile Include="searchPanel\SearchList.cpp" />
     <ClCompile Include="searchPanel\SearchPanel.cpp" />
-    <ClCompile Include="SoundControl.cpp" />
     <ClCompile Include="thirdParty\qtsingleapplication\qtlocalpeer.cpp" />
     <ClCompile Include="thirdParty\qtsingleapplication\qtsingleapplication.cpp" />
     <ClCompile Include="thirdParty\qxtglobalshortcut\qxtglobalshortcut.cpp" />
@@ -643,6 +643,7 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"   -D_WINDOWS -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DLOG_SPECTRUMANALYSER -DLOG_ENGINE -DSUPERIMPOSE_PROGRESS_ON_WAVEFORM -DSPECTRUM_ANALYSER_SEPARATE_THREAD -D_CRT_SECURE_NO_WARNINGS -DQT_DLL -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -DNDEBUG -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_WEBKIT_LIB  "-I." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include" "-I.\..\3rdparty\fftreal" "-I$(QTDIR)\include\ActiveQt" "-I.\release" "-I$(QTDIR)\mkspecs\default" "-I.\GeneratedFiles" "-I$(QTDIR)\include\QtSql" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtWebKit" "-I." "-I." "-I." "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"</Command>
     </CustomBuild>
+    <ClInclude Include="Engine\SoundControl.h" />
     <ClInclude Include="Engine\spectrum.h" />
     <CustomBuild Include="Engine\spectrumanalyser.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
@@ -760,7 +761,6 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DLOG_SPECTRUMANALYSER -DLOG_ENGINE -DSUPERIMPOSE_PROGRESS_ON_WAVEFORM -DSPECTRUM_ANALYSER_SEPARATE_THREAD -D_CRT_SECURE_NO_WARNINGS -DQT_DLL -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -DNDEBUG -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_XML_LIB -DQT_WEBKIT_LIB "-I." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtMultimedia" "-I$(QTDIR)\include" "-I.\..\3rdparty\fftreal" "-I$(QTDIR)\include\ActiveQt" "-I.\release" "-I$(QTDIR)\mkspecs\default" "-I.\GeneratedFiles" "-I$(QTDIR)\include\QtSql" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtWebKit" "-I." "-I." "-I."</Command>
     </CustomBuild>
-    <ClInclude Include="SoundControl.h" />
     <ClInclude Include="thirdParty\qxtglobalshortcut\qxtglobal.h" />
     <CustomBuild Include="thirdParty\qxtglobalshortcut\qxtglobalshortcut.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>

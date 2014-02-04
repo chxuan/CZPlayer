@@ -175,5 +175,11 @@
         <file>images/broadcastingStationButton.png</file>
         <file>images/broadcastingStationButton2.png</file>
         <file>images/broadcastingStationButton3.png</file>
+        <file>images/soundButton.png</file>
+        <file>images/soundButton2.png</file>
+        <file>images/soundButton3.png</file>
+        <file>images/soundButton4.png</file>
+        <file>images/soundButton5.png</file>
+        <file>images/soundButton6.png</file>
     </qresource>
 </RCC>

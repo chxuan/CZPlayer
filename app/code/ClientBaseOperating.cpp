@@ -57,6 +57,8 @@ void ClientBaseOperating::touchConfigFile()
 		CZPlayerConfig::setValue("NEXT", "Alt+Right");
 		CZPlayerConfig::setValue("PLAYMODE", "cyclePlay");
 		CZPlayerConfig::setValue("AUDIOSHOW", "spectrumShow");
+		CZPlayerConfig::setValue("VOLUMEVALUE", "100");
+		CZPlayerConfig::setValue("SETMUTE", "false");
 	}
 }
 

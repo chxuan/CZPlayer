@@ -4,6 +4,7 @@
 #include "czplayerconfig.h"
 #include "ClientBaseOperating.h"
 #include "DBModule.h"
+#include "SoundControl.h"
 
 const int NullTimerId = -1;
 
@@ -172,14 +173,27 @@ void Widget::createUI()
 	volumeSlider ->setObjectName(tr("volumeSlider"));
 	volumeSlider ->setToolTip(tr("音量调节"));
 	volumeSlider ->setRange(0, 100);
+	volumeSlider ->setValue(CZPlayerConfig::getValue("VOLUMEVALUE").toInt());
+	SoundControl::SetVolume(0, CZPlayerConfig::getValue("VOLUMEVALUE").toInt());	//设置音量
 
 	//音量调节按钮
 	volumeButton = new QPushButton(this);
 	volumeButton ->setObjectName(tr("volumeButton"));
-	volumeButton ->setToolTip(tr("音量调节"));
-	volumeButton ->setStyleSheet("QPushButton:!hover{border-image: url(:/images/volumeButton.png);}"
-		"QPushButton:hover{border-image: url(:/images/volumeButton2.png);}"
-		"QPushButton:pressed{border-image: url(:/images/volumeButton3.png);}");
+	if (CZPlayerConfig::getValue("SETMUTE").toString() == "false")
+	{
+		volumeButton ->setToolTip(tr("静音"));
+		volumeButton ->setStyleSheet("QPushButton:!hover{border-image: url(:/images/soundButton.png);}"
+			"QPushButton:hover{border-image: url(:/images/soundButton2.png);}"
+			"QPushButton:pressed{border-image: url(:/images/soundButton3.png);}");
+	}
+	else
+	{
+		SoundControl::SetVolume(0, 0);		//静音
+		volumeButton ->setToolTip(tr("恢复音量"));
+		volumeButton ->setStyleSheet("QPushButton:!hover{border-image: url(:/images/soundButton4.png);}"
+			"QPushButton:hover{border-image: url(:/images/soundButton5.png);}"
+			"QPushButton:pressed{border-image: url(:/images/soundButton6.png);}");
+	}
 
 	//播放模式按钮
 	modeButton = new QPushButton(this);
@@ -424,7 +438,7 @@ void Widget::createUI()
 	openFileButton ->setGeometry(152, 21, 49, 23);
 	musicListButton ->setGeometry(201, 20, 35, 24);
 	lrcButton ->setGeometry(236, 21, 44, 23);
-	volumeButton ->setGeometry(249, 170, 23, 15);
+	volumeButton ->setGeometry(249, 170, 16, 16);
 	volumeSlider ->setGeometry(273, 170, 108, 15);
 }
 
@@ -1958,13 +1972,39 @@ void Widget::slot_ErrorMessage( const QString &heading, const QString &detail )
 //设置声音
 void Widget::slot_SetVolume(int value)
 {
-	qDebug() << "设置声音";
+	if (CZPlayerConfig::getValue("SETMUTE").toString() == "true")
+	{
+		volumeButton ->setToolTip(tr("静音"));
+		volumeButton ->setStyleSheet("QPushButton:!hover{border-image: url(:/images/soundButton.png);}"
+			"QPushButton:hover{border-image: url(:/images/soundButton2.png);}"
+			"QPushButton:pressed{border-image: url(:/images/soundButton3.png);}");
+	}
+	SoundControl::SetVolume(0, value);
+	CZPlayerConfig::setValue("VOLUMEVALUE", QString::number(value));
+	volumeSlider ->setToolTip(tr("当前音量：%1%").arg(value));
 }
 
 //设置静音
 void Widget::slot_SetMute()
 {
-	qDebug() << "静音";
+	if (CZPlayerConfig::getValue("SETMUTE").toString() == "false")
+	{
+		SoundControl::SetVolume(0, 0);	//静音
+		volumeButton ->setToolTip(tr("恢复音量"));
+		volumeButton ->setStyleSheet("QPushButton:!hover{border-image: url(:/images/soundButton4.png);}"
+			"QPushButton:hover{border-image: url(:/images/soundButton5.png);}"
+			"QPushButton:pressed{border-image: url(:/images/soundButton6.png);}");
+		CZPlayerConfig::setValue("SETMUTE", "true");
+	}
+	else
+	{
+		SoundControl::SetVolume(0, volumeSlider ->value());	//恢复
+		volumeButton ->setToolTip(tr("静音"));
+		volumeButton ->setStyleSheet("QPushButton:!hover{border-image: url(:/images/soundButton.png);}"
+			"QPushButton:hover{border-image: url(:/images/soundButton2.png);}"
+			"QPushButton:pressed{border-image: url(:/images/soundButton3.png);}");
+		CZPlayerConfig::setValue("SETMUTE", "false");
+	}
 }
 
 //显示模式菜单

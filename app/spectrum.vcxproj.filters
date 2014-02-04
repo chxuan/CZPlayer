@@ -423,9 +423,6 @@
     <ClCompile Include="Engine\wavfile.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="SoundControl.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\waveform.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -461,6 +458,9 @@
     </ClCompile>
     <ClCompile Include="Release\moc_SearchList.cpp">
       <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\SoundControl.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -630,7 +630,7 @@
     <ClInclude Include="Engine\wavfile.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="SoundControl.h">
+    <ClInclude Include="Engine\SoundControl.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
