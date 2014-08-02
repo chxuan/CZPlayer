@@ -4,14 +4,14 @@
 ThanksPage::ThanksPage(void)
 {
 	thanksLabel = new QLabel;
-	thanksLabel ->setObjectName(tr("thanksLabel"));
-	thanksLabel ->setText(tr("感谢：\n		程煊 <787280310@qq.com>"
+	thanksLabel->setObjectName(tr("thanksLabel"));
+	thanksLabel->setText(tr("感谢：\n		程煊 <787280310@qq.com>"
 								   "\n		程煊 <787280310@qq.com>"));
 
 	QVBoxLayout *mainLayout = new QVBoxLayout;
-	mainLayout ->addWidget(thanksLabel);
-	mainLayout ->addStretch();
-	this ->setLayout(mainLayout);
+	mainLayout->addWidget(thanksLabel);
+	mainLayout->addStretch();
+	this->setLayout(mainLayout);
 }
 
 

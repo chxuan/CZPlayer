@@ -5,37 +5,42 @@
 
 class AlbumThread : public QThread
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    AlbumThread(QString name, QString artist, QLabel *albumImage);
-    ~AlbumThread();
+	AlbumThread(QString musicName, QString name, QString artist, QLabel *albumImage);
+	~AlbumThread();
 
 protected:
-    virtual void run();
+	virtual void run();
 
-private slots:
-    void slot_GetMusicAlbumJson(QNetworkReply *replay);
-    void slot_GetMusicAlbumJson2(QNetworkReply *replay);
-    void slot_GetAlbum();
-    void slot_ReplayFinished();
-    void slot_ReplyError(QNetworkReply::NetworkError networkError);//下载错误
+signals:
+	void sig_AlbumDownloadFinished(QString strMusicName, QString strAlbumUrl);	//专辑下载完成信号
+
+	private slots:
+		void slot_GetMusicAlbumJson(QNetworkReply *replay);
+		void slot_GetMusicAlbumJson2(QNetworkReply *replay);
+		void slot_GetAlbum();
+		void slot_ReplayFinished();
+		void slot_ReplyError(QNetworkReply::NetworkError networkError);//下载错误
 
 private:
-    void getAlbumFromURL(const QUrl &url, const QString &filePath);
-    void startFunc();
+	void getAlbumFromURL(const QUrl &url, const QString &filePath);
+	void startFunc();
 
 private:
-    QFile albumFile;
-    QString m_musicName;
-    QString m_musicArtist;
-    QString albumFilePath;
-    QLabel *m_albumImage;
+	QFile albumFile;
+	QString m_name;
+	QString m_musicArtist;
+	QString albumFilePath;
+	QString m_strAlbumUrl;
+	QString m_strMusicName;
+	QLabel *m_albumImage;
 
-    QNetworkAccessManager *albumManager;
-    QNetworkAccessManager *albumManager2;
-    QNetworkAccessManager *albumManager3;
-    QNetworkReply *albumReply;
+	QNetworkAccessManager *albumManager;
+	QNetworkAccessManager *albumManager2;
+	QNetworkAccessManager *albumManager3;
+	QNetworkReply *albumReply;
 };
 
 #endif // ALBUMTHREAD_H

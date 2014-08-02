@@ -19,9 +19,9 @@ QVariant CZPlayerConfig::getValue(const QString &key)
     if (!m_CZPlayerSetting)
     {
         m_CZPlayerSetting = new QSettings(configPath, QSettings::IniFormat);
-        m_CZPlayerSetting ->setIniCodec("UTF-8");
+        m_CZPlayerSetting->setIniCodec("UTF-8");
     }
-    return m_CZPlayerSetting ->value(key);
+    return m_CZPlayerSetting->value(key);
 }
 
 //Ð´ÅäÖÃÎÄ¼þ
@@ -31,9 +31,9 @@ void CZPlayerConfig::setValue(const QString &key, const QVariant &value)
     if (!m_CZPlayerSetting)
     {
         m_CZPlayerSetting = new QSettings(configPath, QSettings::IniFormat);
-        m_CZPlayerSetting ->setIniCodec("UTF-8");
+        m_CZPlayerSetting->setIniCodec("UTF-8");
     }
-    m_CZPlayerSetting ->setValue(key, value);
+    m_CZPlayerSetting->setValue(key, value);
 }
 
 

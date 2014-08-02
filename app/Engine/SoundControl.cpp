@@ -260,7 +260,7 @@ unsigned SoundControl::GetVolumeValue(HMIXER hmixer, MIXERCONTROL *mxc)
 	vol.dwValue = 0;     
 	mxcd.hwndOwner = 0;   
 	mxcd.cbStruct = sizeof (mxcd);     
-	mxcd.dwControlID = mxc ->dwControlID;     
+	mxcd.dwControlID = mxc->dwControlID;     
 	mxcd.cbDetails = sizeof (vol);     
 	mxcd.paDetails = &vol;   
 	mxcd.cChannels = 1;   
@@ -278,7 +278,7 @@ bool SoundControl::SetMuteValue(HMIXER hmixer, MIXERCONTROL *mxc, bool mute)
 	MIXERCONTROLDETAILS_BOOLEAN mxcdMute;
 	mxcdMute.fValue = mute;     
 	mxcd.hwndOwner = 0;   
-	mxcd.dwControlID = mxc ->dwControlID;     
+	mxcd.dwControlID = mxc->dwControlID;     
 	mxcd.cbStruct = sizeof (mxcd);   
 	mxcd.cbDetails = sizeof (mxcdMute);     
 	mxcd.paDetails = &mxcdMute;     
@@ -298,7 +298,7 @@ bool SoundControl::SetVolumeValue(HMIXER hmixer , MIXERCONTROL *mxc, long volume
 	MIXERCONTROLDETAILS_UNSIGNED vol;
 	vol.dwValue = volume;     
 	mxcd.hwndOwner = 0;   
-	mxcd.dwControlID = mxc ->dwControlID;     
+	mxcd.dwControlID = mxc->dwControlID;     
 	mxcd.cbStruct = sizeof (mxcd);   
 	mxcd.cbDetails = sizeof (vol);   
 	mxcd.paDetails = &vol;   

@@ -22,8 +22,8 @@ signals:
 	void sig_LoadFinished();
 	void sig_SearchTimeout();
 
-	private slots:
-		void slot_LoadFinished(QNetworkReply *replay);		//加载完成
+private slots:
+	void slot_LoadFinished(QNetworkReply *replay);		//加载完成
 
 private:
 	QString m_strKey;

@@ -48,13 +48,13 @@ GlobalHotKey::GlobalHotKey(QWidget *parent)
     connect(configOptions, SIGNAL(activated()), parent, SLOT(slot_ConfigOptions()));
     connect(showHideMainWidget, SIGNAL(activated()), parent, SLOT(slot_ShowHideMainWidget()));
     connect(minMainWidget, SIGNAL(activated()), parent, SLOT(slot_MinMainWidget()));
-    connect(openMusicfile, SIGNAL(activated()), parent, SLOT(slot_OpenMusicfile()));
-    connect(showDownload, SIGNAL(activated()), parent, SLOT(slot_ShowDownload()));
-    connect(showMusicList, SIGNAL(activated()), parent, SLOT(slot_ShowMusicList()));
-    connect(showLrc, SIGNAL(activated()), parent, SLOT(slot_ShowLrc()));
-    connect(playPause, SIGNAL(activated()), parent, SLOT(slot_PlayPause()));
-    connect(last, SIGNAL(activated()), parent, SLOT(slot_Last()));
-    connect(nextSc, SIGNAL(activated()), parent, SLOT(slot_Next()));
+    connect(openMusicfile, SIGNAL(activated()), parent, SLOT(slot_OpenFile()));
+    connect(showDownload, SIGNAL(activated()), parent, SLOT(slot_OpenSearchPanel()));
+    connect(showMusicList, SIGNAL(activated()), parent, SLOT(slot_OpenMusicList()));
+    connect(showLrc, SIGNAL(activated()), parent, SLOT(slot_OpenMusicLrc()));
+    connect(playPause, SIGNAL(activated()), parent, SLOT(slot_SetPlayPaused()));
+    connect(last, SIGNAL(activated()), parent, SLOT(slot_SetPre()));
+    connect(nextSc, SIGNAL(activated()), parent, SLOT(slot_SetNext()));
 }
 
 GlobalHotKey::~GlobalHotKey()
@@ -63,102 +63,102 @@ GlobalHotKey::~GlobalHotKey()
 
 void GlobalHotKey::setConfigOptions(const QString &value)
 {
-    configOptions ->setShortcut(QKeySequence(value));
+    configOptions->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::setShowHideMainWidget(const QString &value)
 {
-    showHideMainWidget ->setShortcut(QKeySequence(value));
+    showHideMainWidget->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::setMinMainWidget(const QString &value)
 {
-    minMainWidget ->setShortcut(QKeySequence(value));
+    minMainWidget->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::setOpenMusicfile(const QString &value)
 {
-    openMusicfile ->setShortcut(QKeySequence(value));
+    openMusicfile->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::setShowDownload(const QString &value)
 {
-    showDownload ->setShortcut(QKeySequence(value));
+    showDownload->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::setShowMusicList(const QString &value)
 {
-    showMusicList ->setShortcut(QKeySequence(value));
+    showMusicList->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::setShowLrc(const QString &value)
 {
-    showLrc ->setShortcut(QKeySequence(value));
+    showLrc->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::setPlayPause(const QString &value)
 {
-    playPause ->setShortcut(QKeySequence(value));
+    playPause->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::setLast(const QString &value)
 {
-    last ->setShortcut(QKeySequence(value));
+    last->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::setNext(const QString &value)
 {
-    nextSc ->setShortcut(QKeySequence(value));
+    nextSc->setShortcut(QKeySequence(value));
 }
 
 void GlobalHotKey::configOptionsDisabled( const bool &value )
 {
-	configOptions ->setDisabled(value);
+	configOptions->setDisabled(value);
 }
 
 void GlobalHotKey::showHideMainWidgetDisabled( const bool &value )
 {
-	showHideMainWidget ->setDisabled(value);
+	showHideMainWidget->setDisabled(value);
 }
 
 void GlobalHotKey::minMainWidgetDisabled( const bool &value )
 {
-	minMainWidget ->setDisabled(value);
+	minMainWidget->setDisabled(value);
 }
 
 void GlobalHotKey::openMusicfileDisabled( const bool &value )
 {
-	openMusicfile ->setDisabled(value);
+	openMusicfile->setDisabled(value);
 }
 
 void GlobalHotKey::showDownloadDisabled( const bool &value )
 {
-	showDownload ->setDisabled(value);
+	showDownload->setDisabled(value);
 }
 
 void GlobalHotKey::showMusicListDisabled( const bool &value )
 {
-	showMusicList ->setDisabled(value);
+	showMusicList->setDisabled(value);
 }
 
 void GlobalHotKey::showLrcDisabled( const bool &value )
 {
-	showLrc ->setDisabled(value);
+	showLrc->setDisabled(value);
 }
 
 void GlobalHotKey::playPauseDisabled( const bool &value )
 {
-	playPause ->setDisabled(value);
+	playPause->setDisabled(value);
 }
 
 void GlobalHotKey::lastDisabled( const bool &value )
 {
-	last ->setDisabled(value);
+	last->setDisabled(value);
 }
 
 void GlobalHotKey::nextDisabled( const bool &value )
 {
-	nextSc ->setDisabled(value);
+	nextSc->setDisabled(value);
 }
 
 

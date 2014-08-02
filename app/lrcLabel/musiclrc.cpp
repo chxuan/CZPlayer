@@ -11,16 +11,16 @@ MusicLrc::MusicLrc()
     flag = 0;//没有锁定歌词
 
     //去掉窗体边框和总是显示在屏幕最前面,但要和showNormal一起用
-    this ->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint
+    this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint
                           | Qt::FramelessWindowHint);//去掉窗体边框,不在任务栏显示图标
-    this ->setAttribute(Qt::WA_TranslucentBackground);//设置背景透明
-    this ->setWindowIcon(QIcon(":/images/CZPlayer.png"));//设置logo
-    this ->resize(1000, 60);
+    this->setAttribute(Qt::WA_TranslucentBackground);//设置背景透明
+    this->setWindowIcon(QIcon(":/images/CZPlayer.png"));//设置logo
+    this->resize(1000, 60);
 
     //设置歌词位置
-    double width = QApplication::desktop() ->width();
-    double height = QApplication::desktop() ->height();
-    this ->move(QPoint(width / 2 - 800 / 2, height - 90));
+    double width = QApplication::desktop()->width();
+    double height = QApplication::desktop()->height();
+    this->move(QPoint(width / 2 - 800 / 2, height - 90));
 
     //歌词的线性渐变填充
     linearGradient.setStart(0, 10);//填充的起点坐标
@@ -53,7 +53,7 @@ MusicLrc::MusicLrc()
 
 MusicLrc::~MusicLrc()
 {
-	if (timer) {timer ->stop(); delete timer; timer = 0;}
+	if (timer) {timer->stop(); delete timer; timer = 0;}
 }
 
 //开启歌词遮罩，需要指定当前歌词开始与结束之间的时间间隔
@@ -66,15 +66,15 @@ void MusicLrc::startLrcMask(qint64 intervalTime)
     //获取遮罩每次需要增加的宽度，这里的800是部件的固定宽度
     lrcMaskWidthInterval = 1000 / count;
     lrcMaskWidth = 0;
-    timer ->start(30);
+    timer->start(30);
 }
 
 //停止歌词遮罩
 void MusicLrc::stopLrcMask()
 {
-    timer ->stop();
+    timer->stop();
     lrcMaskWidth = 0;
-    this ->update();
+    this->update();
 }
 
 void MusicLrc::paintEvent(QPaintEvent *event)
@@ -93,7 +93,7 @@ void MusicLrc::paintEvent(QPaintEvent *event)
     //设置歌词遮罩
     painter.setPen(QPen(maskLinearGradient, 0));
     painter.drawText(0, 0, lrcMaskWidth, 60, Qt::AlignLeft, text());
-    event ->accept();
+    event->accept();
 }
 
 //重写mousePressEvent和mouseMoveEvent实现歌词的移动
@@ -101,10 +101,10 @@ void MusicLrc::mousePressEvent(QMouseEvent *event)
 {
     if (flag == 0)//没有开启歌词锁定
     {
-        if (event ->button() == Qt::LeftButton)
+        if (event->button() == Qt::LeftButton)
         {
-            dragPosition = event ->globalPos() - frameGeometry().topLeft();
-            event ->accept();
+            dragPosition = event->globalPos() - frameGeometry().topLeft();
+            event->accept();
         }
     }
 }
@@ -114,11 +114,11 @@ void MusicLrc::mouseMoveEvent(QMouseEvent *event)
 {
     if (flag == 0)//没有开启歌词锁定
     {
-        if (event ->buttons() == Qt::LeftButton)
+        if (event->buttons() == Qt::LeftButton)
         {
             setCursor(Qt::PointingHandCursor);//显示手型
-            move(event ->globalPos() - dragPosition);//移动窗体
-            event ->accept();
+            move(event->globalPos() - dragPosition);//移动窗体
+            event->accept();
         }
     }
 }
@@ -131,9 +131,9 @@ void MusicLrc::contextMenuEvent(QContextMenuEvent *event)
         QMenu menu;
         menu.addAction(QIcon(":/images/lrc.png"), tr("隐藏歌词"), this, SLOT(hide()));
         menu.addAction(QIcon(":images/lock.png"), tr("锁定歌词"), this, SLOT(slot_LockLrc()));
-        menu.exec(event ->globalPos());//globalPos()为当前鼠标的位置坐标
+        menu.exec(event->globalPos());//globalPos()为当前鼠标的位置坐标
     }
-    event ->accept();
+    event->accept();
 }
 
 //锁定歌词
@@ -240,7 +240,7 @@ void MusicLrc::slot_TimeOut()
 {
     //每隔一段固定的时间笼罩的长度就增加一点
     lrcMaskWidth += lrcMaskWidthInterval;
-    this ->update();//更新歌词显示，但是并不立即重绘，而是安排一个Paint事件，当返回主循环时由系统来重绘
+    this->update();//更新歌词显示，但是并不立即重绘，而是安排一个Paint事件，当返回主循环时由系统来重绘
 }
 
 

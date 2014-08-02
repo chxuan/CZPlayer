@@ -11,6 +11,7 @@
 #include <vector>
 using namespace std;
 
+#include <Shlobj.h>
 #include <Windows.h>
 #include <QtGui>
 #include <QtCore>

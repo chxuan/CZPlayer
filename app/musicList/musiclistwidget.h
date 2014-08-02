@@ -5,6 +5,7 @@
 #include "musiclist.h"
 #include "head.h"
 
+//∏Ë«˙¡–±Ì√Ê∞Â
 class MusicListWidget : public QWidget
 {
     Q_OBJECT
@@ -19,17 +20,11 @@ protected:
     void paintEvent(QPaintEvent *event);
     bool eventFilter(QObject *target, QEvent *event);
 
-signals:
-    void sig_AddMusic();
-	void sig_AddMusicList();
-
 private slots:
     void slot_OnClickedAddMusic();
     void slot_SearchMusic();
     void slot_LineEditFocus();
     void slot_BackMusicList();
-	void slot_AddMusic();
-	void slot_AddMusicList();
 
 private:
     QWidget *m_parent;
@@ -44,9 +39,6 @@ private:
     QPushButton *delMusicButton;
     QPushButton *findButton;
     QPushButton *backButton;
-
-	QAction *addMusicAction;
-	QAction *addMusicListAction;
 };
 
 #endif // MUSICLISTWIDGET_H

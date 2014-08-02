@@ -22,7 +22,7 @@ void SearchThread::startFunc()
 	qDebug() << m_strUrl;
 
 	searchManager = new QNetworkAccessManager;
-	searchManager ->get(QNetworkRequest(QUrl(m_strUrl)));//得到url
+	searchManager->get(QNetworkRequest(QUrl(m_strUrl)));//得到url
 	//信号与槽
 	connect(searchManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(slot_LoadFinished(QNetworkReply*)));
 }
@@ -31,7 +31,7 @@ void SearchThread::startFunc()
 void SearchThread::slot_LoadFinished( QNetworkReply *replay )
 {
 	QTextCodec *codec = QTextCodec::codecForName("utf8");		//转换成utf8编码格式
-	QString searchStr = codec ->toUnicode(replay ->readAll());
+	QString searchStr = codec->toUnicode(replay->readAll());
 	if (searchStr == "")
 	{
 		emit sig_SearchTimeout();	//搜索超时
@@ -61,31 +61,31 @@ void SearchThread::slot_LoadFinished( QNetworkReply *replay )
 
 		//歌曲名
 		QCheckBox *musicNameCheckBox = new QCheckBox(resultMap["song_name"].toString());
-		musicNameCheckBox ->setObjectName(tr("musicNameCheckBox"));
-		musicNameCheckBox ->setToolTip(resultMap["song_name"].toString());
-		musicNameCheckBox ->setFont(QFont("微软雅黑", 10));
-		musicNameCheckBox ->setStyleSheet("QCheckBox{color:white;}"
+		musicNameCheckBox->setObjectName(tr("musicNameCheckBox"));
+		musicNameCheckBox->setToolTip(resultMap["song_name"].toString());
+		musicNameCheckBox->setFont(QFont("微软雅黑", 10));
+		musicNameCheckBox->setStyleSheet("QCheckBox{color:white;}"
 			"QCheckBox::indicator{width:10px;height:10px;border: 1px solid white;border-radius:2px}"
 			"QCheckBox::indicator:checked {image: url(:/images/checked2.png);}");
 
 		//艺人
 		QTableWidgetItem *artistItem = new QTableWidgetItem(resultMap["artist_name"].toString());
-		artistItem ->setTextAlignment(Qt::AlignCenter);
-		artistItem ->setToolTip(resultMap["artist_name"].toString());
-		artistItem ->setFont(QFont("微软雅黑", 10));
+		artistItem->setTextAlignment(Qt::AlignCenter);
+		artistItem->setToolTip(resultMap["artist_name"].toString());
+		artistItem->setFont(QFont("微软雅黑", 10));
 
 		//专辑
 		QTableWidgetItem *albumItem = new QTableWidgetItem("《" + resultMap["album_name"].toString() + "》");
-		albumItem ->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-		albumItem ->setToolTip("《" + resultMap["album_name"].toString() + "》");
-		albumItem ->setFont(QFont("微软雅黑", 10));
+		albumItem->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+		albumItem->setToolTip("《" + resultMap["album_name"].toString() + "》");
+		albumItem->setFont(QFont("微软雅黑", 10));
 
 		//插入播放列表
-		int currentRows = m_searchList ->rowCount();//返回列表中的行数
-		m_searchList ->insertRow(currentRows);//从播放列表中的当前行插入
-		m_searchList ->setCellWidget(currentRows, 0, musicNameCheckBox);
-		m_searchList ->setItem(currentRows, 1, artistItem);
-		m_searchList ->setItem(currentRows, 2, albumItem);
+		int currentRows = m_searchList->rowCount();//返回列表中的行数
+		m_searchList->insertRow(currentRows);//从播放列表中的当前行插入
+		m_searchList->setCellWidget(currentRows, 0, musicNameCheckBox);
+		m_searchList->setItem(currentRows, 1, artistItem);
+		m_searchList->setItem(currentRows, 2, albumItem);
 	}
 
 	++m_nTimes;
@@ -100,7 +100,7 @@ void SearchThread::slot_LoadFinished( QNetworkReply *replay )
 		emit sig_LoadFinished();	//加载完成
 		return;
 	}
-	this ->startFunc();				//第二次加载
+	this->startFunc();				//第二次加载
 }
 
 void SearchThread::setParam( QString strKey, int nStartPage )

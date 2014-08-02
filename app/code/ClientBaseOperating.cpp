@@ -6,10 +6,12 @@
 #include "downloadsettingspage.h"
 #include "lrcsettingspage.h"
 #include "hotkeyssettingspage.h"
-#include "proxysettingspage.h"
+//#include "proxysettingspage.h"
 #include "lrcdemo.h"
 #include "musiclrc.h"
 #include "globalhotkey.h"
+#include "AutoStart.h"
+#include "FileRelation.h"
 
 ClientBaseOperating::ClientBaseOperating()
 {
@@ -21,11 +23,23 @@ ClientBaseOperating::~ClientBaseOperating()
 
 }
 
+//初始化配置
+void ClientBaseOperating::initConfig()
+{
+	ClientBaseOperating::playVoice();							//播放问候语
+	ClientBaseOperating::touchConfigFile();						//创建一个配置文件
+	ClientBaseOperating::mkdirDownloadDir();					//创建一个下载歌曲目录
+	ClientBaseOperating::mkdirAlbumDir();						//创建一个文件夹来存储下载的专辑
+	ClientBaseOperating::mkdirLrcDir();							//创建一个下载歌词目录
+}
+
 //判断配置文件是否存在
 void ClientBaseOperating::touchConfigFile()
 {
 	if (!QFile::exists(CZPlayerConfigName))
 	{
+		CZPlayerConfig::setValue("STARTPLAY", "false");
+		CZPlayerConfig::setValue("GREETINGS", "false");
 		CZPlayerConfig::setValue("MUSICDIR_WIN", "E:\\CZPlayer");
 		CZPlayerConfig::setValue("MUSICDIR_X11", "/CZPlayer");
 		CZPlayerConfig::setValue("ALBUMDIR_WIN", "E:\\CZPlayer\\albumImages");
@@ -126,12 +140,71 @@ void ClientBaseOperating::mkdirLrcDir()
 #endif
 }
 
+//播放问候语
+void ClientBaseOperating::playVoice()
+{
+	if (CZPlayerConfig::getValue("GREETINGS").toString() == "true")
+	{
+		//PlayVoiceThread *playVoiceThread = new PlayVoiceThread;
+		//playVoiceThread->setVoiceText(strVoiceText);
+		//playVoiceThread->start();
+
+		//判断文件是否存在,若存在才播放
+		OFSTRUCT ofStruct;
+		if (OpenFile("./CZPlayer.wav", &ofStruct, OF_EXIST) >= 0)
+		{
+			PlaySound(_T("./CZPlayer.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+		}
+	}
+}
+
 //初始化设置对话框
 void ClientBaseOperating::initConfigDialog()
 {
-	ClientBaseOperating::initDownloadConfig();//初始化下载页
-	ClientBaseOperating::initLrcConfig();//初始化歌词页
-	ClientBaseOperating::initHotKeyConfig();//初始化全局热键页
+	ClientBaseOperating::initGeneralSettings();	//初始化常规设置页
+	ClientBaseOperating::initDownloadConfig();	//初始化下载页
+	ClientBaseOperating::initLrcConfig();		//初始化歌词页
+	ClientBaseOperating::initHotKeyConfig();	//初始化全局热键页
+}
+
+//初始化常规设置页
+void ClientBaseOperating::initGeneralSettings()
+{
+	if (CZPlayerConfig::getValue("STARTPLAY").toString() == "true")
+	{
+		GeneralSettingsPage::setAutoPlay(Qt::Checked);
+	}
+	else
+	{
+		GeneralSettingsPage::setAutoPlay(Qt::Unchecked);
+	}
+
+	if (CZPlayerConfig::getValue("GREETINGS").toString() == "true")
+	{
+		GeneralSettingsPage::setGreetings(Qt::Checked);
+	}
+	else
+	{
+		GeneralSettingsPage::setGreetings(Qt::Unchecked);
+	}
+
+	if (FileRelation::checkFileRelation(_T(".wav"), _T("CZPlayer2.0.WAV")) == true)
+	{
+		GeneralSettingsPage::setDefaultPlayer(Qt::Checked);
+	}
+	else
+	{
+		GeneralSettingsPage::setDefaultPlayer(Qt::Unchecked);
+	}
+
+	if (AutoStart::isAutoStart(_T("CZPlayer")) == true)
+	{
+		GeneralSettingsPage::setAutoStart(Qt::Checked);
+	}
+	else
+	{
+		GeneralSettingsPage::setAutoStart(Qt::Unchecked);
+	}
 }
 
 //初始化下载页
@@ -173,6 +246,14 @@ void ClientBaseOperating::initLrcConfig()
 	LrcDemo::setMaskLinearGradient(CZPlayerConfig::getValue("PLAYEDSHANG").toString());
 	LrcDemo::setMaskLinearGradient2(CZPlayerConfig::getValue("PLAYEDZHONG").toString());
 	LrcDemo::setMaskLinearGradient3(CZPlayerConfig::getValue("PLAYEDXIA").toString());
+
+	//LrcDemo::setLinearGradient("255 255 255");
+	//LrcDemo::setLinearGradient2("255 255 255");
+	//LrcDemo::setLinearGradient3("255 255 255");
+	//LrcDemo::setMaskLinearGradient("254 212 14");
+	//LrcDemo::setMaskLinearGradient2("254 212 14");
+	//LrcDemo::setMaskLinearGradient3("254 212 14");
+	//LrcDemo::setLrcDemoShadow(0);
 }
 
 //初始化全局热键页

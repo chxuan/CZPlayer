@@ -48,7 +48,7 @@ Engine::Engine(QObject *parent)
     qRegisterMetaType<FrequencySpectrum>("FrequencySpectrum");
     qRegisterMetaType<WindowFunction>("WindowFunction");
     connect(&m_spectrumAnalyser, SIGNAL(spectrumChanged(FrequencySpectrum)), this, SLOT(spectrumChanged(FrequencySpectrum)));	//频谱改变
-    this ->initialize();	//初始化播放引擎
+    this->initialize();	//初始化播放引擎
 }
 
 Engine::~Engine()
@@ -59,18 +59,18 @@ Engine::~Engine()
 //加载文件
 bool Engine::loadFile(const QString &fileName)
 {
-    this ->reset();	//重置播放引擎
+    this->reset();	//重置播放引擎
     bool result = false;
     m_file = new WavFile(this);						//新建一个wav文件
-    if (m_file ->open(fileName))					//打开文件
+    if (m_file->open(fileName))					//打开文件
 	{
-        if (isPCMS16LE(m_file ->fileFormat()))		//判断文件格式是否为pcm16le
+        if (isPCMS16LE(m_file->fileFormat()))		//判断文件格式是否为pcm16le
 		{
-            result = this ->initialize();			//初始化播放引擎
+            result = this->initialize();			//初始化播放引擎
         }
 		else 
 		{
-            emit errorMessage(tr("不支持的音频格式"), formatToString(m_file ->fileFormat()));
+            emit errorMessage(tr("不支持的音频格式"), formatToString(m_file->fileFormat()));
         }
     }
 	else
@@ -81,7 +81,7 @@ bool Engine::loadFile(const QString &fileName)
 	{	
 		//分析文件指针
         m_analysisFile = new WavFile(this);
-        m_analysisFile ->open(fileName);
+        m_analysisFile->open(fileName);
     }
     return result;
 }
@@ -92,17 +92,17 @@ bool Engine::initialize()
 	bool result = false;			//初始化播放引擎失败
 	QAudioFormat format = m_format;	//音频数据格式
 
-	if (this ->selectFormat())		//选择音频数据格式
+	if (this->selectFormat())		//选择音频数据格式
 	{
 		if (m_format != format)
 		{
-			this ->resetAudioDevices();	//重置音频设备
+			this->resetAudioDevices();	//重置音频设备
 			if (m_file)
 			{
 				emit bufferLengthChanged(bufferLength());
 				emit dataLengthChanged(dataLength());
 				emit bufferChanged(0, 0, m_buffer);
-				this ->setRecordPosition(bufferLength());
+				this->setRecordPosition(bufferLength());
 				result = true;
 			}
 			else
@@ -123,14 +123,14 @@ bool Engine::initialize()
 					m_dataLength = m_bufferLength;
 					emit dataLengthChanged(dataLength());
 					emit bufferChanged(0, m_dataLength, m_buffer);
-					this ->setRecordPosition(m_bufferLength);
+					this->setRecordPosition(m_bufferLength);
 					result = true;
 				} 
 				else
 				{
 					emit bufferChanged(0, 0, m_buffer);
 					m_audioInput = new QAudioInput(m_audioInputDevice, m_format, this);		//音频输入
-					m_audioInput ->setNotifyInterval(NotifyIntervalMs);						//设定通知时间间隔
+					m_audioInput->setNotifyInterval(NotifyIntervalMs);						//设定通知时间间隔
 					result = true;
 				}
 			}
@@ -171,11 +171,11 @@ bool Engine::selectFormat()
 		if (m_file)
 		{
 			//报头是从WAV文件读取，只需要检查是否它支持的音频输出装置
-			format = m_file ->fileFormat();
+			format = m_file->fileFormat();
 		}
 		if (m_audioOutputDevice.isFormatSupported(format)) 
 		{
-			this ->setFormat(format);		//设置音频数据格式
+			this->setFormat(format);		//设置音频数据格式
 			foundSupportedFormat = true;	//默认的音频输出设备支持该音频格式
 		}
 	}
@@ -240,7 +240,7 @@ bool Engine::selectFormat()
 		{
 			format = QAudioFormat();
 		}
-		this ->setFormat(format);		//设置音频数据格式
+		this->setFormat(format);		//设置音频数据格式
 	}
 	return foundSupportedFormat;
 }
@@ -253,15 +253,15 @@ void Engine::slot_StartPlayback()
 		//如果当前模式为输出模式并且当前状态为暂停状态
 		if (QAudio::AudioOutput == m_mode && QAudio::SuspendedState == m_state)
 		{
-			m_audioOutput ->resume();	//重新开始,继续播放
+			m_audioOutput->resume();	//重新开始,继续播放
 		}
 		//当前状态为停止状态
 		else if (QAudio::StoppedState == m_state)
 		{
 			//第一次播放
 			m_spectrumAnalyser.cancelCalculation();					//取消频谱计算
-			this ->spectrumChanged(0, 0, FrequencySpectrum());		//初始化频谱
-			this ->setPlayPosition(0, true);						//设置音频开始位置
+			this->spectrumChanged(0, 0, FrequencySpectrum());		//初始化频谱
+			this->setPlayPosition(0, true);						//设置音频开始位置
 			m_mode = QAudio::AudioOutput;							//当前模式为输出模式
 
 			connect(m_audioOutput, SIGNAL(stateChanged(QAudio::State)), this, SLOT(audioStateChanged(QAudio::State)));	//音频状态改变
@@ -269,17 +269,17 @@ void Engine::slot_StartPlayback()
 			m_count = 0;
 			if (m_file) 
 			{
-				m_file ->seek(0);				//文件指针指向文件头
+				m_file->seek(0);				//文件指针指向文件头
 				m_bufferPosition = 0;			//设置缓冲区位置
 				m_dataLength = 0;				//设置数据长度
-				m_audioOutput ->start(m_file);	//开始播放
+				m_audioOutput->start(m_file);	//开始播放
 			} 
 			else 
 			{
 				m_audioOutputIODevice.close();
 				m_audioOutputIODevice.setBuffer(&m_buffer);
 				m_audioOutputIODevice.open(QIODevice::ReadOnly);
-				m_audioOutput ->start(&m_audioOutputIODevice);
+				m_audioOutput->start(&m_audioOutputIODevice);
 			}
 		}
 	}
@@ -294,10 +294,10 @@ void Engine::suspend()
 		switch (m_mode) 
 		{
 		case QAudio::AudioInput:	//输入模式
-			m_audioInput ->suspend();
+			m_audioInput->suspend();
 			break;
 		case QAudio::AudioOutput:	//输出模式
-			m_audioOutput ->suspend();
+			m_audioOutput->suspend();
 			break;
 		default:
 			break;
@@ -310,10 +310,10 @@ void Engine::stopPlayback()
 {
 	if (m_audioOutput)
 	{
-		m_audioOutput ->stop();		//停止播放
-		QCoreApplication::instance() ->processEvents();
-		m_audioOutput ->disconnect();
-		this ->setPlayPosition(0);	//重置播放位置
+		m_audioOutput->stop();		//停止播放
+		QCoreApplication::instance()->processEvents();
+		m_audioOutput->disconnect();
+		this->setPlayPosition(0);	//重置播放位置
 	}
 }
 
@@ -322,19 +322,19 @@ void Engine::resetAudioDevices()
 {
 	delete m_audioInput;
 	m_audioInput = 0;
-	this ->setRecordPosition(0);
+	this->setRecordPosition(0);
 	delete m_audioOutput;
 	m_audioOutput = 0;
-	this ->setPlayPosition(0);
+	this->setPlayPosition(0);
 	m_spectrumPosition = 0;
 }
 
 //重置播放引擎
 void Engine::reset()
 {
-	this ->stopPlayback();											//停止播放
-	this ->setState(QAudio::AudioInput, QAudio::StoppedState);		//设置状态
-	this ->setFormat(QAudioFormat());								//设置音频格式
+	this->stopPlayback();											//停止播放
+	this->setState(QAudio::AudioInput, QAudio::StoppedState);		//设置状态
+	this->setFormat(QAudioFormat());								//设置音频格式
 	m_generateTone = false;											//没有生成声音
 	if (m_file) { delete m_file; m_file = 0; }
 	if (m_analysisFile) { delete m_analysisFile; m_analysisFile = 0; }
@@ -343,7 +343,7 @@ void Engine::reset()
 	m_bufferLength = 0;												//缓冲区长度
 	m_dataLength = 0;												//数据部分长度
 	emit dataLengthChanged(0);										//发射数据量改变信号
-	this ->resetAudioDevices();										//重置音频设备
+	this->resetAudioDevices();										//重置音频设备
 }
 
 //设置记录位置
@@ -371,7 +371,7 @@ void Engine::setPlayPosition(long long position, bool forceEmit)
 //生成声音
 bool Engine::generateTone(const Tone &tone)
 {
-    this ->reset();
+    this->reset();
     Q_ASSERT(!m_generateTone);
     Q_ASSERT(!m_file);
     m_generateTone = true;
@@ -380,7 +380,7 @@ bool Engine::generateTone(const Tone &tone)
                  << "startFreq" << m_tone.startFreq
                  << "endFreq" << m_tone.endFreq
                  << "amp" << m_tone.amplitude;
-    return this ->initialize();
+    return this->initialize();
 }
 
 //清除声音
@@ -395,7 +395,7 @@ bool Engine::generateSweptTone(double amplitude)
     qDebug() << "Engine::generateSweptTone"
                  << "startFreq" << m_tone.startFreq
                  << "amp" << m_tone.amplitude;
-    return this ->initialize();
+    return this->initialize();
 }
 
 //获取播放引擎内部缓冲区长度
@@ -418,9 +418,10 @@ void Engine::audioNotify()
     case QAudio::AudioOutput:	//输出模式
 		{
             const long long playPosition = audioLength(m_format, m_audioOutput->processedUSecs());	//获取播放位置
-            this ->setPlayPosition(qMin(bufferLength(), playPosition));								//设置播放位置
+            this->setPlayPosition(qMin(bufferLength(), playPosition));								//设置播放位置
             const long long levelPosition = playPosition - m_levelBufferLength;						//获取水平位置
             const long long spectrumPosition = playPosition - m_spectrumBufferLength;				//获取频谱位置
+
             if (m_file) 
 			{
                 if (levelPosition > m_bufferPosition || spectrumPosition > m_bufferPosition || qMax(m_levelBufferLength, m_spectrumBufferLength) > m_dataLength)
@@ -430,17 +431,17 @@ void Engine::audioNotify()
 
                     //数据需要被读入到m_buffer以待分析
                     const long long readPos = qMax(long long(0), qMin(levelPosition, spectrumPosition));		//获取阅读开始位置
-                    const long long readEnd = qMin(m_analysisFile ->size(), qMax(levelPosition + m_levelBufferLength, spectrumPosition + m_spectrumBufferLength));	//获取阅读结束位置
+                    const long long readEnd = qMin(m_analysisFile->size(), qMax(levelPosition + m_levelBufferLength, spectrumPosition + m_spectrumBufferLength));	//获取阅读结束位置
                     const long long readLen = readEnd - readPos + audioLength(m_format, WaveformWindowDuration);//获取阅读长度
                     //qDebug() << "Engine::audioNotify [1]"
-                    //         << "文件大小:" << m_analysisFile ->size()
+                    //         << "文件大小:" << m_analysisFile->size()
                     //         << "已读位置:" << readPos
                     //         << "读取长度:" << readLen;
-                    if (m_analysisFile ->seek(readPos + m_analysisFile ->headerLength())) 
+                    if (m_analysisFile->seek(readPos + m_analysisFile->headerLength())) 
 					{
                         m_buffer.resize(readLen);
                         m_bufferPosition = readPos;
-                        m_dataLength = m_analysisFile ->read(m_buffer.data(), readLen);
+                        m_dataLength = m_analysisFile->read(m_buffer.data(), readLen);
                         //qDebug() << "Engine::audioNotify [2]" << "缓冲区位置:" << m_bufferPosition << "数据量:" << m_dataLength;
                     } 
 					else 
@@ -455,12 +456,12 @@ void Engine::audioNotify()
 				//如果播放的位置大于等于数据长度则停止播放
                 if (playPosition >= m_dataLength)
 				{
-                    this ->stopPlayback();
+                    this->stopPlayback();
 				}
             }
             if (spectrumPosition >= 0 && spectrumPosition + m_spectrumBufferLength < m_bufferPosition + m_dataLength)
 			{
-                this ->calculateSpectrum(spectrumPosition);	//计算频谱
+                this->calculateSpectrum(spectrumPosition);	//计算频谱
 			}
         }
         break;
@@ -470,10 +471,6 @@ void Engine::audioNotify()
 //计算频谱
 void Engine::calculateSpectrum(long long position)
 {
-	//qDebug() << "Engine::calculateSpectrum" << QThread::currentThread()
-	//	<< "数量:" << m_count << "频谱位置:" << position << "频谱缓冲区长度:" << m_spectrumBufferLength
-	//	<< "频谱分析仪是否就绪:" << m_spectrumAnalyser.isReady();
-
 	//判断频谱分析仪是否开始工作
 	if (m_spectrumAnalyser.isReady()) 
 	{
@@ -488,9 +485,9 @@ void Engine::audioStateChanged(QAudio::State state)
 {
     qDebug() << "Engine::audioStateChanged from" << m_state << "to" << state;
 
-    if (QAudio::IdleState == state && m_file && m_file ->pos() == m_file->size())
+    if (QAudio::IdleState == state && m_file && m_file->pos() == m_file->size())
 	{
-        this ->stopPlayback();	//停止播放
+        this->stopPlayback();	//停止播放
 		emit sig_Finished();	//发送播放完成信号
 		qDebug() << "完成!";
     } 
@@ -511,11 +508,11 @@ void Engine::audioStateChanged(QAudio::State state)
             }
             if (QAudio::NoError != error) 
 			{
-                this ->reset();
+                this->reset();
                 return;
             }
         }
-        this ->setState(state);	//设置状态
+        this->setState(state);	//设置状态
     }
 }
 

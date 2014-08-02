@@ -11,63 +11,63 @@ DownloadSettingsPage::DownloadSettingsPage(QWidget *parent) : m_parent(parent)
     QGroupBox *dirSettingGB = new QGroupBox(tr("Ä¿Â¼ÉèÖÃ"));
 
     musicDir = new QLabel(this);
-    musicDir ->setObjectName(tr("downloadDir"));
-    musicDir ->setText(tr("¸èÇúÄ¿Â¼£º"));
+    musicDir->setObjectName(tr("downloadDir"));
+    musicDir->setText(tr("¸èÇúÄ¿Â¼£º"));
 
     musicEdit = new QLineEdit(this);
-    musicEdit ->setObjectName(tr("downloadEdit"));
+    musicEdit->setObjectName(tr("downloadEdit"));
 
     scanButton = new QPushButton(this);
-    scanButton ->setObjectName(tr("scanButton"));
-    scanButton ->setText(tr("ä¯ÀÀ"));
+    scanButton->setObjectName(tr("scanButton"));
+    scanButton->setText(tr("ä¯ÀÀ"));
 
     albumDir = new QLabel(this);
-    albumDir ->setObjectName(tr("albumDir"));
-    albumDir ->setText(tr("×¨¼­Ä¿Â¼£º"));
+    albumDir->setObjectName(tr("albumDir"));
+    albumDir->setText(tr("×¨¼­Ä¿Â¼£º"));
 
     albumEdit = new QLineEdit(this);
-    albumEdit ->setObjectName(tr("albumEdit"));
+    albumEdit->setObjectName(tr("albumEdit"));
 
     scanButton2 = new QPushButton(this);
-    scanButton2 ->setObjectName(tr("scanButton2"));
-    scanButton2 ->setText(tr("ä¯ÀÀ"));
+    scanButton2->setObjectName(tr("scanButton2"));
+    scanButton2->setText(tr("ä¯ÀÀ"));
 
     lrcFileLabel = new QLabel(this);
-    lrcFileLabel ->setObjectName(tr("lrcFileLabel"));
-    lrcFileLabel ->setText(tr("¸è´ÊÄ¿Â¼£º"));
+    lrcFileLabel->setObjectName(tr("lrcFileLabel"));
+    lrcFileLabel->setText(tr("¸è´ÊÄ¿Â¼£º"));
 
     lrcFileEdit = new QLineEdit(this);
-    lrcFileEdit ->setObjectName(tr("lrcFileEdit"));
+    lrcFileEdit->setObjectName(tr("lrcFileEdit"));
 
     scanButton3 = new QPushButton(this);
-    scanButton3 ->setObjectName(tr("scanButton3"));
-    scanButton3 ->setText(tr("ä¯ÀÀ"));
+    scanButton3->setObjectName(tr("scanButton3"));
+    scanButton3->setText(tr("ä¯ÀÀ"));
 
     QHBoxLayout *musicDirLayout = new QHBoxLayout;
-    musicDirLayout ->addWidget(musicDir);
-    musicDirLayout ->addWidget(musicEdit);
-    musicDirLayout ->addWidget(scanButton);
+    musicDirLayout->addWidget(musicDir);
+    musicDirLayout->addWidget(musicEdit);
+    musicDirLayout->addWidget(scanButton);
 
     QHBoxLayout *albumDirLayout = new QHBoxLayout;
-    albumDirLayout ->addWidget(albumDir);
-    albumDirLayout ->addWidget(albumEdit);
-    albumDirLayout ->addWidget(scanButton2);
+    albumDirLayout->addWidget(albumDir);
+    albumDirLayout->addWidget(albumEdit);
+    albumDirLayout->addWidget(scanButton2);
 
     QHBoxLayout *lrcDirLayout = new QHBoxLayout;
-    lrcDirLayout ->addWidget(lrcFileLabel);
-    lrcDirLayout ->addWidget(lrcFileEdit);
-    lrcDirLayout ->addWidget(scanButton3);
+    lrcDirLayout->addWidget(lrcFileLabel);
+    lrcDirLayout->addWidget(lrcFileEdit);
+    lrcDirLayout->addWidget(scanButton3);
 
     QVBoxLayout *dirSettingLayout = new QVBoxLayout;
-    dirSettingLayout ->addLayout(musicDirLayout);
-    dirSettingLayout ->addLayout(albumDirLayout);
-    dirSettingLayout ->addLayout(lrcDirLayout);
-    dirSettingGB ->setLayout(dirSettingLayout);
+    dirSettingLayout->addLayout(musicDirLayout);
+    dirSettingLayout->addLayout(albumDirLayout);
+    dirSettingLayout->addLayout(lrcDirLayout);
+    dirSettingGB->setLayout(dirSettingLayout);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout ->addWidget(dirSettingGB);
-    mainLayout ->addStretch();
-    this ->setLayout(mainLayout);
+    mainLayout->addWidget(dirSettingGB);
+    mainLayout->addStretch();
+    this->setLayout(mainLayout);
 
     connect(scanButton, SIGNAL(clicked()), this, SLOT(slot_ChangeDir()));
     connect(scanButton2, SIGNAL(clicked()), this, SLOT(slot_ChangeDir()));
@@ -81,37 +81,37 @@ DownloadSettingsPage::~DownloadSettingsPage()
 //µÃµ½ÒôÀÖÄ¿Â¼
 QString DownloadSettingsPage::getMusicDir()
 {
-    return musicEdit ->text();
+    return musicEdit->text();
 }
 
 //ÉèÖÃÒôÀÖÄ¿Â¼
 void DownloadSettingsPage::setMusicDir(const QString &musicDir)
 {
-    musicEdit ->setText(musicDir);
+    musicEdit->setText(musicDir);
 }
 
 //µÃµ½×¨¼­Ä¿Â¼
 QString DownloadSettingsPage::getAlbumDir()
 {
-    return albumEdit ->text();
+    return albumEdit->text();
 }
 
 //µÃµ½¸è´ÊÄ¿Â¼
 QString DownloadSettingsPage::getLrcDir()
 {
-    return lrcFileEdit ->text();
+    return lrcFileEdit->text();
 }
 
 //ÉèÖÃ¸è´ÊÄ¿Â¼
 void DownloadSettingsPage::setLrcDir(const QString &lrcDir)
 {
-    lrcFileEdit ->setText(lrcDir);
+    lrcFileEdit->setText(lrcDir);
 }
 
 //ÉèÖÃ×¨¼­Ä¿Â¼
 void DownloadSettingsPage::setAlbumDir(const QString &albumDir)
 {
-    albumEdit ->setText(albumDir);
+    albumEdit->setText(albumDir);
 }
 
 //¸ü¸ÄÏÂÔØÄ¿Â¼
@@ -134,21 +134,21 @@ void DownloadSettingsPage::slot_ChangeDir()
     {
         if (!directory.isEmpty())
         {
-            musicEdit ->setText(directory);
+            musicEdit->setText(directory);
         }
     }
     else if (button == scanButton2)
     {
         if (!directory.isEmpty())
         {
-            albumEdit ->setText(directory);
+            albumEdit->setText(directory);
         }
     }
     else if (button == scanButton3)
     {
         if (!directory.isEmpty())
         {
-            lrcFileEdit ->setText(directory);
+            lrcFileEdit->setText(directory);
         }
     }
 }

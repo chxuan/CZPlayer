@@ -19,7 +19,7 @@ DownloadThread::DownloadThread(QString musicName, QString musicArtist, DownloadL
 
     QString urlStr = "http://box.zhangmen.baidu.com/x?op=12&count=1&title=" + m_musicName + "$$" + m_musicArtist + "$$$";
     manager = new QNetworkAccessManager;
-    manager ->get(QNetworkRequest(QUrl(urlStr)));//得到url
+    manager->get(QNetworkRequest(QUrl(urlStr)));//得到url
     //信号与槽
     connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(slot_GetMusicXML(QNetworkReply*)));
     connect(downloadList, SIGNAL(sig_DelCurrentRow(int)), this, SLOT(slot_DelCurrentThread(int)));//删除当前行
@@ -38,7 +38,7 @@ void DownloadThread::run()
 void DownloadThread::slot_GetMusicXML(QNetworkReply *replay)
 {
     QTextCodec *codec = QTextCodec::codecForName("utf8");//转换成utf8编码格式
-    QString musicStr = codec ->toUnicode(replay ->readAll());
+    QString musicStr = codec->toUnicode(replay->readAll());
 
     //没有连接到网络
     if (musicStr == "")
@@ -159,49 +159,49 @@ void DownloadThread::slot_GetMusicXML(QNetworkReply *replay)
 #endif
 
     //插入下载列表
-    int currentRows = m_downloadList ->rowCount();//返回列表中的行数
-    m_downloadList ->insertRow(currentRows);//从下载列表中的当前行插入
+    int currentRows = m_downloadList->rowCount();//返回列表中的行数
+    m_downloadList->insertRow(currentRows);//从下载列表中的当前行插入
 
     //进度条
     progressBar = new QProgressBar;
-    progressBar ->setObjectName(tr("progressBar"));
-    timer ->start(1000);
-    time ->start();
+    progressBar->setObjectName(tr("progressBar"));
+    timer->start(1000);
+    time->start();
 
     //歌曲名称
     musicTitleItem = new QTableWidgetItem;
-    musicTitleItem ->setText(m_musicArtist + "-" + m_musicName);
-    musicTitleItem ->setTextAlignment(Qt::AlignCenter);
-    musicTitleItem ->setToolTip(m_musicArtist + "-" + m_musicName);
+    musicTitleItem->setText(m_musicArtist + "-" + m_musicName);
+    musicTitleItem->setTextAlignment(Qt::AlignCenter);
+    musicTitleItem->setToolTip(m_musicArtist + "-" + m_musicName);
 
     //歌曲状态
     musicStatusItem = new QTableWidgetItem;
-    musicStatusItem ->setTextAlignment(Qt::AlignCenter);
-    musicStatusItem ->setText(tr("正在下载"));
+    musicStatusItem->setTextAlignment(Qt::AlignCenter);
+    musicStatusItem->setText(tr("正在下载"));
 
     //大小
     musicSizeItem = new QTableWidgetItem;
-    musicSizeItem ->setTextAlignment(Qt::AlignCenter);
+    musicSizeItem->setTextAlignment(Qt::AlignCenter);
 
     //网速
     speedItem = new QTableWidgetItem;
-    speedItem ->setTextAlignment(Qt::AlignCenter);
+    speedItem->setTextAlignment(Qt::AlignCenter);
 
-    m_downloadList ->setItem(currentRows, 0, musicTitleItem);
-    m_downloadList ->setItem(currentRows, 1, musicStatusItem);
-    m_downloadList ->setItem(currentRows, 2, musicSizeItem);
-    m_downloadList ->setItem(currentRows, 3, speedItem);
-    m_downloadList ->setCellWidget(currentRows, 4, progressBar);
+    m_downloadList->setItem(currentRows, 0, musicTitleItem);
+    m_downloadList->setItem(currentRows, 1, musicStatusItem);
+    m_downloadList->setItem(currentRows, 2, musicSizeItem);
+    m_downloadList->setItem(currentRows, 3, speedItem);
+    m_downloadList->setCellWidget(currentRows, 4, progressBar);
 
     static int index = 0;
     threadMap.insert(make_pair(index, this));
     listMap.insert(make_pair(index, currentRows));
     //emit musicListMap(listMap);
-    m_downloadList ->setMusicListMap(listMap);
+    m_downloadList->setMusicListMap(listMap);
     ++index;
 
-    this ->getMusicFromURL(musicUrl, musicFilePath);
-    replay ->deleteLater();//最后要释放reply对象
+    this->getMusicFromURL(musicUrl, musicFilePath);
+    replay->deleteLater();//最后要释放reply对象
 }
 
 //下载歌曲
@@ -212,7 +212,7 @@ void DownloadThread::getMusicFromURL(const QUrl &url, const QString &filePath)
 
     musicManager = new QNetworkAccessManager;
     QEventLoop loop;
-    musicReply = musicManager ->get(QNetworkRequest(QUrl(url)));
+    musicReply = musicManager->get(QNetworkRequest(QUrl(url)));
 
     connect(musicReply, SIGNAL(downloadProgress(qint64, qint64)), this, SLOT(slot_UpdateDataProgress(qint64, qint64)));
     connect(musicReply, SIGNAL(finished()), this, SLOT(slot_ReplayFinished()));
@@ -229,20 +229,20 @@ void DownloadThread::slot_GetMusic()
     ++times;
     if (times == 1)
     {
-        QVariant var = musicReply ->header(QNetworkRequest::ContentLengthHeader);
+        QVariant var = musicReply->header(QNetworkRequest::ContentLengthHeader);
         int size = var.toLongLong();
         double musicSizeD = (double) size / 1048576;
         QString musicSizeStr = QString::number(musicSizeD, 'f', 2) + "MB";
-        musicSizeItem ->setText(musicSizeStr);
+        musicSizeItem->setText(musicSizeStr);
     }
 
-    musicFile.write(musicReply ->readAll());
+    musicFile.write(musicReply->readAll());
 
-    if (timer2 ->isActive())
+    if (timer2->isActive())
     {
-        timer2 ->stop();
+        timer2->stop();
     }
-    timer2 ->start(200000);//如果20秒都好没有下载文件则网络中断
+    timer2->start(200000);//如果20秒都好没有下载文件则网络中断
 }
 
 //下载歌曲完成
@@ -253,41 +253,41 @@ void DownloadThread::slot_ReplayFinished()
     {
         musicFile.close();
     }
-    musicReply ->deleteLater();//最后要释放reply对象
-    this ->deleteLater();//释放当前线程
+    musicReply->deleteLater();//最后要释放reply对象
+    this->deleteLater();//释放当前线程
 }
 
 //每隔1秒更新一下网速
 void DownloadThread::slot_GetNetSpeed()
 {
     QString speedStr = QString::number(speedD, 'f', 1) + "KB/S";
-    speedItem ->setText(speedStr);
+    speedItem->setText(speedStr);
 }
 
 //更新进度条
 void DownloadThread::slot_UpdateDataProgress(qint64 bytesRead, qint64 totalBytes)
 {
-    progressBar ->setMaximum(totalBytes);//最大值
-    progressBar ->setValue(bytesRead);//当前值
+    progressBar->setMaximum(totalBytes);//最大值
+    progressBar->setValue(bytesRead);//当前值
 
 //    ++times;
 //    if (times == 1)
 //    {
 //        double musicSizeD = (double) totalBytes / 1048576;
 //        QString musicSizeStr = QString::number(musicSizeD, 'f', 2) + "MB";
-//        musicSizeItem ->setText(musicSizeStr);
+//        musicSizeItem->setText(musicSizeStr);
 //    }
 
     //得到当前时间
-    currentTime = time ->elapsed();
+    currentTime = time->elapsed();
     //计算网速
     speedD = bytesRead / currentTime * 1000 / 1024;
 
     if (bytesRead == totalBytes)
     {
-        timer ->stop();
-        speedItem ->setText(tr("0.0KB/S"));
-        musicStatusItem ->setText(tr("完成"));
+        timer->stop();
+        speedItem->setText(tr("0.0KB/S"));
+        musicStatusItem->setText(tr("完成"));
     }
 }
 
@@ -297,26 +297,26 @@ void DownloadThread::slot_DelCurrentThread(int row)
     map<int, DownloadThread*>::iterator threadMapIter = threadMap.find(row);
     if (threadMapIter != threadMap.end())
     {
-        DownloadThread *currentThread = threadMapIter ->second;
+        DownloadThread *currentThread = threadMapIter->second;
         if (currentThread == this)
         {
             threadMap.erase(threadMapIter);
-            musicManager ->deleteLater();
-            musicReply ->deleteLater();
-            //m_downloadList ->removeRow(row);
-            //m_downloadList ->setMusicListMap(listMap);
+            musicManager->deleteLater();
+            musicReply->deleteLater();
+            //m_downloadList->removeRow(row);
+            //m_downloadList->setMusicListMap(listMap);
             if (musicFile.isOpen())
             {
                 musicFile.close();
             }
-            this ->deleteLater();
+            this->deleteLater();
 
             map<int, int>::iterator listMapIter = listMap.find(row);
             if (listMapIter != listMap.end())
             {
                 qDebug() << "row = " << row;
                 listMap.erase(listMapIter);
-                m_downloadList ->setMusicListMap(listMap);
+                m_downloadList->setMusicListMap(listMap);
             }
         }
     }
@@ -328,17 +328,17 @@ void DownloadThread::slot_PauseMusicDownload( int row )
     map<int, DownloadThread*>::iterator threadMapIter = threadMap.find(row);
     if (threadMapIter != threadMap.end())
     {
-        DownloadThread *currentThread = threadMapIter ->second;
+        DownloadThread *currentThread = threadMapIter->second;
         if (currentThread == this)
         {
-            if (musicReply ->isReadable())
+            if (musicReply->isReadable())
             {
-                //musicReply ->deleteLater();
-                musicReply ->abort();
-                timer ->stop();
-                timer2 ->stop();
-                speedItem ->setText(tr("0.0KB/S"));
-                musicStatusItem ->setText(tr("暂停"));
+                //musicReply->deleteLater();
+                musicReply->abort();
+                timer->stop();
+                timer2->stop();
+                speedItem->setText(tr("0.0KB/S"));
+                musicStatusItem->setText(tr("暂停"));
             }
         }
     }
@@ -348,14 +348,14 @@ void DownloadThread::slot_PauseMusicDownload( int row )
 void DownloadThread::slot_ReplyError(QNetworkReply::NetworkError networkError)
 {
     QMessageBox::information(NULL, tr("信息"), tr("下载错误，错误代码：%1").arg(networkError), QMessageBox::Yes);
-	qApp ->exit(-1);
+	qApp->exit(-1);
 	//if (musicFile.isOpen())
 	//{
 	//	musicFile.close();
 	//}
- //   musicManager ->deleteLater();
- //   musicReply ->deleteLater();
- //   this ->deleteLater();
+ //   musicManager->deleteLater();
+ //   musicReply->deleteLater();
+ //   this->deleteLater();
 }
 
 //网络中断
@@ -365,10 +365,10 @@ void DownloadThread::slot_NetWorkInterrupt()
     ++i;
     if (i == 1)
     {
-        timer ->stop();//停止更新网速
-        timer2 ->stop();
-        speedItem ->setText(tr("0.0KB/S"));
-        musicStatusItem ->setText(tr("中断"));
+        timer->stop();//停止更新网速
+        timer2->stop();
+        speedItem->setText(tr("0.0KB/S"));
+        musicStatusItem->setText(tr("中断"));
         QMessageBox::information(NULL, tr("信息"), tr("请检查网络是否连接！"), QMessageBox::Yes);
     }
 }

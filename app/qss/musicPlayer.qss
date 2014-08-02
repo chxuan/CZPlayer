@@ -6,6 +6,53 @@ Qtooltip
     font-family:Œ¢»Ì—≈∫⁄;
 }
 
+
+
+
+/************************************QListWidget************************************************/
+
+
+QListWidget
+{
+	/*border: 0px;*/
+    alternate-background-color: rgb(241,249,255);
+    background: rgb(230,242,255);
+}
+
+
+QListWidget::item:focus
+{
+	padding:-2;
+}
+
+QListWidget::item:selected 
+{
+	color:rgb(49,112,174);
+     border:1px solid rgb(49,112,174);
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 rgb(153,209,252), stop: 1 rgb(223,239,254));
+}
+
+QListWidget::item:selected:!active
+{
+	color:rgb(49,112,174);
+      border:1px solid rgb(49,112,174);
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 rgb(153,209,252), stop: 1 rgb(223,239,254));
+}
+
+QListWidget::item:selected:active
+{
+    border:1px solid rgb(49,112,174);
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 rgb(153,209,252), stop: 1 rgb(223,239,254));
+     color:rgb(49,112,174);
+}
+
+/************************************QListWidget************************************************/
+
+
+
 /************************************QTableWidget************************************************/
 
 QTableWidget
@@ -346,35 +393,103 @@ QPushButton#backButton:pressed
 
 /************************************QSlider******************************************/
 
-/*
-QSlider::groove:horizontal
+QSlider#seekSlider::groove:horizontal 
 {
-     border-image: url(:/images/progressBar.png);
+	border-left: -8px solid;
+	background: rgba(0,0,0,0);
+	height: 6px;
+	border-radius: 6px;
 }
-*/
 
-
-QSlider::handle:horizontal:!hover
+QSlider#seekSlider::sub-page:horizontal 
 {
-     width: 12px;
-     height: 15px;
-     border-image: url(:/images/volumeBarPoint.png);
+	background:url(:/images/progressBarSub.png);
+	border: 0px solid #777;
+	height: 6px;
+	border-radius: 0px;
+}
+
+QSlider#seekSlider::add-page:horizontal
+{
+	background: rgba(0,0,0,0);
+	border: 0px solid #777;
+	height: 6px;
+	border-radius: 0px;
+}
+
+QSlider#seekSlider::handle:horizontal 
+{
+	border: 0px solid #777;
+	width: 28px;
+	height: 30px;
+	border-left:0px;
+	margin-top: -12px;
+	margin-bottom: -12px;
+	border-radius: 4px;
+}
+
+QSlider#volumeSlider::groove:horizontal 
+{
+	border-left: -8px solid;
+	background: rgba(0,0,0,0);
+	height: 6px;
+	border-radius: 6px;
+}
+
+QSlider#volumeSlider::sub-page:horizontal 
+{
+	background:url(:/images/volumeBarSub.png);
+	border: 0px solid #777;
+	height: 6px;
+	border-radius: 0px;
+}
+
+QSlider#volumeSlider::add-page:horizontal
+{
+	background: rgba(0,0,0,0);
+	border: 0px solid #777;
+	height: 6px;
+	border-radius: 0px;
+}
+
+QSlider#volumeSlider::handle:horizontal 
+{
+	border: 0px solid #777;
+	width: 28px;
+	height: 30px;
+	border-left:0px;
+	margin-top: -12px;
+	margin-bottom: -12px;
+	border-radius: 4px;
+}
+
+QSlider::handle:horizontal:!hover 
+{
+	border-image:url(:/images/seekBarPoint.png);
+	border: 0px solid #444;
+	border-radius: 4px;
 }
 
 QSlider::handle:horizontal:hover
 {
-     width: 12px;
-     height: 15px;
-     border-image: url(:/images/volumeBarPoint2.png);
+	border-image:url(:/images/seekBarPoint2.png);
+	border: 0px solid #444;
+	border-radius: 4px;
 }
 
-QSlider::handle:horizontal:pressed
+QSlider::handle:horizontal:pressed 
 {
-     width: 12px;
-     height: 15px;
-     border-image: url(:/images/volumeBarPoint3.png);
+	border-image:url(:/images/seekBarPoint3.png);
+	border: 0px solid #444;
+	border-radius: 4px;
 }
 
+QSlider::handle:horizontal:disabled 
+{
+	border-image:url(:/images/seekBarPoint.png);
+	border: 0px solid #444;
+	border-radius: 0px;
+}
 
 /************************************QSlider******************************************/
 
@@ -490,11 +605,12 @@ QScrollBar::up-arrow:vertical
 
 QScrollBar::down-arrow:vertical
 {
-        border-width:1px;
-        max-height:15px;
-        min-width:15px;
-        border-radius: 3px;
+    border-width:1px;
+    max-height:15px;
+    min-width:15px;
+    border-radius: 3px;
 }
+
 
 /************************************QScrollBar**************************************************/
 
@@ -739,6 +855,64 @@ QLabel#navigationBarLabel
 }
 
 /************************************À—À˜ΩÁ√Ê**************************************************/
+
+
+/************************************∑÷œÌΩÁ√Ê**************************************************/
+
+QTextEdit#textEdit
+{
+    font:12px;
+	font-family:Œ¢»Ì—≈∫⁄;
+    border: 0px;
+}
+
+QLabel#sharedLabel
+{
+    font:15px;
+    font-family:Œ¢»Ì—≈∫⁄;
+}
+
+QLabel#xinlangweiboLabel
+{
+    border-image: url(:/images/XinLangWeiBo.png);
+}
+
+QLabel#tengxunweiboLabel
+{
+    border-image: url(:/images/TengXunWeiBo.png);
+}
+
+QLabel#qqkongjianLabel
+{
+    border-image: url(:/images/QQKongJian.png);
+}
+
+QLabel#renrenLabel
+{
+    border-image: url(:/images/RenRen.png);
+}
+
+QLabel#kaixinLabel
+{
+    border-image: url(:/images/KaiXin.png);
+}
+
+QLabel#doubanLabel
+{
+    border-image: url(:/images/douban.png);
+}
+
+QLabel#souhuweiboLabel
+{
+    border-image: url(:/images/SouHuBoKe.png);
+}
+
+QLabel#qqhaoyouLabel
+{
+    border-image: url(:/images/qqhaoyou.png);
+}
+
+/************************************∑÷œÌΩÁ√Ê**************************************************/
 
 
 

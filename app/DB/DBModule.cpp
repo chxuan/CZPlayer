@@ -50,11 +50,11 @@ void DBModule::createTable()
 	query.exec("drop table musicList");
 
 	query.exec("create table musicList (fileName varchar(50) primary key not null, "
-		"time varchar(10), filePath varchar(50))");
+		"time varchar(10), filePath varchar(50), albumUrlPath varchar(100))");
 }
 
 //从数据库中读出音乐文件信息放入音乐播放列表
-bool DBModule::readFromDb( QStringList &list )
+bool DBModule::readFilePath( QStringList &list )
 {
 	QSqlQuery query;
 	query.exec("select filePath from musicList");
@@ -74,7 +74,7 @@ bool DBModule::readFromDb( QStringList &list )
 }
 
 //从数据库中读出数据显示到m3u文件中
-bool DBModule::readFromDb2( vector<MusicListSaveFormatEntity> &vec )
+bool DBModule::readMusicListSaveFormatEntity( vector<MusicListSaveFormatEntity> &vec )
 {
 	QSqlQuery query;
 	query.exec("select fileName, time, filePath from musicList");
@@ -115,9 +115,59 @@ bool DBModule::delLine( const QString &fileName )
 bool DBModule::insertLine( const QString &fileName, const QString &time, const QString &filePath )
 {
 	QSqlQuery query;
-	query.prepare("insert into musicList values(?, ?, ?)");
+	query.prepare("insert into musicList values(?, ?, ?, ?)");
 	query.addBindValue(fileName);
 	query.addBindValue(time);
 	query.addBindValue(filePath);
+	query.addBindValue("");
 	return query.exec();
+}
+
+//更新专辑url
+bool DBModule::updateAlbumUrlPath( const QString &fileName, const QString &albumUrlPath )
+{
+	QSqlQuery query;
+	query.prepare("update musicList set albumUrlPath = ? where fileName = ?");
+	query.addBindValue(albumUrlPath);
+	query.addBindValue(fileName);
+	return query.exec();
+}
+
+//从数据库中读出歌曲名对应的专辑url
+bool DBModule::readAlbumUrlPathFromDB( QString &fileName, QString &albumUrlPath )
+{
+	QSqlQuery query;
+	query.prepare("select albumUrlPath from musicList where fileName = ?");
+	query.addBindValue(fileName);
+	query.exec();
+
+	while (query.next())
+	{
+		albumUrlPath = query.value(0).toString();
+		break;
+	}
+
+	return true;
+}
+
+//从数据库读取音乐信息
+bool DBModule::readMusicInfoEntity( vector<MusicInfoEntity> &vec )
+{
+	QSqlQuery query;
+	query.exec("select fileName, time, filePath from musicList");
+
+	while (query.next())
+	{
+		MusicInfoEntity entity(query.value(0).toString().toStdString(),
+			query.value(1).toString().toStdString(),
+			query.value(2).toString().toStdString());
+		vec.push_back(entity);
+	}
+
+	if (!vec.empty())
+	{
+		return true;
+	}
+
+	return false;
 }

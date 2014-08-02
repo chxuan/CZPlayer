@@ -26,22 +26,27 @@ QSpinBox* LrcSettingsPage::shadowSpinBox = 0;
 
 LrcSettingsPage::LrcSettingsPage(QWidget *parnet) : m_parent(parnet)
 {
+	//ÉèÖÃ´°¿Ú»ù±¾ÊôÐÔ
+	//this->resize(507, 423);//ÉèÖÃ´°Ìå´óÐ¡
+	//this->setMinimumSize(665, 482);
+	//this->setMaximumSize(665, 482);
+
     //×ÖÌå
     QGroupBox *fontGB = new QGroupBox(tr("×ÖÌå"));
 
     fontLabel = new QLabel(this);
-    fontLabel ->setObjectName(tr("fontLabel"));
-    fontLabel ->setText(tr("×ÖÌå"));
+    fontLabel->setObjectName(tr("fontLabel"));
+    fontLabel->setText(tr("×ÖÌå"));
 
     fontCombo = new QComboBox(this);
     QFontDatabase font;
     //QStringList fontList = font.families(QFontDatabase::SimplifiedChinese);//»ñÈ¡ÏµÍ³ÄÜÏÔÊ¾ÖÐÎÄµÄ×ÖÌå
     QStringList fontList = font.families();//»ñÈ¡ÏµÍ³ÄÜÏÔÊ¾ÖÐÎÄµÄ×ÖÌå
-    fontCombo ->addItems(fontList);
+    fontCombo->addItems(fontList);
 
     fontSizeLabel = new QLabel(this);
-    fontSizeLabel ->setObjectName(tr("fontSizeLabel"));
-    fontSizeLabel ->setText(tr("×ÖºÅ"));
+    fontSizeLabel->setObjectName(tr("fontSizeLabel"));
+    fontSizeLabel->setText(tr("×ÖºÅ"));
 
     fontSizeCombo = new QComboBox(this);
     QStringList fontSizeList;
@@ -51,16 +56,16 @@ LrcSettingsPage::LrcSettingsPage(QWidget *parnet) : m_parent(parnet)
         fontSizeStr = QString::number(i, 10);
         fontSizeList << fontSizeStr;
     }
-    fontSizeCombo ->addItems(fontSizeList);
+    fontSizeCombo->addItems(fontSizeList);
 
     fontTypeLabel = new QLabel(this);
-    fontTypeLabel ->setObjectName(tr("fontTypeLabel"));
-    fontTypeLabel ->setText(tr("×ÖÐÎ"));
+    fontTypeLabel->setObjectName(tr("fontTypeLabel"));
+    fontTypeLabel->setText(tr("×ÖÐÎ"));
 
     fontTypeCombo = new QComboBox(this);
     QStringList fontTypeList;
     fontTypeList << tr("³£¹æ") << tr("´ÖÌå") << tr("ÇãÐ±") << tr("´ÖÌå ÇãÐ±");
-    fontTypeCombo ->addItems(fontTypeList);
+    fontTypeCombo->addItems(fontTypeList);
 
     //ÑÕÉ«
     QGroupBox *colorGB = new QGroupBox(tr("ÑÕÉ«"));
@@ -69,168 +74,168 @@ LrcSettingsPage::LrcSettingsPage(QWidget *parnet) : m_parent(parnet)
     QGroupBox *noPlayGB = new QGroupBox(tr("Î´²¥·Å"));
 
     noPlayEdit = new QLineEdit(this);
-    noPlayEdit ->setObjectName(tr("noPlayEdit"));
-    noPlayEdit ->setReadOnly(true);
+    noPlayEdit->setObjectName(tr("noPlayEdit"));
+    noPlayEdit->setReadOnly(true);
 
     noPlayEdit2 = new QLineEdit(this);
-    noPlayEdit2 ->setObjectName(tr("noPlayEdit3"));
-    noPlayEdit2 ->setReadOnly(true);
+    noPlayEdit2->setObjectName(tr("noPlayEdit3"));
+    noPlayEdit2->setReadOnly(true);
 
     noPlayEdit3 = new QLineEdit(this);
-    noPlayEdit3 ->setObjectName(tr("noPlayEdit3"));
-    noPlayEdit3 ->setReadOnly(true);
+    noPlayEdit3->setObjectName(tr("noPlayEdit3"));
+    noPlayEdit3->setReadOnly(true);
 
     changeNoPlayButton = new QPushButton(this);
-    changeNoPlayButton ->setObjectName(tr("changeNoPlayButton"));
-    changeNoPlayButton ->setText(tr("ÉÏ²¿ÑÕÉ«"));
+    changeNoPlayButton->setObjectName(tr("changeNoPlayButton"));
+    changeNoPlayButton->setText(tr("ÉÏ²¿ÑÕÉ«"));
 
     changeNoPlayButton2 = new QPushButton(this);
-    changeNoPlayButton2 ->setObjectName(tr("changeNoPlayButton2"));
-    changeNoPlayButton2 ->setText(tr("ÖÐ²¿ÑÕÉ«"));
+    changeNoPlayButton2->setObjectName(tr("changeNoPlayButton2"));
+    changeNoPlayButton2->setText(tr("ÖÐ²¿ÑÕÉ«"));
 
     changeNoPlayButton3 = new QPushButton(this);
-    changeNoPlayButton3 ->setObjectName(tr("changeNoPlayButton3"));
-    changeNoPlayButton3 ->setText(tr("ÏÂ²¿ÑÕÉ«"));
+    changeNoPlayButton3->setObjectName(tr("changeNoPlayButton3"));
+    changeNoPlayButton3->setText(tr("ÏÂ²¿ÑÕÉ«"));
 
     //ÒÑ²¥·Å
     QGroupBox *playedGB = new QGroupBox(tr("ÒÑ²¥·Å"));
 
     playedEdit = new QLineEdit(this);
-    playedEdit ->setObjectName(tr("playedEdit"));
-    playedEdit ->setReadOnly(true);
+    playedEdit->setObjectName(tr("playedEdit"));
+    playedEdit->setReadOnly(true);
 
     playedEdit2 = new QLineEdit(this);
-    playedEdit2 ->setObjectName(tr("playedEdit2"));
-    playedEdit2 ->setReadOnly(true);
+    playedEdit2->setObjectName(tr("playedEdit2"));
+    playedEdit2->setReadOnly(true);
 
     playedEdit3 = new QLineEdit(this);
-    playedEdit3 ->setObjectName(tr("playedEdit3"));
-    playedEdit3 ->setReadOnly(true);
+    playedEdit3->setObjectName(tr("playedEdit3"));
+    playedEdit3->setReadOnly(true);
 
     changePlayedButton = new QPushButton(this);
-    changePlayedButton ->setObjectName(tr("changePlayedButton"));
-    changePlayedButton ->setText(tr("ÉÏ²¿ÑÕÉ«"));
+    changePlayedButton->setObjectName(tr("changePlayedButton"));
+    changePlayedButton->setText(tr("ÉÏ²¿ÑÕÉ«"));
 
     changePlayedButton2 = new QPushButton(this);
-    changePlayedButton2 ->setObjectName(tr("changePlayedButton2"));
-    changePlayedButton2 ->setText(tr("ÖÐ²¿ÑÕÉ«"));
+    changePlayedButton2->setObjectName(tr("changePlayedButton2"));
+    changePlayedButton2->setText(tr("ÖÐ²¿ÑÕÉ«"));
 
     changePlayedButton3 = new QPushButton(this);
-    changePlayedButton3 ->setObjectName(tr("changePlayedButton3"));
-    changePlayedButton3 ->setText(tr("ÏÂ²¿ÑÕÉ«"));
+    changePlayedButton3->setObjectName(tr("changePlayedButton3"));
+    changePlayedButton3->setText(tr("ÏÂ²¿ÑÕÉ«"));
 
     yuSheButton = new QPushButton(this);
-    yuSheButton ->setObjectName(tr("yuSheButton"));
-    yuSheButton ->setText(tr("Ô¤Éè·½°¸"));
+    yuSheButton->setObjectName(tr("yuSheButton"));
+    yuSheButton->setText(tr("Ô¤Éè·½°¸"));
 
     backToButton = new QPushButton(this);
-    backToButton ->setObjectName(tr("backToButton"));
-    backToButton ->setText(tr("»Ö¸´Ä¬ÈÏ·½°¸"));
+    backToButton->setObjectName(tr("backToButton"));
+    backToButton->setText(tr("»Ö¸´Ä¬ÈÏ·½°¸"));
 
     //»Ò¶ÈÏÔÊ¾
     QGroupBox *shadowGB = new QGroupBox(tr("ÒõÓ°Ð§¹û"));
 
     shadowLabel = new QLabel(this);
-    shadowLabel ->setObjectName(tr("shadowLabel"));
-    shadowLabel ->setText(tr("ÒõÓ°Ð§¹û"));
+    shadowLabel->setObjectName(tr("shadowLabel"));
+    shadowLabel->setText(tr("ÒõÓ°Ð§¹û"));
 
     shadowSlider = new QSlider(Qt::Horizontal, this);
-    shadowSlider ->setObjectName(tr("shadowSlider"));
-    shadowSlider ->setRange(0, 255);
+    shadowSlider->setObjectName(tr("shadowSlider"));
+    shadowSlider->setRange(0, 255);
 
     shadowSpinBox = new QSpinBox(this);
-    shadowSpinBox ->setObjectName(tr("shadowSpinBox"));
-    shadowSpinBox ->setRange(0, 255);
+    shadowSpinBox->setObjectName(tr("shadowSpinBox"));
+    shadowSpinBox->setRange(0, 255);
 
     //¸è´ÊÄ£°åÏÔÊ¾
     lrcDemo = new LrcDemo();
-    lrcDemo ->resize(300, 60);
+    lrcDemo->resize(300, 60);
 
     jingDianWhite = new QAction(this);
-    jingDianWhite ->setText(tr("¾­µä°×"));
-    jingDianWhite ->setIcon(QIcon(":/images/jingDianWhite.png"));
+    jingDianWhite->setText(tr("¾­µä°×"));
+    jingDianWhite->setIcon(QIcon(":/images/jingDianWhite.png"));
 
     haiYangBlue = new QAction(this);
-    haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-    haiYangBlue ->setIcon(QIcon(":/images/haiYangBlue.png"));
+    haiYangBlue->setText(tr("º£ÑóÀ¶"));
+    haiYangBlue->setIcon(QIcon(":/images/haiYangBlue.png"));
 
     huoYanRed = new QAction(this);
-    huoYanRed ->setText(tr("»ðÑæºì"));
-    huoYanRed ->setIcon(QIcon(":/images/huoYanRed.png"));
+    huoYanRed->setText(tr("»ðÑæºì"));
+    huoYanRed->setIcon(QIcon(":/images/huoYanRed.png"));
 
     kuXuanBlack = new QAction(this);
-    kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-    kuXuanBlack ->setIcon(QIcon(":/images/kuXuanBlack.png"));
+    kuXuanBlack->setText(tr("¿áìÅºÚ"));
+    kuXuanBlack->setIcon(QIcon(":/images/kuXuanBlack.png"));
 
     qiuSeYellow = new QAction(this);
-    qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-    qiuSeYellow ->setIcon(QIcon(":/images/qiuSeYellow.png"));
+    qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+    qiuSeYellow->setIcon(QIcon(":/images/qiuSeYellow.png"));
 
     langManPurple = new QAction(this);
-    langManPurple ->setText(tr("ÀËÂþ×Ï"));
-    langManPurple ->setIcon(QIcon(":/images/langManPurple.png"));
+    langManPurple->setText(tr("ÀËÂþ×Ï"));
+    langManPurple->setIcon(QIcon(":/images/langManPurple.png"));
 
     ziRanGreen = new QAction(this);
-    ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
-    ziRanGreen ->setIcon(QIcon(":/images/ziRanGreen.png"));
+    ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
+    ziRanGreen->setIcon(QIcon(":/images/ziRanGreen.png"));
 
     QHBoxLayout *fontLayout = new QHBoxLayout;
-    fontLayout ->addWidget(fontLabel);
-    fontLayout ->addWidget(fontCombo);
-    fontLayout ->addStretch();
-    fontLayout ->addWidget(fontSizeLabel);
-    fontLayout ->addWidget(fontSizeCombo);
-    fontLayout ->addStretch();
-    fontLayout ->addWidget(fontTypeLabel);
-    fontLayout ->addWidget(fontTypeCombo);
-    fontGB ->setLayout(fontLayout);
+    fontLayout->addWidget(fontLabel);
+    fontLayout->addWidget(fontCombo);
+    fontLayout->addStretch();
+    fontLayout->addWidget(fontSizeLabel);
+    fontLayout->addWidget(fontSizeCombo);
+    fontLayout->addStretch();
+    fontLayout->addWidget(fontTypeLabel);
+    fontLayout->addWidget(fontTypeCombo);
+    fontGB->setLayout(fontLayout);
 
     QGridLayout *noPlayLayout = new QGridLayout;
-    noPlayLayout ->addWidget(noPlayEdit, 0, 0);
-    noPlayLayout ->addWidget(changeNoPlayButton, 0, 1);
-    noPlayLayout ->addWidget(noPlayEdit2, 1, 0);
-    noPlayLayout ->addWidget(changeNoPlayButton2, 1, 1);
-    noPlayLayout ->addWidget(noPlayEdit3, 2, 0);
-    noPlayLayout ->addWidget(changeNoPlayButton3, 2, 1);
-    noPlayGB ->setLayout(noPlayLayout);
+    noPlayLayout->addWidget(noPlayEdit, 0, 0);
+    noPlayLayout->addWidget(changeNoPlayButton, 0, 1);
+    noPlayLayout->addWidget(noPlayEdit2, 1, 0);
+    noPlayLayout->addWidget(changeNoPlayButton2, 1, 1);
+    noPlayLayout->addWidget(noPlayEdit3, 2, 0);
+    noPlayLayout->addWidget(changeNoPlayButton3, 2, 1);
+    noPlayGB->setLayout(noPlayLayout);
 
     QGridLayout *playedLayout = new QGridLayout;
-    playedLayout ->addWidget(playedEdit, 0, 0);
-    playedLayout ->addWidget(changePlayedButton, 0, 1);
-    playedLayout ->addWidget(playedEdit2, 1, 0);
-    playedLayout ->addWidget(changePlayedButton2, 1, 1);
-    playedLayout ->addWidget(playedEdit3, 2, 0);
-    playedLayout ->addWidget(changePlayedButton3, 2, 1);
-    playedGB ->setLayout(playedLayout);
+    playedLayout->addWidget(playedEdit, 0, 0);
+    playedLayout->addWidget(changePlayedButton, 0, 1);
+    playedLayout->addWidget(playedEdit2, 1, 0);
+    playedLayout->addWidget(changePlayedButton2, 1, 1);
+    playedLayout->addWidget(playedEdit3, 2, 0);
+    playedLayout->addWidget(changePlayedButton3, 2, 1);
+    playedGB->setLayout(playedLayout);
 
     QHBoxLayout *shadowLayout = new QHBoxLayout;
-    shadowLayout ->addWidget(shadowLabel);
-    shadowLayout ->addWidget(shadowSlider);
-    shadowLayout ->addWidget(shadowSpinBox);
-    shadowLayout ->addStretch();
-    shadowGB ->setLayout(shadowLayout);
+    shadowLayout->addWidget(shadowLabel);
+    shadowLayout->addWidget(shadowSlider);
+    shadowLayout->addWidget(shadowSpinBox);
+    shadowLayout->addStretch();
+    shadowGB->setLayout(shadowLayout);
 
     QHBoxLayout *colorLayout = new QHBoxLayout;
-    colorLayout ->addWidget(noPlayGB);
-    colorLayout ->addStretch();
-    colorLayout ->addWidget(playedGB);
+    colorLayout->addWidget(noPlayGB);
+    colorLayout->addStretch();
+    colorLayout->addWidget(playedGB);
 
     QHBoxLayout *buttonsLayout = new QHBoxLayout;
-    buttonsLayout ->addWidget(yuSheButton);
-    buttonsLayout ->addStretch();
-    buttonsLayout ->addWidget(backToButton);
+    buttonsLayout->addWidget(yuSheButton);
+    buttonsLayout->addStretch();
+    buttonsLayout->addWidget(backToButton);
 
     QVBoxLayout *colorLayout2 = new QVBoxLayout;
-    colorLayout2 ->addLayout(colorLayout);
-    colorLayout2 ->addLayout(buttonsLayout);
-    colorGB ->setLayout(colorLayout2);
+    colorLayout2->addLayout(colorLayout);
+    colorLayout2->addLayout(buttonsLayout);
+    colorGB->setLayout(colorLayout2);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout ->addWidget(fontGB);
-    mainLayout ->addWidget(colorGB);
-    mainLayout ->addWidget(shadowGB);
-    mainLayout ->addWidget(lrcDemo);
-    this ->setLayout(mainLayout);
+    mainLayout->addWidget(fontGB);
+    mainLayout->addWidget(colorGB);
+    mainLayout->addWidget(shadowGB);
+    mainLayout->addWidget(lrcDemo);
+    this->setLayout(mainLayout);
 
     connect(changeNoPlayButton, SIGNAL(clicked()), this, SLOT(slot_ChangeColor()));
     connect(changeNoPlayButton2, SIGNAL(clicked()), this, SLOT(slot_ChangeColor()));
@@ -278,27 +283,27 @@ void LrcSettingsPage::slot_ChangeColor()
     QString preColorStr;
     if (button == changeNoPlayButton)
     {
-        preColorStr = noPlayEdit ->text();
+        preColorStr = noPlayEdit->text();
     }
     else if (button == changeNoPlayButton2)
     {
-        preColorStr = noPlayEdit2 ->text();
+        preColorStr = noPlayEdit2->text();
     }
     else if (button == changeNoPlayButton3)
     {
-        preColorStr = noPlayEdit3 ->text();
+        preColorStr = noPlayEdit3->text();
     }
     else if (button == changePlayedButton)
     {
-        preColorStr = playedEdit ->text();
+        preColorStr = playedEdit->text();
     }
     else if (button == changePlayedButton2)
     {
-        preColorStr = playedEdit2 ->text();
+        preColorStr = playedEdit2->text();
     }
     else if (button == changePlayedButton3)
     {
-        preColorStr = playedEdit3 ->text();
+        preColorStr = playedEdit3->text();
     }
 
     QStringList colorList = preColorStr.split(" ");
@@ -319,33 +324,33 @@ void LrcSettingsPage::slot_ChangeColor()
                                                                         .arg(color.blue());
         if (button == changeNoPlayButton)
         {
-            noPlayEdit ->setText(colorStr);
-            noPlayEdit ->setStyleSheet(colorStr2);
+            noPlayEdit->setText(colorStr);
+            noPlayEdit->setStyleSheet(colorStr2);
         }
         else if (button == changeNoPlayButton2)
         {
-            noPlayEdit2 ->setText(colorStr);
-            noPlayEdit2 ->setStyleSheet(colorStr2);
+            noPlayEdit2->setText(colorStr);
+            noPlayEdit2->setStyleSheet(colorStr2);
         }
         else if (button == changeNoPlayButton3)
         {
-            noPlayEdit3 ->setText(colorStr);
-            noPlayEdit3 ->setStyleSheet(colorStr2);
+            noPlayEdit3->setText(colorStr);
+            noPlayEdit3->setStyleSheet(colorStr2);
         }
         else if (button == changePlayedButton)
         {
-            playedEdit ->setText(colorStr);
-            playedEdit ->setStyleSheet(colorStr2);
+            playedEdit->setText(colorStr);
+            playedEdit->setStyleSheet(colorStr2);
         }
         else if (button == changePlayedButton2)
         {
-            playedEdit2 ->setText(colorStr);
-            playedEdit2 ->setStyleSheet(colorStr2);
+            playedEdit2->setText(colorStr);
+            playedEdit2->setStyleSheet(colorStr2);
         }
         else if (button == changePlayedButton3)
         {
-            playedEdit3 ->setText(colorStr);
-            playedEdit3 ->setStyleSheet(colorStr2);
+            playedEdit3->setText(colorStr);
+            playedEdit3->setStyleSheet(colorStr2);
         }
     }
 }
@@ -390,13 +395,13 @@ void LrcSettingsPage::slot_ChangeYuSheColor()
         LrcSettingsPage::setPlayedEdit(playedWhite);
         LrcSettingsPage::setPlayedEdit2(playedWhite2);
         LrcSettingsPage::setPlayedEdit3(playedWhite3);
-        jingDianWhite ->setText(tr("¾­µä°× ¡Ì"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°× ¡Ì"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (action == haiYangBlue)//º£ÑóÀ¶
     {
@@ -406,13 +411,13 @@ void LrcSettingsPage::slot_ChangeYuSheColor()
         LrcSettingsPage::setPlayedEdit(playedBlue);
         LrcSettingsPage::setPlayedEdit2(playedBlue2);
         LrcSettingsPage::setPlayedEdit3(playedBlue3);
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶ ¡Ì"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶ ¡Ì"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (action == huoYanRed)//»ðÑæºì
     {
@@ -422,13 +427,13 @@ void LrcSettingsPage::slot_ChangeYuSheColor()
         LrcSettingsPage::setPlayedEdit(playedRed);
         LrcSettingsPage::setPlayedEdit2(playedRed2);
         LrcSettingsPage::setPlayedEdit3(playedRed3);
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì ¡Ì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì ¡Ì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (action == kuXuanBlack)//¿áìÅºÚ
     {
@@ -438,13 +443,13 @@ void LrcSettingsPage::slot_ChangeYuSheColor()
         LrcSettingsPage::setPlayedEdit(playedBlack);
         LrcSettingsPage::setPlayedEdit2(playedBlack2);
         LrcSettingsPage::setPlayedEdit3(playedBlack3);
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ ¡Ì"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ ¡Ì"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (action == qiuSeYellow)//ÇïÉ«»Æ
     {
@@ -454,13 +459,13 @@ void LrcSettingsPage::slot_ChangeYuSheColor()
         LrcSettingsPage::setPlayedEdit(playedYellow);
         LrcSettingsPage::setPlayedEdit2(playedYellow2);
         LrcSettingsPage::setPlayedEdit3(playedYellow3);
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ ¡Ì"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ ¡Ì"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (action == langManPurple)//ÀËÂþ×Ï
     {
@@ -470,13 +475,13 @@ void LrcSettingsPage::slot_ChangeYuSheColor()
         LrcSettingsPage::setPlayedEdit(playedPurple);
         LrcSettingsPage::setPlayedEdit2(playedPurple2);
         LrcSettingsPage::setPlayedEdit3(playedPurple3);
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï ¡Ì"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï ¡Ì"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (action == ziRanGreen)//×ÔÈ»ÂÌ
     {
@@ -486,13 +491,13 @@ void LrcSettingsPage::slot_ChangeYuSheColor()
         LrcSettingsPage::setPlayedEdit(playedGreen);
         LrcSettingsPage::setPlayedEdit2(playedGreen2);
         LrcSettingsPage::setPlayedEdit3(playedGreen3);
-        jingDianWhite ->setText(tr("¾­µä°× *"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ ¡Ì"));
+        jingDianWhite->setText(tr("¾­µä°× *"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ ¡Ì"));
     }
 }
 
@@ -513,7 +518,7 @@ void LrcSettingsPage::slot_ChangeLrcDemoFont(QString value)
     {
         LrcDemo::setFontType(value);
     }
-    lrcDemo ->update();
+    lrcDemo->update();
 }
 
 //¸Ä±ä¸è´Ê×ÖÌåÑÕÉ«
@@ -544,45 +549,45 @@ void LrcSettingsPage::slot_ChangeLrcDemoColor(QString value)
     {
         LrcDemo::setMaskLinearGradient3(value);
     }
-    lrcDemo ->update();
+    lrcDemo->update();
 }
 
 //¸Ä±älrcDemo¸è´Ê»Ò¶È
 void LrcSettingsPage::slot_ChangelrcDemoShadow(int value)
 {
     LrcDemo::setLrcDemoShadow(value);
-    lrcDemo ->update();
+    lrcDemo->update();
 }
 
 //µÃµ½Ô¤ÉèÑÕÉ«
 QString LrcSettingsPage::getYuSheColor()
 {
     QString str = "";
-    if (jingDianWhite ->text().contains("¡Ì"))
+    if (jingDianWhite->text().contains("¡Ì"))
     {
         str = "¾­µä°×";
     }
-    else if (haiYangBlue ->text().contains("¡Ì"))
+    else if (haiYangBlue->text().contains("¡Ì"))
     {
         str =  "º£ÑóÀ¶";
     }
-    else if (huoYanRed ->text().contains("¡Ì"))
+    else if (huoYanRed->text().contains("¡Ì"))
     {
         str =  "»ðÑæºì";
     }
-    else if (kuXuanBlack ->text().contains("¡Ì"))
+    else if (kuXuanBlack->text().contains("¡Ì"))
     {
         str =  "¿áìÅºÚ";
     }
-    else if (qiuSeYellow ->text().contains("¡Ì"))
+    else if (qiuSeYellow->text().contains("¡Ì"))
     {
         str =  "ÇïÉ«»Æ";
     }
-    else if (langManPurple ->text().contains("¡Ì"))
+    else if (langManPurple->text().contains("¡Ì"))
     {
         str = "ÀËÂþ×Ï";
     }
-    else if (ziRanGreen ->text().contains("¡Ì"))
+    else if (ziRanGreen->text().contains("¡Ì"))
     {
         str = "×ÔÈ»ÂÌ";
     }
@@ -594,197 +599,197 @@ void LrcSettingsPage::setYuSheColor(const QString &value)
 {
     if (value == "¾­µä°×")
     {
-        jingDianWhite ->setText(tr("¾­µä°× ¡Ì"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°× ¡Ì"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (value == "º£ÑóÀ¶")
     {
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶ ¡Ì"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶ ¡Ì"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (value == "»ðÑæºì")
     {
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì ¡Ì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì ¡Ì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (value == "¿áìÅºÚ")
     {
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ ¡Ì"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ ¡Ì"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (value == "ÇïÉ«»Æ")
     {
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ ¡Ì"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ ¡Ì"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (value == "ÀËÂþ×Ï")
     {
-        jingDianWhite ->setText(tr("¾­µä°×"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï ¡Ì"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ"));
+        jingDianWhite->setText(tr("¾­µä°×"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï ¡Ì"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ"));
     }
     else if (value == "×ÔÈ»ÂÌ")
     {
-        jingDianWhite ->setText(tr("¾­µä°× *"));
-        haiYangBlue ->setText(tr("º£ÑóÀ¶"));
-        huoYanRed ->setText(tr("»ðÑæºì"));
-        kuXuanBlack ->setText(tr("¿áìÅºÚ"));
-        qiuSeYellow ->setText(tr("ÇïÉ«»Æ"));
-        langManPurple ->setText(tr("ÀËÂþ×Ï"));
-        ziRanGreen ->setText(tr("×ÔÈ»ÂÌ ¡Ì"));
+        jingDianWhite->setText(tr("¾­µä°× *"));
+        haiYangBlue->setText(tr("º£ÑóÀ¶"));
+        huoYanRed->setText(tr("»ðÑæºì"));
+        kuXuanBlack->setText(tr("¿áìÅºÚ"));
+        qiuSeYellow->setText(tr("ÇïÉ«»Æ"));
+        langManPurple->setText(tr("ÀËÂþ×Ï"));
+        ziRanGreen->setText(tr("×ÔÈ»ÂÌ ¡Ì"));
     }
 }
 
 QString LrcSettingsPage::getShadowSlider()
 {
-    return QString::number(shadowSlider ->value(), 10);
+    return QString::number(shadowSlider->value(), 10);
 }
 
 void LrcSettingsPage::setShadowSlider(const int &value)
 {
-    shadowSlider ->setValue(value);
+    shadowSlider->setValue(value);
 }
 
 QString LrcSettingsPage::getFontTypeCombo()
 {
-    return fontTypeCombo ->currentText();
+    return fontTypeCombo->currentText();
 }
 
 void LrcSettingsPage::setFontTypeCombo(QString const &value)
 {
-    for (int i = 0; i < fontTypeCombo ->count(); ++i)
+    for (int i = 0; i < fontTypeCombo->count(); ++i)
     {
-        if (value == fontTypeCombo ->itemText(i))
+        if (value == fontTypeCombo->itemText(i))
         {
-            fontTypeCombo ->setCurrentIndex(i);
+            fontTypeCombo->setCurrentIndex(i);
         }
     }
 }
 
 QString LrcSettingsPage::getFontSizeCombo()
 {
-    return fontSizeCombo ->currentText();
+    return fontSizeCombo->currentText();
 }
 
 void LrcSettingsPage::setFontSizeCombo(QString const &value)
 {
-    for (int i = 0; i < fontSizeCombo ->count(); ++i)
+    for (int i = 0; i < fontSizeCombo->count(); ++i)
     {
-        if (value == fontSizeCombo ->itemText(i))
+        if (value == fontSizeCombo->itemText(i))
         {
-            fontSizeCombo ->setCurrentIndex(i);
+            fontSizeCombo->setCurrentIndex(i);
         }
     }
 }
 
 QString LrcSettingsPage::getFontCombo()
 {
-    return fontCombo ->currentText();
+    return fontCombo->currentText();
 }
 
 void LrcSettingsPage::setFontCombo(QString const &value)
 {
-    for (int i = 0; i < fontCombo ->count(); ++i)
+    for (int i = 0; i < fontCombo->count(); ++i)
     {
-        if (value == fontCombo ->itemText(i))
+        if (value == fontCombo->itemText(i))
         {
-            fontCombo ->setCurrentIndex(i);
+            fontCombo->setCurrentIndex(i);
         }
     }
 }
 
 QString LrcSettingsPage::getPlayedEdit3()
 {
-    return playedEdit3 ->text();
+    return playedEdit3->text();
 }
 
 void LrcSettingsPage::setPlayedEdit3(QString const &value)
 {
-    playedEdit3 ->setText(value);
+    playedEdit3->setText(value);
     LrcSettingsPage::setColor(playedEdit3, value);
 }
 
 QString LrcSettingsPage::getPlayedEdit2()
 {
-    return playedEdit2 ->text();
+    return playedEdit2->text();
 }
 
 void LrcSettingsPage::setPlayedEdit2(QString const &value)
 {
-    playedEdit2 ->setText(value);
+    playedEdit2->setText(value);
     LrcSettingsPage::setColor(playedEdit2, value);
 }
 
 QString LrcSettingsPage::getPlayedEdit()
 {
-    return playedEdit ->text();
+    return playedEdit->text();
 }
 
 void LrcSettingsPage::setPlayedEdit(QString const &value)
 {
-    playedEdit ->setText(value);
+    playedEdit->setText(value);
     LrcSettingsPage::setColor(playedEdit, value);
 }
 
 QString LrcSettingsPage::getNoPlayEdit3()
 {
-    return noPlayEdit3 ->text();
+    return noPlayEdit3->text();
 }
 
 void LrcSettingsPage::setNoPlayEdit3(QString const &value)
 {
-    noPlayEdit3 ->setText(value);
+    noPlayEdit3->setText(value);
     LrcSettingsPage::setColor(noPlayEdit3, value);
 }
 
 QString LrcSettingsPage::getNoPlayEdit2()
 {
-    return noPlayEdit2 ->text();
+    return noPlayEdit2->text();
 }
 
 void LrcSettingsPage::setNoPlayEdit2(QString const &value)
 {
-    noPlayEdit2 ->setText(value);
+    noPlayEdit2->setText(value);
     LrcSettingsPage::setColor(noPlayEdit2, value);
 }
 
 QString LrcSettingsPage::getNoPlayEdit()
 {
-    return noPlayEdit ->text();
+    return noPlayEdit->text();
 }
 
 void LrcSettingsPage::setNoPlayEdit(QString const &value)
 {
-    noPlayEdit ->setText(value);
+    noPlayEdit->setText(value);
     LrcSettingsPage::setColor(noPlayEdit, value);
 }
 
@@ -796,7 +801,7 @@ void LrcSettingsPage::setColor(QLineEdit *lineEdit, const QString &value)
     QString greenStr = colorList.at(1);
     QString blueStr = colorList.at(2);
     QString colorStr = QString("background-color: rgb(%1, %2, %3)").arg(redStr).arg(greenStr).arg(blueStr);
-    lineEdit ->setStyleSheet(colorStr);
+    lineEdit->setStyleSheet(colorStr);
 }
 
 

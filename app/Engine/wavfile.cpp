@@ -53,7 +53,7 @@ bool WavFile::open(const QString &fileName)
 {
     close();														//打开文件之前先关闭文件
     setFileName(fileName);											//设置打开文件的路径
-    return QFile::open(QIODevice::ReadOnly) && this ->readHeader();	//打开文件并且读取文件头
+    return QFile::open(QIODevice::ReadOnly) && this->readHeader();	//打开文件并且读取文件头
 }
 
 //读取文件头
@@ -117,6 +117,7 @@ bool WavFile::readHeader()
             result = false;
         }
     }
+
     m_headerLength = pos();
     return result;
 }

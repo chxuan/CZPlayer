@@ -7,7 +7,7 @@
 LrcThread::LrcThread( QString musicName, QString musicArtist, QString lrcFileName, QLabel *lrc ) 
 	: m_musicName(musicName), m_musicArtist(musicArtist), m_lrcFilePath(lrcFileName), m_lrc(lrc)
 {
-	this ->startFunc();
+	this->startFunc();
 }
 
 LrcThread::~LrcThread()
@@ -23,7 +23,7 @@ void LrcThread::startFunc()
 {
 	QString urlStr = "http://box.zhangmen.baidu.com/x?op=12&count=1&title=" + m_musicName + "$$" + m_musicArtist + "$$$";
 	lrcManager = new QNetworkAccessManager;
-	lrcManager ->get(QNetworkRequest(QUrl(urlStr)));//得到url
+	lrcManager->get(QNetworkRequest(QUrl(urlStr)));//得到url
 	//信号与槽
 	connect(lrcManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(slot_GetMusicXML(QNetworkReply*)));
 }
@@ -32,12 +32,12 @@ void LrcThread::startFunc()
 void LrcThread::slot_GetMusicXML(QNetworkReply *replay)
 {
 	QTextCodec *codec = QTextCodec::codecForName("utf8");//转换成utf8编码格式
-	QString musicStr = codec ->toUnicode(replay ->readAll());
+	QString musicStr = codec->toUnicode(replay->readAll());
 
 	//没有连接到网络
 	if (musicStr == "")
 	{
-		m_lrc ->setText(m_musicArtist + " - " + m_musicName + tr("----无法连接到网络!"));
+		m_lrc->setText(m_musicArtist + " - " + m_musicName + tr("----无法连接到网络!"));
 		return;
 	}
 
@@ -49,14 +49,14 @@ void LrcThread::slot_GetMusicXML(QNetworkReply *replay)
 	if (!doc.setContent(musicStr, false, &errorStr, &errorLine, &errorColumn))
 	{
 		qDebug() << "在第" << errorLine << "行，第" << errorColumn << "列，读取字符串到doc中错误：" << errorStr;
-		m_lrc ->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
+		m_lrc->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
 		return;
 	}
 
 	QDomElement root = doc.documentElement();//获取根元素
 	if (root.tagName() != "result")
 	{
-		m_lrc ->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
+		m_lrc->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
 		return;
 	}
 
@@ -76,7 +76,7 @@ void LrcThread::slot_GetMusicXML(QNetworkReply *replay)
 					qDebug() << "element.text() = " << element.text();
 					if (element.text() == "0")//返回元素文本
 					{
-						m_lrc ->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
+						m_lrc->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
 						return;
 					}
 				}
@@ -99,13 +99,13 @@ void LrcThread::slot_GetMusicXML(QNetworkReply *replay)
 							}
 							else
 							{
-								m_lrc ->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
+								m_lrc->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
 								return;
 							}
 						}
 						else
 						{
-							m_lrc ->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
+							m_lrc->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
 							return;
 						}
 					}
@@ -114,13 +114,13 @@ void LrcThread::slot_GetMusicXML(QNetworkReply *replay)
 			}
 			else
 			{
-				m_lrc ->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
+				m_lrc->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
 				return;
 			}
 		}
 		else
 		{
-			m_lrc ->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
+			m_lrc->setText(m_musicArtist + " - " + m_musicName + tr("----未找到歌词文件!"));
 			return;
 		}
 	}
@@ -131,8 +131,8 @@ void LrcThread::slot_GetMusicXML(QNetworkReply *replay)
 	//歌词url
 	QString lrcUrl = "http://box.zhangmen.baidu.com/bdlrc/" + sFolder + "/" + sLrcID + ".lrc";
 
-	this ->getLrcFromURL(lrcUrl);
-	replay ->deleteLater();//最后要释放reply对象
+	this->getLrcFromURL(lrcUrl);
+	replay->deleteLater();//最后要释放reply对象
 }
 
 //下载歌词
@@ -142,7 +142,7 @@ void LrcThread::getLrcFromURL(const QUrl &url)
 	lrcFile.open(QIODevice::WriteOnly);
 
 	lrcManager2 = new QNetworkAccessManager;
-	lrcManager2 ->get(QNetworkRequest(QUrl(url)));
+	lrcManager2->get(QNetworkRequest(QUrl(url)));
 
 	connect(lrcManager2, SIGNAL(finished(QNetworkReply*)), this, SLOT(slot_GetLrc(QNetworkReply*)));
 }
@@ -150,7 +150,7 @@ void LrcThread::getLrcFromURL(const QUrl &url)
 //得到歌词文件
 void LrcThread::slot_GetLrc(QNetworkReply *replay)
 {
-	lrcFile.write(replay ->readAll());
+	lrcFile.write(replay->readAll());
 	lrcFile.flush();
 	if (lrcFile.isOpen())
 	{
@@ -158,8 +158,8 @@ void LrcThread::slot_GetLrc(QNetworkReply *replay)
 	}
 
 	emit sig_ResolveLrc();		//解析当前下载歌词
-	replay ->deleteLater();		//最后要释放reply对象
-	this ->deleteLater();		//释放当前线程
+	replay->deleteLater();		//最后要释放reply对象
+	this->deleteLater();		//释放当前线程
 }
 
 

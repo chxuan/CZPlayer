@@ -4,70 +4,76 @@
 #include "czplayerconfig.h"
 #include "musiclrc.h"
 #include "globalhotkey.h"
+#include "AutoStart.h"
+#include "FileRelation.h"
+//#include "nofocusdelegate.h"
 
 QListWidget* ConfigDialog::contentsWidget = 0;
 
 ConfigDialog::ConfigDialog(QWidget *parent) : m_parent(parent)
 {
     //设置窗口基本属性
-    this ->resize(665, 482);//设置窗体大小
-    this ->setMinimumSize(665, 482);
-    this ->setWindowTitle(tr("CZPlayer 设置"));
+    this->resize(665, 482);//设置窗体大小
+    this->setMinimumSize(665, 482);
+	this->setMaximumSize(665, 482);
+    this->setWindowTitle(tr("CZPlayer 设置"));
 
     //设置选项
     contentsWidget = new QListWidget;
-    contentsWidget ->setViewMode(QListView::ListMode);//IconMode
-    contentsWidget ->setIconSize(QSize(96, 84));
-    contentsWidget ->setMovement(QListView::Static);
-    contentsWidget ->setMaximumWidth(128);
-    contentsWidget ->setSpacing(12);
-    this ->createIcons();
+    contentsWidget->setViewMode(QListView::ListMode);//IconMode
+    contentsWidget->setIconSize(QSize(96, 84));
+    contentsWidget->setMovement(QListView::Static);
+    contentsWidget->setMaximumWidth(128);
+    contentsWidget->setSpacing(12);
+    this->createIcons();
 
     generalSettingsPage = new GeneralSettingsPage(this);
     downloadSettingsPage = new DownloadSettingsPage(this);
     lrcSettingsPage = new LrcSettingsPage(this);
     hotKeysSettingsPage = new HotKeysSettingsPage(this);
-    proxySettingsPage = new ProxySettingsPage(this);
+    //proxySettingsPage = new ProxySettingsPage(this);
+	updatePage = new UpdatePage(this);
 
     //多页显示
     pagesWidget = new QStackedWidget;
-    pagesWidget ->addWidget(generalSettingsPage);//基本设置
-    pagesWidget ->addWidget(downloadSettingsPage);//下载设置
-    pagesWidget ->addWidget(lrcSettingsPage);//歌词设置
-    pagesWidget ->addWidget(hotKeysSettingsPage);//热键设置
-    pagesWidget ->addWidget(proxySettingsPage);//代理设置
-    contentsWidget ->setCurrentRow(0);
+    pagesWidget->addWidget(generalSettingsPage);		//基本设置
+    pagesWidget->addWidget(downloadSettingsPage);		//下载设置
+    pagesWidget->addWidget(lrcSettingsPage);			//歌词设置
+    pagesWidget->addWidget(hotKeysSettingsPage);		//热键设置
+    //pagesWidget->addWidget(proxySettingsPage);			//代理设置
+	pagesWidget->addWidget(updatePage);					//更新页面
+    contentsWidget->setCurrentRow(0);
 
     //确定按钮
     okButton = new QPushButton(this);
-    okButton ->setObjectName(tr("okButton"));
-    okButton ->setText(tr("确定"));
+    okButton->setObjectName(tr("okButton"));
+    okButton->setText(tr("确定"));
 
     //取消按钮
     cancelButton = new QPushButton(this);
-    cancelButton ->setObjectName(tr("cancelButton"));
-    cancelButton ->setText(tr("取消"));
+    cancelButton->setObjectName(tr("cancelButton"));
+    cancelButton->setText(tr("取消"));
 
     //应用按钮
     appButton = new QPushButton(this);
-    appButton ->setObjectName(tr("appButton"));
-    appButton ->setText(tr("应用"));
+    appButton->setObjectName(tr("appButton"));
+    appButton->setText(tr("应用"));
 
     QHBoxLayout *horizontalLayout = new QHBoxLayout;
-    horizontalLayout ->addWidget(contentsWidget);
-    horizontalLayout ->addWidget(pagesWidget);
+    horizontalLayout->addWidget(contentsWidget);
+    horizontalLayout->addWidget(pagesWidget);
 
     QHBoxLayout *buttonsLayout = new QHBoxLayout;
-    buttonsLayout ->addStretch();
-    buttonsLayout ->addWidget(okButton);
-    buttonsLayout ->addWidget(cancelButton);
-    buttonsLayout ->addWidget(appButton);
+    buttonsLayout->addStretch();
+    buttonsLayout->addWidget(okButton);
+    buttonsLayout->addWidget(cancelButton);
+    buttonsLayout->addWidget(appButton);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout ->addLayout(horizontalLayout);
-    mainLayout ->addStretch();
-    mainLayout ->addLayout(buttonsLayout);
-    this ->setLayout(mainLayout);
+    mainLayout->addLayout(horizontalLayout);
+    //mainLayout->addStretch();
+    mainLayout->addLayout(buttonsLayout);
+    this->setLayout(mainLayout);
 
     connect(cancelButton, SIGNAL(clicked()), this, SLOT(hide()));
     connect(okButton, SIGNAL(clicked()), this, SLOT(slot_OkFunc()));
@@ -83,38 +89,45 @@ void ConfigDialog::createIcons()
 {
     //常规设置
     QListWidgetItem *generalSettingsItem = new QListWidgetItem(contentsWidget);
-    generalSettingsItem ->setIcon(QIcon(":/images/generalSettingsButton.png"));
-    generalSettingsItem ->setText(tr("常规设置"));
-    generalSettingsItem ->setTextAlignment(Qt::AlignCenter);
-    generalSettingsItem ->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    generalSettingsItem->setIcon(QIcon(":/images/generalSettingsButton.png"));
+    generalSettingsItem->setText(tr("常规设置"));
+    generalSettingsItem->setTextAlignment(Qt::AlignCenter);
+    generalSettingsItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     //下载设置
     QListWidgetItem *downloadSettingsItem = new QListWidgetItem(contentsWidget);
-    downloadSettingsItem ->setIcon(QIcon(":/images/downloadSettingsButton.png"));
-    downloadSettingsItem ->setText(tr("下载设置"));
-    downloadSettingsItem ->setTextAlignment(Qt::AlignCenter);
-    downloadSettingsItem ->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    downloadSettingsItem->setIcon(QIcon(":/images/downloadSettingsButton.png"));
+    downloadSettingsItem->setText(tr("下载设置"));
+    downloadSettingsItem->setTextAlignment(Qt::AlignCenter);
+    downloadSettingsItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     //歌词设置
     QListWidgetItem *lrcSettingsItem = new QListWidgetItem(contentsWidget);
-    lrcSettingsItem ->setIcon(QIcon(":/images/lrcSettingsButton.png"));
-    lrcSettingsItem ->setText(tr("歌词设置"));
-    lrcSettingsItem ->setTextAlignment(Qt::AlignCenter);
-    lrcSettingsItem ->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    lrcSettingsItem->setIcon(QIcon(":/images/lrcSettingsButton.png"));
+    lrcSettingsItem->setText(tr("歌词设置"));
+    lrcSettingsItem->setTextAlignment(Qt::AlignCenter);
+    lrcSettingsItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     //热键设置
     QListWidgetItem *hotKeysSettingsItem = new QListWidgetItem(contentsWidget);
-    hotKeysSettingsItem ->setIcon(QIcon(":/images/hotKeysSettingsButton.png"));
-    hotKeysSettingsItem ->setText(tr("热键设置"));
-    hotKeysSettingsItem ->setTextAlignment(Qt::AlignCenter);
-    hotKeysSettingsItem ->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    hotKeysSettingsItem->setIcon(QIcon(":/images/hotKeysSettingsButton.png"));
+    hotKeysSettingsItem->setText(tr("热键设置"));
+    hotKeysSettingsItem->setTextAlignment(Qt::AlignCenter);
+    hotKeysSettingsItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     //代理设置
-    QListWidgetItem *proxySettingsItem = new QListWidgetItem(contentsWidget);
-    proxySettingsItem ->setIcon(QIcon(":/images/proxySettingsButton.png"));
-    proxySettingsItem ->setText(tr("代理设置"));
-    proxySettingsItem ->setTextAlignment(Qt::AlignCenter);
-    proxySettingsItem ->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    //QListWidgetItem *proxySettingsItem = new QListWidgetItem(contentsWidget);
+    //proxySettingsItem->setIcon(QIcon(":/images/proxySettingsButton.png"));
+    //proxySettingsItem->setText(tr("代理设置"));
+    //proxySettingsItem->setTextAlignment(Qt::AlignCenter);
+    //proxySettingsItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+	//更新页面
+	QListWidgetItem *updateItem = new QListWidgetItem(contentsWidget);
+	updateItem->setIcon(QIcon(":/images/updateButton.png"));
+	updateItem->setText(tr("软件更新"));
+	updateItem->setTextAlignment(Qt::AlignCenter);
+	updateItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     connect(contentsWidget,
             SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)),
@@ -128,22 +141,71 @@ void ConfigDialog::slot_ChangePage(QListWidgetItem *current, QListWidgetItem *pr
     {
         current = previous;
     }
-    pagesWidget ->setCurrentIndex(contentsWidget->row(current));
+    pagesWidget->setCurrentIndex(contentsWidget->row(current));
 }
 
 //确定
 void ConfigDialog::slot_OkFunc()
 {
-    this ->slot_AppFunc();
-    this ->hide();
+    this->slot_AppFunc();
+    this->hide();
 }
 
 //应用
 void ConfigDialog::slot_AppFunc()
 {
-    this ->downloadAppFunc();
-    this ->lrcAppFunc();
-    this ->hotKeyAppFunc();
+	this->generalSettingAppFunc();
+    this->downloadAppFunc();
+    this->lrcAppFunc();
+    this->hotKeyAppFunc();
+}
+
+//常规设置页应用
+void ConfigDialog::generalSettingAppFunc()
+{
+	if (GeneralSettingsPage::getAutoPlay() == Qt::Checked)
+	{
+		CZPlayerConfig::setValue("STARTPLAY", "true");
+	}
+	else
+	{
+		CZPlayerConfig::setValue("STARTPLAY", "false");
+	}
+
+	if (GeneralSettingsPage::getAutoStart() == Qt::Checked)
+	{
+		AutoStart::autoStart(_T("CZPlayer"));
+	}
+	else
+	{
+		AutoStart::cancelAutoStart(_T("CZPlayer"));
+	}
+
+	if (GeneralSettingsPage::getGreetings() == Qt::Checked)
+	{
+		CZPlayerConfig::setValue("GREETINGS", "true");
+	}
+	else
+	{
+		CZPlayerConfig::setValue("GREETINGS", "false");
+	}
+
+	if (GeneralSettingsPage::getDefaultPlayer() == Qt::Checked)
+	{
+		WCHAR filePath[MAX_PATH];	//文件的完整路径
+		WCHAR icoPath[MAX_PATH];	//图标路径
+
+		//得到当前执行文件的全路径
+		HMODULE hModule = GetModuleHandle(NULL);
+		GetModuleFileName(hModule, filePath, sizeof(filePath));
+		wsprintf(icoPath, _T("%s,0"), filePath);
+		
+		FileRelation::registerFileRelation(_T(".wav"), filePath, _T("CZPlayer2.0.WAV"), icoPath, _T("WAV文件"));
+	}
+	else
+	{
+		FileRelation::cancelFileRelation(_T(".wav"), _T("CZPlayer2.0.WAV"));
+	}
 }
 
 //下载页应用
@@ -159,9 +221,9 @@ void ConfigDialog::downloadAppFunc()
     CZPlayerConfig::setValue("ALBUMDIR_X11", DownloadSettingsPage::getAlbumDir());
     CZPlayerConfig::setValue("LRCDIR_X11", DownloadSettingsPage::getLrcDir());
 #endif
-    this ->mkdirMusicDir();
-    this ->mkdirAlbumDir();
-    this ->mkdirLrcDir();
+    this->mkdirMusicDir();
+    this->mkdirAlbumDir();
+    this->mkdirLrcDir();
 }
 
 //歌词页应用
@@ -228,17 +290,17 @@ void ConfigDialog::mkdirMusicDir()
     //读取配置文件//创建一个文件夹来存储下载的歌曲
 #ifdef _WIN32_WINNT
     QString WINPATH = CZPlayerConfig::getValue("MUSICDIR_WIN").toString();
-    bool exist = CZPlayer ->exists(WINPATH);
+    bool exist = CZPlayer->exists(WINPATH);
     if (!exist)
     {
-        CZPlayer ->mkdir(WINPATH);
+        CZPlayer->mkdir(WINPATH);
     }
 #else
     QString X11PATH =  QDir::homePath() + CZPlayerConfig::getValue("MUSICDIR_X11").toString();
-    bool exist = CZPlayer ->exists(X11PATH);
+    bool exist = CZPlayer->exists(X11PATH);
     if (!exist)
     {
-        CZPlayer ->mkdir(X11PATH);
+        CZPlayer->mkdir(X11PATH);
     }
 #endif
 }
@@ -250,17 +312,17 @@ void ConfigDialog::mkdirAlbumDir()
     //读取配置文件//创建一个文件夹来存储下载的专辑
 #ifdef _WIN32_WINNT
     QString WINPATH = CZPlayerConfig::getValue("ALBUMDIR_WIN").toString();
-    bool exist = CZPlayer ->exists(WINPATH);
+    bool exist = CZPlayer->exists(WINPATH);
     if (!exist)
     {
-        CZPlayer ->mkdir(WINPATH);
+        CZPlayer->mkdir(WINPATH);
     }
 #else
     QString X11PATH =  QDir::homePath() + CZPlayerConfig::getValue("ALBUMDIR_X11").toString();
-    bool exist = CZPlayer ->exists(X11PATH);
+    bool exist = CZPlayer->exists(X11PATH);
     if (!exist)
     {
-        CZPlayer ->mkdir(X11PATH);
+        CZPlayer->mkdir(X11PATH);
     }
 #endif
 }
@@ -272,23 +334,20 @@ void ConfigDialog::mkdirLrcDir()
     //读取配置文件//创建一个文件夹来存储下载的歌词
 #ifdef _WIN32_WINNT
     QString WINPATH = CZPlayerConfig::getValue("LRCDIR_WIN").toString();
-    bool exist = CZPlayer ->exists(WINPATH);
+    bool exist = CZPlayer->exists(WINPATH);
     if (!exist)
     {
-        CZPlayer ->mkdir(WINPATH);
+        CZPlayer->mkdir(WINPATH);
     }
 #else
     QString X11PATH =  QDir::homePath() + CZPlayerConfig::getValue("LRCDIR_X11").toString();
-    bool exist = CZPlayer ->exists(X11PATH);
+    bool exist = CZPlayer->exists(X11PATH);
     if (!exist)
     {
-        CZPlayer ->mkdir(X11PATH);
+        CZPlayer->mkdir(X11PATH);
     }
 #endif
 }
-
-
-
 
 
 

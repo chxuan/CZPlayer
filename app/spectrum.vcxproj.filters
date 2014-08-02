@@ -9,10 +9,6 @@
       <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
       <Extensions>qrc;*</Extensions>
@@ -22,10 +18,6 @@
       <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
       <UniqueIdentifier>{2d8ab837-0d6f-48de-8735-3135e1be9070}</UniqueIdentifier>
@@ -462,6 +454,42 @@
     <ClCompile Include="Engine\SoundControl.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="musicList\SharedDialog.cpp">
+      <Filter>musicList</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_SharedDialog.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_SharedDialog.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="thread\LoadMusicThread.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_LoadMusicThread.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_LoadMusicThread.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity\MusicInfoEntity.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="code\AutoStart.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="code\FileRelation.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="configPanel\UpdatePage.cpp">
+      <Filter>configPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_UpdatePage.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_UpdatePage.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="aboutPanel\AboutPage.h">
@@ -578,6 +606,15 @@
     <CustomBuild Include="searchPanel\SearchList.h">
       <Filter>searchPanel</Filter>
     </CustomBuild>
+    <CustomBuild Include="musicList\SharedDialog.h">
+      <Filter>musicList</Filter>
+    </CustomBuild>
+    <CustomBuild Include="thread\LoadMusicThread.h">
+      <Filter>thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="configPanel\UpdatePage.h">
+      <Filter>configPanel</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="spectrum.qrc">
@@ -632,6 +669,15 @@
     </ClInclude>
     <ClInclude Include="Engine\SoundControl.h">
       <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity\MusicInfoEntity.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="code\AutoStart.h">
+      <Filter>code</Filter>
+    </ClInclude>
+    <ClInclude Include="code\FileRelation.h">
+      <Filter>code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

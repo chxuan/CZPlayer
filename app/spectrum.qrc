@@ -181,5 +181,18 @@
         <file>images/soundButton4.png</file>
         <file>images/soundButton5.png</file>
         <file>images/soundButton6.png</file>
+        <file>images/shareMusic.png</file>
+        <file>images/douban.png</file>
+        <file>images/KaiXin.png</file>
+        <file>images/QQKongJian.png</file>
+        <file>images/RenRen.png</file>
+        <file>images/SouHuBoKe.png</file>
+        <file>images/TengXunWeiBo.png</file>
+        <file>images/XinLangWeiBo.png</file>
+        <file>images/qqhaoyou.png</file>
+        <file>images/updateButton.png</file>
+        <file>images/seekBarPoint.png</file>
+        <file>images/seekBarPoint2.png</file>
+        <file>images/seekBarPoint3.png</file>
     </qresource>
 </RCC>

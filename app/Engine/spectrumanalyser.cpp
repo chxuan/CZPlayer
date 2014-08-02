@@ -84,7 +84,7 @@ void SpectrumAnalyserThread::calculateSpectrum(const QByteArray &buffer, int inp
     }
 
     // Calculate the FFT快速傅里叶变换
-    m_fft ->calculateFFT(m_output.data(), m_input.data());
+    m_fft->calculateFFT(m_output.data(), m_input.data());
 
     // Analyze output to obtain amplitude and phase for each frequency
     for (int i = 2; i <= m_numSamples / 2; ++i) 
@@ -158,12 +158,6 @@ void SpectrumAnalyser::setWindowFunction(WindowFunction type)
 void SpectrumAnalyser::calculate(const QByteArray &buffer,
                          const QAudioFormat &format)
 {
-    // QThread::currentThread is marked 'for internal use only', but
-    // we're only using it for debug output here, so it's probably OK :)
-    //qDebug() << "SpectrumAnalyser::calculate"
-    //                       << QThread::currentThread()
-    //                       << "state" << m_state;
-
     if (isReady())
 	{
         Q_ASSERT(isPCMS16LE(format));

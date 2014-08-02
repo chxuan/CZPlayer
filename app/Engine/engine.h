@@ -6,6 +6,8 @@
 #include "wavfile.h"
 #include <QtCore>
 #include <QtMultimedia>
+#include <stdio.h>
+#include <stdlib.h>
 
 class FrequencySpectrum;
 QT_FORWARD_DECLARE_CLASS(QAudioInput)
@@ -88,7 +90,7 @@ private:
     long long           m_bufferPosition;				//缓冲区位置
     long long           m_bufferLength;					//缓冲区长度
     long long           m_dataLength;					//数据部分长度
-	long long              m_recordPosition;				//记录位置
+	long long             m_recordPosition;				//记录位置
     int                 m_levelBufferLength;			//水平缓冲区长度
     double              m_rmsLevel;						//RMS电平
     double              m_peakLevel;					//峰值电平

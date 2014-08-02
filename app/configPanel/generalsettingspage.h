@@ -3,8 +3,6 @@
 
 #include <QtCore>
 #include <QtGui>
-#include <QGroupBox>
-#include <QCheckBox>
 
 class GeneralSettingsPage : public QWidget
 {
@@ -13,18 +11,26 @@ class GeneralSettingsPage : public QWidget
 public:
     GeneralSettingsPage(QWidget *parent = 0);
     ~GeneralSettingsPage();
+public:
+	static Qt::CheckState getAutoPlay();
+	static void setAutoPlay(Qt::CheckState const &state);
+
+	static Qt::CheckState getAutoStart();
+	static void setAutoStart(Qt::CheckState const &state);
+
+	static Qt::CheckState getGreetings();
+	static void setGreetings(Qt::CheckState const &state);
+
+	static Qt::CheckState getDefaultPlayer();
+	static void setDefaultPlayer(Qt::CheckState const &state);
 
 private:
     QWidget *m_parent;
 
-    //QGroupBox *startGB;
-//    QCheckBox *autoPlayCB;
-//    QCheckBox *autoStartCB;
-//    QCheckBox *helloCZPlayerCB;
-//    QCheckBox *preWidgetCB;
-
-//    QGroupBox *fileConnect;
-//    QCheckBox *defaultPlayer;
+    static QCheckBox *autoPlayCB;
+    static QCheckBox *autoStartCB;
+    static QCheckBox *helloCZPlayerCB;
+    static QCheckBox *defaultPlayer;
 };
 
 #endif // GENERALSETTINGSPAGE_H

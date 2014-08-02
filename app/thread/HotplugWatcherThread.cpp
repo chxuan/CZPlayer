@@ -4,8 +4,8 @@
 HotplugWatcherThread::HotplugWatcherThread(QObject *parent) : QThread(parent)
 {
 	qDebug("当前线程id:%#x, %s", (unsigned int)QThread::currentThreadId(), __PRETTY_FUNCTION__);
-	this ->start();
-	this ->moveToThread(this); //Let bool event(QEvent *e) be in another thread
+	this->start();
+	this->moveToThread(this); //Let bool event(QEvent *e) be in another thread
 
 	watcher = new QDeviceWatcher;
 	watcher->moveToThread(this);
@@ -50,21 +50,21 @@ void HotplugWatcherThread::slot_DeviceChanged( const QString &dev )
 
 bool HotplugWatcherThread::event(QEvent *e)
 {
-	if (e ->type() == QDeviceChangeEvent::registeredType()) 
+	if (e->type() == QDeviceChangeEvent::registeredType()) 
 	{
 		QDeviceChangeEvent *event = dynamic_cast<QDeviceChangeEvent*>(e);
 		QString action("改变");
 
-		if (event ->action() == QDeviceChangeEvent::Add)
+		if (event->action() == QDeviceChangeEvent::Add)
 		{
 			action = "挂载";
 		}
-		else if (event ->action() == QDeviceChangeEvent::Remove)
+		else if (event->action() == QDeviceChangeEvent::Remove)
 		{
 			action = "移除";
 		}
 
-		qDebug("当前线程id:%#x, 类型:%d, %s: %s %s", (unsigned int)QThread::currentThreadId(), e ->type(), __PRETTY_FUNCTION__, qPrintable(action), qPrintable(event ->device()));
+		qDebug("当前线程id:%#x, 类型:%d, %s: %s %s", (unsigned int)QThread::currentThreadId(), e->type(), __PRETTY_FUNCTION__, qPrintable(action), qPrintable(event->device()));
 		event->accept();
 		return true;
 	}

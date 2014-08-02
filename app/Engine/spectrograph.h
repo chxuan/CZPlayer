@@ -24,7 +24,7 @@ public:
 	
 protected:
 	//重新实现以下event函数
-    void timerEvent(QTimerEvent *event);
+    //void timerEvent(QTimerEvent *event);
     void paintEvent(QPaintEvent *event);
     //void mousePressEvent(QMouseEvent *event);
 

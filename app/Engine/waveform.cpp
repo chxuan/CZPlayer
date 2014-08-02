@@ -16,12 +16,12 @@ Waveform::Waveform(QWidget *parent)
     ,   m_windowPosition(0)
     ,   m_windowLength(0)
 {
-	this ->resize(190, 78);
+	this->resize(190, 78);
 }
 
 Waveform::~Waveform()
 {
-    this ->deletePixmaps();
+    this->deletePixmaps();
 }
 
 void Waveform::paintEvent(QPaintEvent * /*event*/)
@@ -32,9 +32,6 @@ void Waveform::paintEvent(QPaintEvent * /*event*/)
 
     if (m_active)
 	{
-        //qDebug() << "Waveform::paintEvent"
-        //                     << "windowPosition" << m_windowPosition
-        //                     << "windowLength" << m_windowLength;
         long long pos = m_windowPosition;
         const long long windowEnd = m_windowPosition + m_windowLength;
         int destLeft = 0;
@@ -42,10 +39,6 @@ void Waveform::paintEvent(QPaintEvent * /*event*/)
         while (pos < windowEnd)
 		{
             const TilePoint point = tilePoint(pos);
-            //qDebug() << "Waveform::paintEvent" << "pos" << pos
-            //                     << "tileIndex" << point.index
-            //                     << "positionOffset" << point.positionOffset
-            //                     << "pixelOffset" << point.pixelOffset;
 
             if (point.index != NullIndex) 
 			{
@@ -66,17 +59,13 @@ void Waveform::paintEvent(QPaintEvent * /*event*/)
                     sourceRect.setLeft(point.pixelOffset);
                     sourceRect.setRight(sourceRight);
 
-                    //qDebug() << "Waveform::paintEvent" << "tileIndex" << point.index
-                    //                     << "source" << point.pixelOffset << sourceRight
-                    //                     << "dest" << destLeft << destRight;
-
                     painter.drawPixmap(destRect, *tile.pixmap, sourceRect);
 
                     destLeft = destRight;
                     if (point.index < m_tiles.count())
 					{
                         pos = tilePosition(point.index + 1);
-                       // qDebug() << "Waveform::paintEvent" << "pos ->" << pos;
+                       // qDebug() << "Waveform::paintEvent" << "pos->" << pos;
                     } 
 					else 
 					{
@@ -103,7 +92,7 @@ void Waveform::paintEvent(QPaintEvent * /*event*/)
 
 void Waveform::resizeEvent(QResizeEvent *event)
 {
-    if (event ->size() != event ->oldSize())
+    if (event->size() != event->oldSize())
 	{
         createPixmaps(event->size());
 	}
@@ -111,10 +100,7 @@ void Waveform::resizeEvent(QResizeEvent *event)
 
 void Waveform::initialize(const QAudioFormat &format, long long audioBufferSize, long long windowDurationUs)
 {
-    //qDebug() << "Waveform::initialize"
-    //               << "audioBufferSize" << audioBufferSize
-    //               << "windowDurationUs" << windowDurationUs;
-    this ->reset();
+    this->reset();
     m_format = format;
     m_tileLength = audioBufferSize;								//计算平铺尺寸
     m_windowLength = audioLength(m_format, windowDurationUs);	//计算窗口大小
@@ -133,14 +119,10 @@ void Waveform::initialize(const QAudioFormat &format, long long audioBufferSize,
             ++nTiles;
 		}
     }
-    //qDebug() << "Waveform::initialize"
-    //               << "tileLength" << m_tileLength
-    //               << "windowLength" << m_windowLength
-    //               << "nTiles" << nTiles;
 
     m_pixmaps.fill(0, nTiles);
     m_tiles.resize(nTiles);
-    this ->createPixmaps(rect().size());
+    this->createPixmaps(rect().size());
     m_active = true;
 }
 
@@ -163,10 +145,6 @@ void Waveform::reset()
 //缓冲区改变
 void Waveform::bufferChanged(long long position, long long length, const QByteArray &buffer)
 {
-    //qDebug() << "Waveform::bufferChanged"
-    //               << "audioPosition" << m_audioPosition
-    //               << "bufferPosition" << position
-    //               << "bufferLength" << length;
     m_bufferPosition = position;
     m_bufferLength = length;
     m_buffer = buffer;
@@ -176,11 +154,6 @@ void Waveform::bufferChanged(long long position, long long length, const QByteAr
 //音频位置改变
 void Waveform::audioPositionChanged(long long position)
 {
-    //qDebug() << "Waveform::audioPositionChanged"
-    //               << "audioPosition" << position
-    //               << "bufferPosition" << m_bufferPosition
-    //               << "bufferLength" << m_bufferLength;
-
     if (position >= m_bufferPosition) 
 	{
         if (position + m_windowLength > m_bufferPosition + m_bufferLength)
@@ -209,10 +182,6 @@ void Waveform::createPixmaps(const QSize &widgetSize)
     m_pixmapSize = widgetSize;
     m_pixmapSize.setWidth(double(widgetSize.width()) * m_tileLength / m_windowLength);
 
-    //qDebug() << "Waveform::createPixmaps"
-    //               << "widgetSize" << widgetSize
-    //               << "pixmapSize" << m_pixmapSize;
-
     Q_ASSERT(m_tiles.count() == m_pixmaps.count());
 
     //创建所有像素图
@@ -234,10 +203,6 @@ void Waveform::createPixmaps(const QSize &widgetSize)
 //更新窗口位置触发更新
 void Waveform::setWindowPosition(long long position)
 {
-    //qDebug() << "Waveform::setWindowPosition"
-    //               << "old" << m_windowPosition << "new" << position
-    //               << "tileArrayStart" << m_tileArrayStart;
-
     const long long oldPosition = m_windowPosition;
     m_windowPosition = position;
 
@@ -420,7 +385,7 @@ void Waveform::resetTiles(long long newStartPos)
     QVector<Tile>::iterator i = m_tiles.begin();
     for ( ; i != m_tiles.end(); ++i)
 	{
-        i ->painted = false;
+        i->painted = false;
 	}
     m_tileArrayStart = newStartPos;
 }

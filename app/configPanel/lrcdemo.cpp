@@ -9,11 +9,11 @@ int LrcDemo::shadow;
 
 LrcDemo::LrcDemo()
 {
-    this ->setWindowFlags(Qt::FramelessWindowHint);//去掉窗体边框
-    this ->setAttribute(Qt::WA_TranslucentBackground);//设置背景透明
-    this ->resize(500, 60);
-    this ->setText(tr("CZPlayer,传播好音乐"));
-    this ->setAlignment(Qt::AlignCenter);
+    this->setWindowFlags(Qt::FramelessWindowHint);//去掉窗体边框
+    this->setAttribute(Qt::WA_TranslucentBackground);//设置背景透明
+    this->resize(500, 60);
+    this->setText(tr("CZPlayer,传播好音乐"));
+    this->setAlignment(Qt::AlignCenter);
 
     //歌词的线性渐变填充
     linearGradient.setStart(0, 10);//填充的起点坐标
@@ -30,7 +30,7 @@ LrcDemo::LrcDemo()
 //    maskLinearGradient.setColorAt(0.9, QColor(222, 54, 4));
 
     //lrcMaskWidth += 13 * 30 / 2;
-    this ->update();
+    this->update();
 }
 
 LrcDemo::~LrcDemo()
@@ -53,7 +53,7 @@ void LrcDemo::paintEvent(QPaintEvent *event)
     //设置歌词遮罩
     painter.setPen(QPen(maskLinearGradient, 0));
     painter.drawText(0, 0, lrcMaskWidth, 60, Qt::AlignLeft, text());
-    event ->accept();
+    event->accept();
 }
 
 //设置字体
