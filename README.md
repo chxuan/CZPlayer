@@ -2,7 +2,7 @@ CZPlayer
 ===================
 
 
-CZPlayer是基于Qt开发的一款功能强大的音乐播放器，该播放器的论坛地址请点击[here](http://www.qtcn.org/bbs/read-htm-tid-55824.html)，目前CZPlayer已经是第四个版本了，历史版本也分别在我的github上。
+CZPlayer是基于Qt开发的一款功能强大的音乐播放器，该播放器的论坛地址请点击[here](http://www.qtcn.org/bbs/read-htm-tid-55824.html)，目前CZPlayer已经是第四个版本了。
 
 ----------
 
