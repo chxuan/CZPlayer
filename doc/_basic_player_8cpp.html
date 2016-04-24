@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>CZPlayer: BasicPlayer.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">CZPlayer
+   &#160;<span id="projectnumber">3.0.0</span>
+   </div>
+   <div id="projectbrief">CZPlayer应用程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0b6ee6e7e9547e675db4add2e5de97da.html">Engine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">BasicPlayer.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>播放引擎实现文件。  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_basic_player_8h_source.html">BasicPlayer.h</a>&quot;</code><br/>
+<code>#include &quot;CriticalSection.h&quot;</code><br/>
+<code>#include &quot;IO.h&quot;</code><br/>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a786999c63a43089289887e79db3263ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a786999c63a43089289887e79db3263ba"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG_OUTPUT_BUFFER_SIZE</b>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:a786999c63a43089289887e79db3263ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e576a3c6530636d68b7a220480bcd32"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e576a3c6530636d68b7a220480bcd32"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_BUFFER_SIZE</b>&#160;&#160;&#160;88200</td></tr>
+<tr class="separator:a6e576a3c6530636d68b7a220480bcd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe9b1c28165a7071e354bd9d7823ca1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe9b1c28165a7071e354bd9d7823ca1a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SAMPLE_RATE</b>&#160;&#160;&#160;44100.0F</td></tr>
+<tr class="separator:abe9b1c28165a7071e354bd9d7823ca1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee6405a4f74939fffcc9b3055af94b3a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee6405a4f74939fffcc9b3055af94b3a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_FRAME_SIZE</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:aee6405a4f74939fffcc9b3055af94b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a006e76f29a44f81e1166abae76a2e3f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a006e76f29a44f81e1166abae76a2e3f8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_BITS_PER_SAMPLE</b>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a006e76f29a44f81e1166abae76a2e3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c31d7b1dab0427b51c034e798b4722"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56c31d7b1dab0427b51c034e798b4722"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_CHANNELS</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a56c31d7b1dab0427b51c034e798b4722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc75d6c9bda01ee346700c3dc274b15"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbc75d6c9bda01ee346700c3dc274b15"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SECONDS</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:adbc75d6c9bda01ee346700c3dc274b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4fcabfc82bd0180b37f60d5d51800e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4fcabfc82bd0180b37f60d5d51800e6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_DS_BUFFER_SIZE</b>&#160;&#160;&#160;DEFAULT_SECONDS*DEFAULT_SAMPLE_RATE*(DEFAULT_BITS_PER_SAMPLE&gt;&gt;3)*DEFAULT_CHANNELS</td></tr>
+<tr class="separator:af4fcabfc82bd0180b37f60d5d51800e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93493eb8fae5549bd5be67f3449245e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93493eb8fae5549bd5be67f3449245e0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_WIDTH</b>&#160;&#160;&#160;300</td></tr>
+<tr class="separator:a93493eb8fae5549bd5be67f3449245e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1879f9e5604a01f0983829846001ab23"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1879f9e5604a01f0983829846001ab23"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_HEIGHT</b>&#160;&#160;&#160;180</td></tr>
+<tr class="separator:a1879f9e5604a01f0983829846001ab23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09d3264ec0b7077972dbc15779ac596c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09d3264ec0b7077972dbc15779ac596c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SAMPLE_SIZE</b>&#160;&#160;&#160;2048</td></tr>
+<tr class="separator:a09d3264ec0b7077972dbc15779ac596c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa0b8e2587392b1fa7ea5b2cfc12b029"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa0b8e2587392b1fa7ea5b2cfc12b029"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_FPS</b>&#160;&#160;&#160;30</td></tr>
+<tr class="separator:aaa0b8e2587392b1fa7ea5b2cfc12b029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4efbab94fd58a5b3bca4954432f68eac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4efbab94fd58a5b3bca4954432f68eac"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SPECTRUM_ANALYSER_FFT_SAMPLE_SIZE</b>&#160;&#160;&#160;512</td></tr>
+<tr class="separator:a4efbab94fd58a5b3bca4954432f68eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a558e5c45afeaa8fde7020e85168bb2d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a558e5c45afeaa8fde7020e85168bb2d2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SPECTRUM_ANALYSER_BAND_COUNT</b>&#160;&#160;&#160;30</td></tr>
+<tr class="separator:a558e5c45afeaa8fde7020e85168bb2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd1d2dca49e592ee5e8fc891ee4777b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3bd1d2dca49e592ee5e8fc891ee4777b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SPECTRUM_ANALYSER_DECAY</b>&#160;&#160;&#160;0.05F</td></tr>
+<tr class="separator:a3bd1d2dca49e592ee5e8fc891ee4777b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a88d8ab5f77fd43976d6b6cd759263"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0a88d8ab5f77fd43976d6b6cd759263"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SPECTRUM_ANALYSER_PEAK_DELAY</b>&#160;&#160;&#160;5 /* the value is more lower, fall faster */</td></tr>
+<tr class="separator:aa0a88d8ab5f77fd43976d6b6cd759263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf193aec4c6b0fa0b84fe2968752a2a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf193aec4c6b0fa0b84fe2968752a2a1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SPECTRUM_ANALYSER_PEAK_DELAY_FPS_RATIO</b>&#160;&#160;&#160;0.4F</td></tr>
+<tr class="separator:acf193aec4c6b0fa0b84fe2968752a2a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d077f8198bb7b238ec9bad76bd0fd1f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d077f8198bb7b238ec9bad76bd0fd1f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_SPECTRUM_ANALYSER_PEAK_DELAY_FPS_RATIO_RANGE</b>&#160;&#160;&#160;0.1F</td></tr>
+<tr class="separator:a4d077f8198bb7b238ec9bad76bd0fd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a833b98996ca9f332c176c89aee6733e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a833b98996ca9f332c176c89aee6733e1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MIN_SPECTRUM_ANALYSER_DECAY</b>&#160;&#160;&#160;0.02F</td></tr>
+<tr class="separator:a833b98996ca9f332c176c89aee6733e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b71c9f2b76ce3b2bd0d141138dc1829"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b71c9f2b76ce3b2bd0d141138dc1829"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_SPECTRUM_ANALYSER_DECAY</b>&#160;&#160;&#160;0.08F</td></tr>
+<tr class="separator:a6b71c9f2b76ce3b2bd0d141138dc1829"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f15dae60576883ac0005d13a75a2d38"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f15dae60576883ac0005d13a75a2d38"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SAMPLE_TYPE_EIGHT_BIT</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a1f15dae60576883ac0005d13a75a2d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a8683d25f03e2f5a86bfa4524b6edb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a8683d25f03e2f5a86bfa4524b6edb8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SAMPLE_TYPE_SIXTEEN_BIT</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a7a8683d25f03e2f5a86bfa4524b6edb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae25524c7ac244317dfdc1b019397030d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae25524c7ac244317dfdc1b019397030d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CHANNEL_MODE_MONO</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ae25524c7ac244317dfdc1b019397030d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa212357b92a765fd7077c8244f5b4e4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa212357b92a765fd7077c8244f5b4e4f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CHANNEL_MODE_STEREO</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:aa212357b92a765fd7077c8244f5b4e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a7a1d3dc5a52591acab859975672ca3ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a1d3dc5a52591acab859975672ca3ee"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_low</b> (jlong *value, jint low)</td></tr>
+<tr class="separator:a7a1d3dc5a52591acab859975672ca3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6d9db79326e35c63aaf25ad7d437a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b6d9db79326e35c63aaf25ad7d437a2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_high</b> (jlong *value, jint high)</td></tr>
+<tr class="separator:a4b6d9db79326e35c63aaf25ad7d437a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1997c22a005bb700869301fcc811e87f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1997c22a005bb700869301fcc811e87f"></a>
+jlong&#160;</td><td class="memItemRight" valign="bottom"><b>as_long</b> (LARGE_INTEGER x)</td></tr>
+<tr class="separator:a1997c22a005bb700869301fcc811e87f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a780e1c5dc5e868543f69dd95f2bb5e40"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a780e1c5dc5e868543f69dd95f2bb5e40"></a>
+TCHAR&#160;</td><td class="memItemRight" valign="bottom"><b>BUFFER</b> [DEBUG_OUTPUT_BUFFER_SIZE]</td></tr>
+<tr class="separator:a780e1c5dc5e868543f69dd95f2bb5e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab271e5f8c2a652d81a2d6a704fe49a2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab271e5f8c2a652d81a2d6a704fe49a2d"></a>
+LARGE_INTEGER&#160;</td><td class="memItemRight" valign="bottom"><b>liFrequency</b> = { 0 }</td></tr>
+<tr class="separator:ab271e5f8c2a652d81a2d6a704fe49a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9affcc21d62c8eec24934fcdf736ffd6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9affcc21d62c8eec24934fcdf736ffd6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>gSupportPerformanceFrequency</b> = QueryPerformanceFrequency(&amp;liFrequency)</td></tr>
+<tr class="separator:a9affcc21d62c8eec24934fcdf736ffd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>播放引擎实现文件。 </p>
+<dl class="section author"><dt>作者</dt><dd>chengxuan <a href="#" onclick="location.href='mai'+'lto:'+'787'+'28'+'031'+'0@'+'qq.'+'co'+'m'; return false;">78728<span style="display: none;">.nosp@m.</span>0310<span style="display: none;">.nosp@m.</span>@qq.c<span style="display: none;">.nosp@m.</span>om</a> </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2015-02-06 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>3.0.0</dd></dl>
+<pre class="fragment">* 历史
+*          3.0.0   创建,
+*          2015-02-06    by chengxuan
+*
+* </pre> </div></div><!-- contents -->
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#000000 SIZE=3>
+<table width="100%">
+<tr>
+        <td align="center">
+                <a href="http://www.qtcn.org/bbs/read-htm-tid-55824.html"> <img style="height:40px;" src="CZPlayer.png"> </img> </a>
+        </td>
+</tr>
+<tr>
+        <td align="center">
+                Copyright (C) 2012-2015 Highway-9 Studio.
+        </td>
+</tr>

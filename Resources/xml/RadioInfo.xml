@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<RadioInfo>
+	<Radio name="CRI 怀旧金曲频道">mms://live.cri.cn/oldies.wsx</Radio>
+	<Radio name="CRI 都市流行频道">mms://live.cri.cn/pop.wsx</Radio>
+	<Radio name="CRI 国际流行音乐频道">mms://live.hitfm.cn/fm887</Radio>
+	<Radio name="CRI轻松调频">mms://enmms.chinabroadcast.cn/fm91.5</Radio>
+	<Radio name="北京电台音乐广播">mms://alive.rbc.cn/fm974</Radio>
+	<Radio name="青苹果音乐台">mms://mms.qpgfm.com/ting</Radio>
+	<Radio name="Tiktok网络电台">mms://radio.wanwanw.com/wanwanw</Radio>
+	<Radio name="态度音乐电台">mms://live.taidu.fm/taidufmwr</Radio>
+	<Radio name="完美音乐在线">mms://audio.wanmei.com/music</Radio>
+	<Radio name="中国校园之声">mms://mms.fm520.com/fm520</Radio>
+	<Radio name="清晨音乐台">mms://radio.qingc.net/live</Radio>
+	<Radio name="中国古典音乐网络电台">http://radio.chinesemusicworld.com:8202/</Radio>
+	<Radio name="AsiaFM欧美音乐台">mms://asiafm.cn/funradio</Radio>
+	<Radio name="AsiaFM亚洲音乐台">mms://asiafm.cn/asiafm</Radio>
+	<Radio name="凤凰URadio音乐台">http://live.hkuradio.com/radio2?download=1</Radio>
+</RadioInfo>

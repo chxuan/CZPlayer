@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>CZPlayer: LrcSettingsPage.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">CZPlayer
+   &#160;<span id="projectnumber">3.0.0</span>
+   </div>
+   <div id="projectbrief">CZPlayer应用程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_abd33bfc052dc4b28a34b6a77a4d5bc7.html">ConfigPanel</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">LrcSettingsPage.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_lrc_settings_page_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">*   Copyright (C) 2012-2015 Highway-9 Studio.                             *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*   787280310@qq.com                                                       *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*                                                                         *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*   This program is free software; you can redistribute it and/or modify  *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*   it under the terms of the GNU General Public License as published by  *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*   the Free Software Foundation; either version 2 of the License, or     *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*   (at your option) any later version.                                   *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*                                                                         *</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*   This program is distributed in the hope that it will be useful,       *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*   but WITHOUT ANY WARRANTY; without even the implied warranty of        *</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   GNU General Public License for more details.                          *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*                                                                         *</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*   You should have received a copy of the GNU General Public License     *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*   along with this program; if not, write to the                         *</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*   Free Software Foundation, Inc.,                                       *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*   CUIT Highway-9 Studio, China.                                          *</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">***************************************************************************/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef LRCSETTINGSPAGE_H</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LRCSETTINGSPAGE_H</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="_lrc_settings_page_8h.html#ade7dd060e4185724629f96cbf693cd01">   43</a></span>&#160;<span class="preprocessor">#define LRCSETTINGSPAGE_VERSION   0x030000</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;QColor&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;QMenu&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">class </span><a class="code" href="class_lrc_demo.html">LrcDemo</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">class </span>QLabel;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">class </span>QSpinBox;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">class </span>QLineEdit;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">class </span>QSlider;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">class </span>QPushButton;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">class </span>QAction;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">class </span>QComboBox;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_lrc_settings_page.html">   61</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_lrc_settings_page.html">LrcSettingsPage</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="class_lrc_settings_page.html#a414e9e2e0cf7ea2de9eece06ea3fe457">LrcSettingsPage</a>(QWidget *parent = NULL);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_lrc_settings_page.html#a659bc020cbf596a371dd1bf0f0f7537e">~LrcSettingsPage</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_lrc_settings_page.html#ab938c3442653a7edb1bf4d6fc0921026">init</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_lrc_settings_page.html#a1f0c5fbce89ddec5e1bf5af4fcb60644">apply</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;signals:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_lrc_settings_page.html#a9db15d2685a05bb1d6e9749cce6a1b5d">sigLrcSettingsChanged</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> handleChangeColor();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> handleFontNameChanged(<span class="keyword">const</span> QString &amp;fontName);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> handleFontSizeChanged(<span class="keyword">const</span> QString &amp;fontSize);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> handleFontTypeChanged(<span class="keyword">const</span> QString &amp;fontType);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> handleNoPlayShangColorChanged();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> handleNoPlayZhongColorChanged();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> handleNoPlayXiaColorChanged();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> handlePlayedShangColorChanged();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> handlePlayedZhongColorChanged();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> handlePlayedXiaColorChanged();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> handlePresetColor();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> handleRecoverDefaultSetting();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">void</span> handlePresetColorChanged();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> handleShadowChanged(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;shadow);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">void</span> createUI();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">void</span> createConnect();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> setLineEditColor(QLineEdit *lineEdit, <span class="keyword">const</span> QColor &amp;color);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">void</span> setDefaultChoiceColor(<span class="keyword">const</span> QString &amp;color);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="class_lrc_demo.html">LrcDemo</a> *m_lrcDemo;                             </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    QLabel *m_fontLabel;                            </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    QComboBox *m_fontNameCombo;                         </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    QLabel *m_fontSizeLabel;                        </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    QComboBox *m_fontSizeCombo;                     </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    QLabel *m_fontTypeLabel;                        </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    QComboBox *m_fontTypeCombo;                     </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    QLabel *m_shadowLabel;                          </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    QSlider *m_shadowSlider;                        </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    QSpinBox *m_shadowSpinBox;                      </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    QLineEdit *m_noPlayEdit;                        </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    QPushButton *m_changeNoPlayButton;              </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    QColor m_noPlayShang;                           </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    QLineEdit *m_noPlayEdit2;                       </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    QPushButton *m_changeNoPlayButton2;             </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    QColor m_noPlayZhong;                           </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    QLineEdit *m_noPlayEdit3;                       </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    QPushButton *m_changeNoPlayButton3;             </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    QColor m_noPlayXia;                             </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    QLineEdit *m_playedEdit;                        </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    QPushButton *m_changePlayedButton;              </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    QColor m_playedShang;                           </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    QLineEdit *m_playedEdit2;                       </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    QPushButton *m_changePlayedButton2;             </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    QColor m_playedZhong;                           </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    QLineEdit *m_playedEdit3;                       </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    QPushButton *m_changePlayedButton3;             </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    QColor m_playedXia;                             </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    QPushButton *m_yuSheButton;                     </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    QPushButton *m_recoverDefaultColorButton;       </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    QMenu m_presetMenu;                             </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    QString m_defaultChoiceColor;                   </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    QAction *m_jingDianWhite;                       </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    QAction *m_haiYangBlue;                         </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    QAction *m_huoYanRed;                           </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    QAction *m_kuXuanBlack;                         </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    QAction *m_qiuSeYellow;                         </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    QAction *m_langManPurple;                       </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    QAction *m_ziRanGreen;                          </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;};</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif // LRCSETTINGSPAGE_H</span></div>
+<div class="ttc" id="class_lrc_settings_page_html_a659bc020cbf596a371dd1bf0f0f7537e"><div class="ttname"><a href="class_lrc_settings_page.html#a659bc020cbf596a371dd1bf0f0f7537e">LrcSettingsPage::~LrcSettingsPage</a></div><div class="ttdeci">~LrcSettingsPage()</div><div class="ttdef"><b>Definition:</b> LrcSettingsPage.cpp:87</div></div>
+<div class="ttc" id="class_lrc_settings_page_html_a414e9e2e0cf7ea2de9eece06ea3fe457"><div class="ttname"><a href="class_lrc_settings_page.html#a414e9e2e0cf7ea2de9eece06ea3fe457">LrcSettingsPage::LrcSettingsPage</a></div><div class="ttdeci">LrcSettingsPage(QWidget *parent=NULL)</div><div class="ttdef"><b>Definition:</b> LrcSettingsPage.cpp:79</div></div>
+<div class="ttc" id="class_lrc_demo_html"><div class="ttname"><a href="class_lrc_demo.html">LrcDemo</a></div><div class="ttdef"><b>Definition:</b> LrcDemo.h:55</div></div>
+<div class="ttc" id="class_lrc_settings_page_html_a9db15d2685a05bb1d6e9749cce6a1b5d"><div class="ttname"><a href="class_lrc_settings_page.html#a9db15d2685a05bb1d6e9749cce6a1b5d">LrcSettingsPage::sigLrcSettingsChanged</a></div><div class="ttdeci">void sigLrcSettingsChanged()</div></div>
+<div class="ttc" id="class_lrc_settings_page_html"><div class="ttname"><a href="class_lrc_settings_page.html">LrcSettingsPage</a></div><div class="ttdef"><b>Definition:</b> LrcSettingsPage.h:61</div></div>
+<div class="ttc" id="class_lrc_settings_page_html_a1f0c5fbce89ddec5e1bf5af4fcb60644"><div class="ttname"><a href="class_lrc_settings_page.html#a1f0c5fbce89ddec5e1bf5af4fcb60644">LrcSettingsPage::apply</a></div><div class="ttdeci">void apply()</div><div class="ttdef"><b>Definition:</b> LrcSettingsPage.cpp:120</div></div>
+<div class="ttc" id="class_lrc_settings_page_html_ab938c3442653a7edb1bf4d6fc0921026"><div class="ttname"><a href="class_lrc_settings_page.html#ab938c3442653a7edb1bf4d6fc0921026">LrcSettingsPage::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> LrcSettingsPage.cpp:97</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#000000 SIZE=3>
+<table width="100%">
+<tr>
+        <td align="center">
+                <a href="http://www.qtcn.org/bbs/read-htm-tid-55824.html"> <img style="height:40px;" src="CZPlayer.png"> </img> </a>
+        </td>
+</tr>
+<tr>
+        <td align="center">
+                Copyright (C) 2012-2015 Highway-9 Studio.
+        </td>
+</tr>

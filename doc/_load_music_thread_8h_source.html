@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>CZPlayer: LoadMusicThread.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">CZPlayer
+   &#160;<span id="projectnumber">3.0.0</span>
+   </div>
+   <div id="projectbrief">CZPlayer应用程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c211989d999a6a303a2b08461c3c22b8.html">Thread</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">LoadMusicThread.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_load_music_thread_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *   Copyright (C) 2012-2015 Highway-9 Studio.                             *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *   787280310@qq.com                                                      *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                         *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *   This program is free software; you can redistribute it and/or modify  *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *   it under the terms of the GNU General Public License as published by  *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *   the Free Software Foundation; either version 2 of the License, or     *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *   (at your option) any later version.                                   *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *                                                                         *</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *   This program is distributed in the hope that it will be useful,       *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *   GNU General Public License for more details.                          *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *                                                                         *</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *   You should have received a copy of the GNU General Public License     *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *   along with this program; if not, write to the                         *</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *   Free Software Foundation, Inc.,                                       *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *   CUIT Highway-9 Studio, China.                                         *</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> ***************************************************************************/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef LOADMUSICTHREAD_H</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LOADMUSICTHREAD_H</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="_load_music_thread_8h.html#a142ea6df737943ee37b9682315c0b537">   43</a></span>&#160;<span class="preprocessor">#define LOADMUSICTHREAD_VERSION   0x030000</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;QThread&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;QStringList&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;QUrl&gt;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_music_info_entity_8h.html">MusicInfoEntity.h</a>&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_load_music_thread.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_load_music_thread.html">LoadMusicThread</a> : <span class="keyword">public</span> QThread</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_load_music_thread.html#a6ed424e435074afdf1003823d334aadb">LoadMusicThread</a>(QObject *parent = NULL);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_load_music_thread.html#a0647b93173158d483ab9056dcab371cf">~LoadMusicThread</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_load_music_thread.html#afc7d46fd8c97421bdef319eb58251d49">run</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_load_music_thread_event.html">   76</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_load_music_thread_event.html">LoadMusicThreadEvent</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_load_music_thread_event.html#a6e8996c90c971352f4f5e780dbbbac2c">LoadMusicThreadEvent</a>(QObject *parent = NULL);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="class_load_music_thread_event.html#ad5d7bb7de030266369e90499ee4284ff">~LoadMusicThreadEvent</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;signals:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_load_music_thread_event.html#af52c0d91838427736db184671be0645d">sigLoadMusicListError</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_load_music_thread_event.html#a727f9bff9454063d034104a662f5d983">sigLoadMusicListFinished</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_load_music_thread_event.html#a894e64fed6cda32122461c103b183bb8">sigAddMusic</a>(<span class="keyword">const</span> <a class="code" href="class_music_info_entity.html">MusicInfoEntity</a> &amp;entity);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> handleStartloadMusic(<span class="keyword">const</span> QStringList &amp;musicList);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> handleStartloadMusic(<span class="keyword">const</span> QList&lt;QUrl&gt; &amp;urls);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> handleStartloadMusic(<span class="keyword">const</span> QString &amp;strFileOrDir);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> handleStartloadMusic();                            </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> startLoad();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> openMusicModeLoad();                               </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> dragEnterMusicModeLoad();                          </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> openMusicFormatFileLoad();                         </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">void</span> readFromDBModeLoad();                              </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">void</span> openMusicDirectoryMode();      </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> analyzeMusic(<span class="keyword">const</span> QString &amp;filePath);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    QStringList m_musicList;                                </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    QList&lt;QUrl&gt; m_urls;                                     </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    QString m_musicFormatFile;                              </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    QString m_musicDirectory;                               </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">enum</span> LoadMusicMode</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        OpenMusic               = 1,        </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        DragEnterMusic          = 2,        </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        OpenMusicFormatFile     = 3,        </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        ReadFromDB              = 4,        </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        OpenDirectory           = 5         </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    };</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    LoadMusicMode m_loadMusicMode;          </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;};</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#endif //LOADMUSICTHREAD_H</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="class_load_music_thread_html_a0647b93173158d483ab9056dcab371cf"><div class="ttname"><a href="class_load_music_thread.html#a0647b93173158d483ab9056dcab371cf">LoadMusicThread::~LoadMusicThread</a></div><div class="ttdeci">~LoadMusicThread(void)</div><div class="ttdef"><b>Definition:</b> LoadMusicThread.cpp:83</div></div>
+<div class="ttc" id="class_load_music_thread_event_html"><div class="ttname"><a href="class_load_music_thread_event.html">LoadMusicThreadEvent</a></div><div class="ttdef"><b>Definition:</b> LoadMusicThread.h:76</div></div>
+<div class="ttc" id="class_music_info_entity_html"><div class="ttname"><a href="class_music_info_entity.html">MusicInfoEntity</a></div><div class="ttdef"><b>Definition:</b> MusicInfoEntity.h:35</div></div>
+<div class="ttc" id="class_load_music_thread_html_afc7d46fd8c97421bdef319eb58251d49"><div class="ttname"><a href="class_load_music_thread.html#afc7d46fd8c97421bdef319eb58251d49">LoadMusicThread::run</a></div><div class="ttdeci">virtual void run()</div><div class="ttdef"><b>Definition:</b> LoadMusicThread.cpp:88</div></div>
+<div class="ttc" id="class_load_music_thread_event_html_a894e64fed6cda32122461c103b183bb8"><div class="ttname"><a href="class_load_music_thread_event.html#a894e64fed6cda32122461c103b183bb8">LoadMusicThreadEvent::sigAddMusic</a></div><div class="ttdeci">void sigAddMusic(const MusicInfoEntity &amp;entity)</div></div>
+<div class="ttc" id="class_load_music_thread_event_html_ad5d7bb7de030266369e90499ee4284ff"><div class="ttname"><a href="class_load_music_thread_event.html#ad5d7bb7de030266369e90499ee4284ff">LoadMusicThreadEvent::~LoadMusicThreadEvent</a></div><div class="ttdeci">~LoadMusicThreadEvent(void)</div><div class="ttdef"><b>Definition:</b> LoadMusicThread.cpp:99</div></div>
+<div class="ttc" id="class_load_music_thread_html"><div class="ttname"><a href="class_load_music_thread.html">LoadMusicThread</a></div><div class="ttdef"><b>Definition:</b> LoadMusicThread.h:55</div></div>
+<div class="ttc" id="class_load_music_thread_event_html_a6e8996c90c971352f4f5e780dbbbac2c"><div class="ttname"><a href="class_load_music_thread_event.html#a6e8996c90c971352f4f5e780dbbbac2c">LoadMusicThreadEvent::LoadMusicThreadEvent</a></div><div class="ttdeci">LoadMusicThreadEvent(QObject *parent=NULL)</div><div class="ttdef"><b>Definition:</b> LoadMusicThread.cpp:93</div></div>
+<div class="ttc" id="class_load_music_thread_event_html_af52c0d91838427736db184671be0645d"><div class="ttname"><a href="class_load_music_thread_event.html#af52c0d91838427736db184671be0645d">LoadMusicThreadEvent::sigLoadMusicListError</a></div><div class="ttdeci">void sigLoadMusicListError()</div></div>
+<div class="ttc" id="class_load_music_thread_html_a6ed424e435074afdf1003823d334aadb"><div class="ttname"><a href="class_load_music_thread.html#a6ed424e435074afdf1003823d334aadb">LoadMusicThread::LoadMusicThread</a></div><div class="ttdeci">LoadMusicThread(QObject *parent=NULL)</div><div class="ttdef"><b>Definition:</b> LoadMusicThread.cpp:77</div></div>
+<div class="ttc" id="class_load_music_thread_event_html_a727f9bff9454063d034104a662f5d983"><div class="ttname"><a href="class_load_music_thread_event.html#a727f9bff9454063d034104a662f5d983">LoadMusicThreadEvent::sigLoadMusicListFinished</a></div><div class="ttdeci">void sigLoadMusicListFinished()</div></div>
+<div class="ttc" id="_music_info_entity_8h_html"><div class="ttname"><a href="_music_info_entity_8h.html">MusicInfoEntity.h</a></div><div class="ttdoc">音乐信息实体头文件。 </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#000000 SIZE=3>
+<table width="100%">
+<tr>
+        <td align="center">
+                <a href="http://www.qtcn.org/bbs/read-htm-tid-55824.html"> <img style="height:40px;" src="CZPlayer.png"> </img> </a>
+        </td>
+</tr>
+<tr>
+        <td align="center">
+                Copyright (C) 2012-2015 Highway-9 Studio.
+        </td>
+</tr>

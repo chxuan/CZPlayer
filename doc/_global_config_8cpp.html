@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>CZPlayer: GlobalConfig.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">CZPlayer
+   &#160;<span id="projectnumber">3.0.0</span>
+   </div>
+   <div id="projectbrief">CZPlayer应用程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_abd33bfc052dc4b28a34b6a77a4d5bc7.html">ConfigPanel</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">枚举</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">GlobalConfig.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>全局配置实现文件。  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_global_config_8h_source.html">GlobalConfig.h</a>&quot;</code><br/>
+<code>#include &quot;Global.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_r_8h_source.html">TR.h</a>&quot;</code><br/>
+<code>#include &lt;QSettings&gt;</code><br/>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ae7411851956ca64eea1ce8fc4ed5a15b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>PlayModeType</b> { <b>RandomPlay</b> = 1, 
+<b>CyclePlay</b> = 2
+ }</td></tr>
+<tr class="separator:ae7411851956ca64eea1ce8fc4ed5a15b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a641f7fb30418114a4922dc15c69bf0a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a641f7fb30418114a4922dc15c69bf0a8"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrGeneralConfig</b> = &quot;GeneralConfig&quot;</td></tr>
+<tr class="separator:a641f7fb30418114a4922dc15c69bf0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30499d6226d701572db9060d5e42cdd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae30499d6226d701572db9060d5e42cdd"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrAutoPlayMusic</b> = &quot;AutoPlayMusic&quot;</td></tr>
+<tr class="separator:ae30499d6226d701572db9060d5e42cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73736421914a2a20b48f372cbd9f9548"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73736421914a2a20b48f372cbd9f9548"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrAutoRunPlayer</b> = &quot;AutoRunPlayer&quot;</td></tr>
+<tr class="separator:a73736421914a2a20b48f372cbd9f9548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e60377768de321010601294d1d87e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31e60377768de321010601294d1d87e0"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrAutoGreetings</b> = &quot;AutoGreetings&quot;</td></tr>
+<tr class="separator:a31e60377768de321010601294d1d87e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b33c5895fab31f1b66759aee5820af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54b33c5895fab31f1b66759aee5820af"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrDefaultPlayer</b> = &quot;DefaultPlayer&quot;</td></tr>
+<tr class="separator:a54b33c5895fab31f1b66759aee5820af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0beaaf63857092a79b3a8698b9705a7f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0beaaf63857092a79b3a8698b9705a7f"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrDownloadConfig</b> = &quot;DownloadConfig&quot;</td></tr>
+<tr class="separator:a0beaaf63857092a79b3a8698b9705a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fe4a751b4c5199d73952cdee6920849"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2fe4a751b4c5199d73952cdee6920849"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrMusicPath</b> = &quot;MusicPath&quot;</td></tr>
+<tr class="separator:a2fe4a751b4c5199d73952cdee6920849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae971fcab58020b164e2a682b40bc1661"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae971fcab58020b164e2a682b40bc1661"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrAlbumPath</b> = &quot;AlbumPath&quot;</td></tr>
+<tr class="separator:ae971fcab58020b164e2a682b40bc1661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486f99e33fa30704fb0e7d801732140a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a486f99e33fa30704fb0e7d801732140a"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrLrcPath</b> = &quot;LrcPath&quot;</td></tr>
+<tr class="separator:a486f99e33fa30704fb0e7d801732140a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b9494d355a91838843a717592faff0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52b9494d355a91838843a717592faff0"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrLrcConfig</b> = &quot;LrcConfig&quot;</td></tr>
+<tr class="separator:a52b9494d355a91838843a717592faff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1476a2192cf935f96beebdf37d22b32"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1476a2192cf935f96beebdf37d22b32"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrFontName</b> = &quot;FontName&quot;</td></tr>
+<tr class="separator:ac1476a2192cf935f96beebdf37d22b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5529ef186c37d9182aa2602c43fea11"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5529ef186c37d9182aa2602c43fea11"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrFontSize</b> = &quot;FontSize&quot;</td></tr>
+<tr class="separator:ab5529ef186c37d9182aa2602c43fea11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68a13c8430b3c859848102a49e9e6cd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68a13c8430b3c859848102a49e9e6cd2"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrFontType</b> = &quot;FontType&quot;</td></tr>
+<tr class="separator:a68a13c8430b3c859848102a49e9e6cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633c88548b60304913cf3ab229c5abaf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a633c88548b60304913cf3ab229c5abaf"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrNoPlayShang</b> = &quot;NoPlayShang&quot;</td></tr>
+<tr class="separator:a633c88548b60304913cf3ab229c5abaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a101404fc67ce216f1e62e19c7facce14"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a101404fc67ce216f1e62e19c7facce14"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrNoPlayZhong</b> = &quot;NoPlayZhong&quot;</td></tr>
+<tr class="separator:a101404fc67ce216f1e62e19c7facce14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a647e3719c643c886c60603173c2f74ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a647e3719c643c886c60603173c2f74ed"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrNoPlayXia</b> = &quot;NoPlayXia&quot;</td></tr>
+<tr class="separator:a647e3719c643c886c60603173c2f74ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fccc2aa2ef6ed9ba7896920bc99b93d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fccc2aa2ef6ed9ba7896920bc99b93d"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrPlayedShang</b> = &quot;PlayedShang&quot;</td></tr>
+<tr class="separator:a3fccc2aa2ef6ed9ba7896920bc99b93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01df75f0fc78a2f83125150d1d758f92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01df75f0fc78a2f83125150d1d758f92"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrPlayedZhong</b> = &quot;PlayedZhong&quot;</td></tr>
+<tr class="separator:a01df75f0fc78a2f83125150d1d758f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0955cec9ca57769d0bec4d9328646c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0955cec9ca57769d0bec4d9328646c3"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrPlayedXia</b> = &quot;PlayedXia&quot;</td></tr>
+<tr class="separator:af0955cec9ca57769d0bec4d9328646c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7038db23da20991f04366424e0ba9c41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7038db23da20991f04366424e0ba9c41"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrDefaultChoiceColor</b> = &quot;DefaultChoiceColor&quot;</td></tr>
+<tr class="separator:a7038db23da20991f04366424e0ba9c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab20f7c884691d91dc6791b1845bd6a39"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab20f7c884691d91dc6791b1845bd6a39"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrShadow</b> = &quot;Shadow&quot;</td></tr>
+<tr class="separator:ab20f7c884691d91dc6791b1845bd6a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f126bd2aa20277dd9e28bcbe793905e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f126bd2aa20277dd9e28bcbe793905e"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrHotkeyConfig</b> = &quot;HotkeyConfig&quot;</td></tr>
+<tr class="separator:a1f126bd2aa20277dd9e28bcbe793905e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cd8e25822ed749f119ff05b1ee89c2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7cd8e25822ed749f119ff05b1ee89c2d"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrConfigOptions</b> = &quot;ConfigOptions&quot;</td></tr>
+<tr class="separator:a7cd8e25822ed749f119ff05b1ee89c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a996b41c801e03d8305ed4482128383cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a996b41c801e03d8305ed4482128383cf"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrShowHideMainWidget</b> = &quot;ShowHideMainWidget&quot;</td></tr>
+<tr class="separator:a996b41c801e03d8305ed4482128383cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5603f225dd036fafbb354edd2fec21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf5603f225dd036fafbb354edd2fec21"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrMinMainWidget</b> = &quot;MinMainWidget&quot;</td></tr>
+<tr class="separator:acf5603f225dd036fafbb354edd2fec21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ec4763d4a5c3dfada4b395fe120435"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4ec4763d4a5c3dfada4b395fe120435"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrOpenMusicFile</b> = &quot;OpenMusicFile&quot;</td></tr>
+<tr class="separator:aa4ec4763d4a5c3dfada4b395fe120435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6456cea2a126aa5cf140b3f145c9c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b6456cea2a126aa5cf140b3f145c9c2"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrShowHideMediaWidget</b> = &quot;ShowHideMediaWidget&quot;</td></tr>
+<tr class="separator:a8b6456cea2a126aa5cf140b3f145c9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d9ca8fc62a22bfeea600126e7a5e8e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d9ca8fc62a22bfeea600126e7a5e8e0"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrShowHideMusicList</b> = &quot;ShowHideMusicList&quot;</td></tr>
+<tr class="separator:a6d9ca8fc62a22bfeea600126e7a5e8e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617e22d27eb0621ef0f2c7822335cff9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a617e22d27eb0621ef0f2c7822335cff9"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrShowHideLrc</b> = &quot;ShowHideLrc&quot;</td></tr>
+<tr class="separator:a617e22d27eb0621ef0f2c7822335cff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f585cf6928822069aa220b09c853df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3f585cf6928822069aa220b09c853df"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrPlayPause</b> = &quot;PlayPause&quot;</td></tr>
+<tr class="separator:ae3f585cf6928822069aa220b09c853df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c9cb499a5a6804b83a30ddb040644da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c9cb499a5a6804b83a30ddb040644da"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrPlayPre</b> = &quot;PlayPre&quot;</td></tr>
+<tr class="separator:a5c9cb499a5a6804b83a30ddb040644da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc6c62895c1b5d3ad1161c135aa4135f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc6c62895c1b5d3ad1161c135aa4135f"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrPlayNext</b> = &quot;PlayNext&quot;</td></tr>
+<tr class="separator:adc6c62895c1b5d3ad1161c135aa4135f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37661a7ca022199280ce295efd9b0d0f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37661a7ca022199280ce295efd9b0d0f"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrPlayControlConfig</b> = &quot;PlayControlConfig&quot;</td></tr>
+<tr class="separator:a37661a7ca022199280ce295efd9b0d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7deedb95c7e4bfe46a94c8442befd8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad7deedb95c7e4bfe46a94c8442befd8"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrMute</b> = &quot;Mute&quot;</td></tr>
+<tr class="separator:aad7deedb95c7e4bfe46a94c8442befd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f656d42af1a6cb4e33b0d4b0b834c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90f656d42af1a6cb4e33b0d4b0b834c0"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrVolume</b> = &quot;Volume&quot;</td></tr>
+<tr class="separator:a90f656d42af1a6cb4e33b0d4b0b834c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f70638fd873752baa06eda22d66c582"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f70638fd873752baa06eda22d66c582"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StrPlayMode</b> = &quot;PlayMode&quot;</td></tr>
+<tr class="separator:a1f70638fd873752baa06eda22d66c582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a360fd5abfb798f76c040cd9f2cbd5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a360fd5abfb798f76c040cd9f2cbd5a"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><b>AutoPlayMusic</b> = false</td></tr>
+<tr class="separator:a6a360fd5abfb798f76c040cd9f2cbd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce928d9b8e5d1f422bcd1a113c952cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ce928d9b8e5d1f422bcd1a113c952cf"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><b>AutoRunPlayer</b> = false</td></tr>
+<tr class="separator:a9ce928d9b8e5d1f422bcd1a113c952cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b258acc848783deeb97978bcbf2375"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69b258acc848783deeb97978bcbf2375"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><b>AutoGreetings</b> = false</td></tr>
+<tr class="separator:a69b258acc848783deeb97978bcbf2375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda697f3225fbfe33d5c3af39524adbe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acda697f3225fbfe33d5c3af39524adbe"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultPlayer</b> = false</td></tr>
+<tr class="separator:acda697f3225fbfe33d5c3af39524adbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5439e52f97e57b33ea9b2fa71cd4fd1c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5439e52f97e57b33ea9b2fa71cd4fd1c"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>MusicPath</b> = &quot;E:/CZPlayer&quot;</td></tr>
+<tr class="separator:a5439e52f97e57b33ea9b2fa71cd4fd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb159f47fa15e2053c764f07b9a9f02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bb159f47fa15e2053c764f07b9a9f02"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>AlbumPath</b> = &quot;E:/CZPlayer/albumImages&quot;</td></tr>
+<tr class="separator:a9bb159f47fa15e2053c764f07b9a9f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9935b9dd170dfc2a910fada36f70f933"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9935b9dd170dfc2a910fada36f70f933"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>LrcPath</b> = &quot;E:/CZPlayer/lrc&quot;</td></tr>
+<tr class="separator:a9935b9dd170dfc2a910fada36f70f933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5780057da6d9db2f887df5d378e5d0d6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5780057da6d9db2f887df5d378e5d0d6"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>FontName</b> = TR(&quot;微软雅黑&quot;)</td></tr>
+<tr class="separator:a5780057da6d9db2f887df5d378e5d0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6101a67f6ffd183abcab708bdb232589"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6101a67f6ffd183abcab708bdb232589"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>FontSize</b> = &quot;30&quot;</td></tr>
+<tr class="separator:a6101a67f6ffd183abcab708bdb232589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7139351a0104554c6d9168e9cff0949"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7139351a0104554c6d9168e9cff0949"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>FontType</b> = TR(&quot;常规&quot;)</td></tr>
+<tr class="separator:ac7139351a0104554c6d9168e9cff0949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02fb0453b89264cd890742d1ada8df6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab02fb0453b89264cd890742d1ada8df6"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayShang</b> = QColor(14, 179, 255)</td></tr>
+<tr class="separator:ab02fb0453b89264cd890742d1ada8df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be4874091a00914ba7320b67f5827e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7be4874091a00914ba7320b67f5827e5"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayZhong</b> = QColor(114, 232, 255)</td></tr>
+<tr class="separator:a7be4874091a00914ba7320b67f5827e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c81490778df8b2065160f83764cca20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c81490778df8b2065160f83764cca20"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayXia</b> = QColor(14, 179, 255)</td></tr>
+<tr class="separator:a4c81490778df8b2065160f83764cca20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bf5ecfe03c2d332d1046af9b11a4936"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bf5ecfe03c2d332d1046af9b11a4936"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedShang</b> = QColor(222, 54, 4)</td></tr>
+<tr class="separator:a6bf5ecfe03c2d332d1046af9b11a4936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcaa06fa9e94a404f698474c9868c998"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adcaa06fa9e94a404f698474c9868c998"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedZhong</b> = QColor(255, 72, 16)</td></tr>
+<tr class="separator:adcaa06fa9e94a404f698474c9868c998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd6f5486fcc2b1aef9ddb2a68f2b774"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dd6f5486fcc2b1aef9ddb2a68f2b774"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedXia</b> = QColor(222, 54, 4)</td></tr>
+<tr class="separator:a1dd6f5486fcc2b1aef9ddb2a68f2b774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c776f6ff634260092abd956c257a599"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c776f6ff634260092abd956c257a599"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultChoiceColor</b> = &quot;&quot;</td></tr>
+<tr class="separator:a6c776f6ff634260092abd956c257a599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782980dd8d0396b1153e8a7c48f8e31e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a782980dd8d0396b1153e8a7c48f8e31e"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>Shadow</b> = 255</td></tr>
+<tr class="separator:a782980dd8d0396b1153e8a7c48f8e31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefcad15a86f6e2703c89fec9ea3bf6ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aefcad15a86f6e2703c89fec9ea3bf6ec"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>ConfigOptions</b> = &quot;Ctrl+Alt+F1&quot;</td></tr>
+<tr class="separator:aefcad15a86f6e2703c89fec9ea3bf6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825d58c87507ca64c4b6312255b3c135"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a825d58c87507ca64c4b6312255b3c135"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>ShowHideMainWidget</b> = &quot;Ctrl+Alt+W&quot;</td></tr>
+<tr class="separator:a825d58c87507ca64c4b6312255b3c135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3651e085bb20ee7e28b33fc5175c0dda"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3651e085bb20ee7e28b33fc5175c0dda"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>MinMainWidget</b> = &quot;Ctrl+Alt+M&quot;</td></tr>
+<tr class="separator:a3651e085bb20ee7e28b33fc5175c0dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97fc3648c2447ab48c99d3c0f720d527"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97fc3648c2447ab48c99d3c0f720d527"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>OpenMusicFile</b> = &quot;Ctrl+Alt+O&quot;</td></tr>
+<tr class="separator:a97fc3648c2447ab48c99d3c0f720d527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e9668eb8260e118f40e706cf248d52a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e9668eb8260e118f40e706cf248d52a"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>ShowHideMediaWidget</b> = &quot;Ctrl+Alt+D&quot;</td></tr>
+<tr class="separator:a8e9668eb8260e118f40e706cf248d52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13f86daf5c529ad60acdb19ea1e0947"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab13f86daf5c529ad60acdb19ea1e0947"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>ShowHideMusicList</b> = &quot;Ctrl+Alt+L&quot;</td></tr>
+<tr class="separator:ab13f86daf5c529ad60acdb19ea1e0947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c5df6c24b91384b4bdd5a797aee25e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c5df6c24b91384b4bdd5a797aee25e9"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>ShowHideLrc</b> = &quot;Ctrl+Alt+R&quot;</td></tr>
+<tr class="separator:a5c5df6c24b91384b4bdd5a797aee25e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d667f50b373900da79bff3eace4ed6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88d667f50b373900da79bff3eace4ed6"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>PlayPause</b> = &quot;Alt+Space&quot;</td></tr>
+<tr class="separator:a88d667f50b373900da79bff3eace4ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f127aa1a31f23ecfac3f2170c9a6446"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f127aa1a31f23ecfac3f2170c9a6446"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>PlayPre</b> = &quot;Alt+Left&quot;</td></tr>
+<tr class="separator:a7f127aa1a31f23ecfac3f2170c9a6446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e145788958ab8d50c77f9ef3c05836"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6e145788958ab8d50c77f9ef3c05836"></a>
+const QString&#160;</td><td class="memItemRight" valign="bottom"><b>PlayNext</b> = &quot;Alt+Right&quot;</td></tr>
+<tr class="separator:ac6e145788958ab8d50c77f9ef3c05836"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17ffc88591f79cfbcd35d87534ded864"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17ffc88591f79cfbcd35d87534ded864"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayWhiteShang</b> = QColor(255, 255, 255)</td></tr>
+<tr class="separator:a17ffc88591f79cfbcd35d87534ded864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29404c65d0e5c214847a785c7f340f64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29404c65d0e5c214847a785c7f340f64"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayWhiteZhong</b> = QColor(255, 255, 255)</td></tr>
+<tr class="separator:a29404c65d0e5c214847a785c7f340f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e66e0585c4018d0a852398c11341f23"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e66e0585c4018d0a852398c11341f23"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayWhiteXia</b> = QColor(255, 255, 255)</td></tr>
+<tr class="separator:a3e66e0585c4018d0a852398c11341f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce755ba20f9b47e1faf4e7b26743e18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afce755ba20f9b47e1faf4e7b26743e18"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedWhiteShang</b> = QColor(255, 255, 0)</td></tr>
+<tr class="separator:afce755ba20f9b47e1faf4e7b26743e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f3ae42e6dc1086f0a64397d0e864711"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f3ae42e6dc1086f0a64397d0e864711"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedWhiteZhong</b> = QColor(255, 255, 0)</td></tr>
+<tr class="separator:a1f3ae42e6dc1086f0a64397d0e864711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93163469a61f1f8e3b6a92b158e2ce2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab93163469a61f1f8e3b6a92b158e2ce2"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedWhiteXia</b> = QColor(255, 255, 0)</td></tr>
+<tr class="separator:ab93163469a61f1f8e3b6a92b158e2ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8abb4b69f04edb73c4c9002fec07fc72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8abb4b69f04edb73c4c9002fec07fc72"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayBlueShang</b> = QColor(0, 52, 138)</td></tr>
+<tr class="separator:a8abb4b69f04edb73c4c9002fec07fc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53329ca5028ab64097923bc45c7051f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac53329ca5028ab64097923bc45c7051f"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayBlueZhong</b> = QColor(0, 128, 192)</td></tr>
+<tr class="separator:ac53329ca5028ab64097923bc45c7051f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ed2bd00ae750ec16b22eb7e730dda7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41ed2bd00ae750ec16b22eb7e730dda7"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayBlueXia</b> = QColor(3, 202, 252)</td></tr>
+<tr class="separator:a41ed2bd00ae750ec16b22eb7e730dda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca0f613302e9ddb51ae1e6d64fb7104"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeca0f613302e9ddb51ae1e6d64fb7104"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedBlueShang</b> = QColor(130, 247, 253)</td></tr>
+<tr class="separator:aeca0f613302e9ddb51ae1e6d64fb7104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c75aed539cc687482798ac4f26d3a75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c75aed539cc687482798ac4f26d3a75"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedBlueZhong</b> = QColor(255, 255, 255)</td></tr>
+<tr class="separator:a2c75aed539cc687482798ac4f26d3a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fde952cd9835da58c8421dc53239308"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9fde952cd9835da58c8421dc53239308"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedBlueXia</b> = QColor(3, 233, 252)</td></tr>
+<tr class="separator:a9fde952cd9835da58c8421dc53239308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d993c7102c7bfcb2bbdb05266c4cec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2d993c7102c7bfcb2bbdb05266c4cec"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayRedShang</b> = QColor(255, 172, 0)</td></tr>
+<tr class="separator:ac2d993c7102c7bfcb2bbdb05266c4cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769820f04fc41f4747ae5df8c3f41061"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a769820f04fc41f4747ae5df8c3f41061"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayRedZhong</b> = QColor(255, 0, 0)</td></tr>
+<tr class="separator:a769820f04fc41f4747ae5df8c3f41061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a294006c731818db2b2aaaa26a2150c25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a294006c731818db2b2aaaa26a2150c25"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayRedXia</b> = QColor(170, 0, 0)</td></tr>
+<tr class="separator:a294006c731818db2b2aaaa26a2150c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f44860a57da2afcec71d44169a35de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16f44860a57da2afcec71d44169a35de"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedRedShang</b> = QColor(255, 255, 164)</td></tr>
+<tr class="separator:a16f44860a57da2afcec71d44169a35de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f97094bb48700be23deca5a8b14533"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48f97094bb48700be23deca5a8b14533"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedRedZhong</b> = QColor(255, 255, 0)</td></tr>
+<tr class="separator:a48f97094bb48700be23deca5a8b14533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d45b8cd403727e783d5c00b3654833f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d45b8cd403727e783d5c00b3654833f"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedRedXia</b> = QColor(255, 100, 26)</td></tr>
+<tr class="separator:a4d45b8cd403727e783d5c00b3654833f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c1bce8aba92885fef185731f16cb728"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c1bce8aba92885fef185731f16cb728"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayBlackShang</b> = QColor(225, 225, 225)</td></tr>
+<tr class="separator:a5c1bce8aba92885fef185731f16cb728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9070587f0c59a177914b8ffc6da6e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f9070587f0c59a177914b8ffc6da6e4"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayBlackZhong</b> = QColor(106, 106, 106)</td></tr>
+<tr class="separator:a6f9070587f0c59a177914b8ffc6da6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30ed38620266045e1d5c3b0cb48b871"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad30ed38620266045e1d5c3b0cb48b871"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayBlackXia</b> = QColor(0, 0, 0)</td></tr>
+<tr class="separator:ad30ed38620266045e1d5c3b0cb48b871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7550292f1f9f1ff78e7ebc75af352bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7550292f1f9f1ff78e7ebc75af352bd"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedBlackShang</b> = QColor(255, 255, 255)</td></tr>
+<tr class="separator:aa7550292f1f9f1ff78e7ebc75af352bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af638d7318ede4033bb550137c006771d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af638d7318ede4033bb550137c006771d"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedBlackZhong</b> = QColor(0, 255, 255)</td></tr>
+<tr class="separator:af638d7318ede4033bb550137c006771d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d597fa1e3c9fc6dad215aef048a4a4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d597fa1e3c9fc6dad215aef048a4a4b"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedBlackXia</b> = QColor(128, 255, 255)</td></tr>
+<tr class="separator:a2d597fa1e3c9fc6dad215aef048a4a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f1711095d59d38b7d9e8b541d6b229c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f1711095d59d38b7d9e8b541d6b229c"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayYellowShang</b> = QColor(2, 166, 174)</td></tr>
+<tr class="separator:a6f1711095d59d38b7d9e8b541d6b229c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd5f5f088514b39a8e836a306ab9f00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adcd5f5f088514b39a8e836a306ab9f00"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayYellowZhong</b> = QColor(128, 255, 255)</td></tr>
+<tr class="separator:adcd5f5f088514b39a8e836a306ab9f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cbfbee0756cd5e646137d0e777c5445"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cbfbee0756cd5e646137d0e777c5445"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayYellowXia</b> = QColor(2, 166, 174)</td></tr>
+<tr class="separator:a0cbfbee0756cd5e646137d0e777c5445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae16dc1d1dd27641a148be0f8ad857d36"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae16dc1d1dd27641a148be0f8ad857d36"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedYellowShang</b> = QColor(247, 132, 38)</td></tr>
+<tr class="separator:ae16dc1d1dd27641a148be0f8ad857d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d2c586d78bb52313626687b22bf719"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49d2c586d78bb52313626687b22bf719"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedYellowZhong</b> = QColor(255, 255, 0)</td></tr>
+<tr class="separator:a49d2c586d78bb52313626687b22bf719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da064609eda71940b5245e43c3c8d86"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9da064609eda71940b5245e43c3c8d86"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedYellowXia</b> = QColor(255, 128, 0)</td></tr>
+<tr class="separator:a9da064609eda71940b5245e43c3c8d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe9cf9e6acbc7b531da30849e54d2ef5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe9cf9e6acbc7b531da30849e54d2ef5"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayPurpleShang</b> = QColor(64, 0, 128)</td></tr>
+<tr class="separator:abe9cf9e6acbc7b531da30849e54d2ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a548d84e50e814acd5a24661e8bfa9c7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a548d84e50e814acd5a24661e8bfa9c7c"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayPurpleZhong</b> = QColor(255, 128, 255)</td></tr>
+<tr class="separator:a548d84e50e814acd5a24661e8bfa9c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61aaef73d3687539bd5a82f874070e2b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61aaef73d3687539bd5a82f874070e2b"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayPurpleXia</b> = QColor(64, 0, 128)</td></tr>
+<tr class="separator:a61aaef73d3687539bd5a82f874070e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81cedab80a97a767333914b38252d22b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81cedab80a97a767333914b38252d22b"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedPurpleShang</b> = QColor(255, 55, 146)</td></tr>
+<tr class="separator:a81cedab80a97a767333914b38252d22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbf2bf98f1290ce6ba9e9773d3019de6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbf2bf98f1290ce6ba9e9773d3019de6"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedPurpleZhong</b> = QColor(255, 243, 134)</td></tr>
+<tr class="separator:afbf2bf98f1290ce6ba9e9773d3019de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a98466b05385718c722535911531aef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a98466b05385718c722535911531aef"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedPurpleXia</b> = QColor(255, 55, 146)</td></tr>
+<tr class="separator:a6a98466b05385718c722535911531aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c5bbf11f52afe406f91da68596302bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c5bbf11f52afe406f91da68596302bd"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayGreenShang</b> = QColor(147, 255, 38)</td></tr>
+<tr class="separator:a4c5bbf11f52afe406f91da68596302bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad54c3a6a72a0f9ff5057a9d47549f25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad54c3a6a72a0f9ff5057a9d47549f25"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayGreenZhong</b> = QColor(70, 176, 0)</td></tr>
+<tr class="separator:aad54c3a6a72a0f9ff5057a9d47549f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad01c26106cb3d8fe0763727ce8ec6ef4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad01c26106cb3d8fe0763727ce8ec6ef4"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>NoPlayGreenXia</b> = QColor(0, 85, 0)</td></tr>
+<tr class="separator:ad01c26106cb3d8fe0763727ce8ec6ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2811e8cfa804e1b174f4ad79c5b9579a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2811e8cfa804e1b174f4ad79c5b9579a"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedGreenShang</b> = QColor(255, 255, 255)</td></tr>
+<tr class="separator:a2811e8cfa804e1b174f4ad79c5b9579a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71260390c48b4448b4812a75cfe9bbdd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71260390c48b4448b4812a75cfe9bbdd"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedGreenZhong</b> = QColor(154, 255, 17)</td></tr>
+<tr class="separator:a71260390c48b4448b4812a75cfe9bbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6c188fb35af8bd57d33e0513cc5041b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6c188fb35af8bd57d33e0513cc5041b"></a>
+const QColor&#160;</td><td class="memItemRight" valign="bottom"><b>PlayedGreenXia</b> = QColor(255, 255, 0)</td></tr>
+<tr class="separator:af6c188fb35af8bd57d33e0513cc5041b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41eebab4751335b5bb2421ab7e9074dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41eebab4751335b5bb2421ab7e9074dc"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><b>Mute</b> = false</td></tr>
+<tr class="separator:a41eebab4751335b5bb2421ab7e9074dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3851a5efe968ad6f8fb77d4dc1589578"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3851a5efe968ad6f8fb77d4dc1589578"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>Volume</b> = 100</td></tr>
+<tr class="separator:a3851a5efe968ad6f8fb77d4dc1589578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7954d0cd74507b825db051d74a9db77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7954d0cd74507b825db051d74a9db77"></a>
+enum PlayModeType&#160;</td><td class="memItemRight" valign="bottom"><b>PlayMode</b> = RandomPlay</td></tr>
+<tr class="separator:ac7954d0cd74507b825db051d74a9db77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>全局配置实现文件。 </p>
+<dl class="section author"><dt>作者</dt><dd>chengxuan <a href="#" onclick="location.href='mai'+'lto:'+'787'+'28'+'031'+'0@'+'qq.'+'co'+'m'; return false;">78728<span style="display: none;">.nosp@m.</span>0310<span style="display: none;">.nosp@m.</span>@qq.c<span style="display: none;">.nosp@m.</span>om</a> </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2015-01-18 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>3.0.0</dd></dl>
+<pre class="fragment">* 历史
+*          3.0.0   创建,
+*          2015-01-18    by chengxuan
+*
+* </pre> </div></div><!-- contents -->
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#000000 SIZE=3>
+<table width="100%">
+<tr>
+        <td align="center">
+                <a href="http://www.qtcn.org/bbs/read-htm-tid-55824.html"> <img style="height:40px;" src="CZPlayer.png"> </img> </a>
+        </td>
+</tr>
+<tr>
+        <td align="center">
+                Copyright (C) 2012-2015 Highway-9 Studio.
+        </td>
+</tr>

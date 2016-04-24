@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>CZPlayer: IO.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">CZPlayer
+   &#160;<span id="projectnumber">3.0.0</span>
+   </div>
+   <div id="projectbrief">CZPlayer应用程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_0b6ee6e7e9547e675db4add2e5de97da.html">Engine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IO.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INCLUDE_IO</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INCLUDE_IO</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;AudioStream.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;CriticalSection.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Stream.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/* libmad support */</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;mad.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* libogg support */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;ogg.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* libvorbis support */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;codec.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;vorbisfile.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/* CInput                                                               */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_c_input.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_input.html">CInput</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_c_input.html">CInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ~<a class="code" href="class_c_input.html">CInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Reset();                                       <span class="comment">//重置</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Pause();                                       <span class="comment">//暂停</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Resume();                                      <span class="comment">//恢复，重新开始</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> DWORD GetTotalTime();                               <span class="comment">//获得总时间</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> LARGE_INTEGER GetTotalSamples();                    <span class="comment">//获得总的采样率</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> WORD GetBitsPerSample() = 0;                        <span class="comment">//获得每秒的采样率</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> WORD GetChannels() = 0;                             <span class="comment">//获得通道数</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> DWORD GetSampleRate() = 0;                          <span class="comment">//获得采样率</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    LARGE_INTEGER GetSize();                                    <span class="comment">//得到文件大小</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    LARGE_INTEGER GetPosition();                                <span class="comment">//获得位置</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> GetData(<span class="keywordtype">void</span>** buffer, DWORD* size);                   <span class="comment">//得到数据</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    DWORD CopyData(<span class="keywordtype">void</span>* buffer, DWORD size);                   <span class="comment">//拷贝数据</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    DWORD FillBuffer(<span class="keywordtype">void</span>* buffer, DWORD size, <span class="keywordtype">bool</span>* eof);      <span class="comment">//填充缓冲区</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> Init();                                                <span class="comment">//初始化</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> Flush();                                               <span class="comment">//Flush缓冲区</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> Lock();                                                <span class="comment">//加锁</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> Unlock();                                              <span class="comment">//解锁</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    LARGE_INTEGER m_Position;                                   <span class="comment">//位置</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    LARGE_INTEGER m_Size;                                       <span class="comment">//大小</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    WORD m_SampleSize;                                          <span class="comment">//采样率大小</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> m_Busy;                                                <span class="comment">//是否忙</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    DWORD m_BufferStart;                                        <span class="comment">//缓冲区开始</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    DWORD m_BufferEnd;                                          <span class="comment">//缓冲区结束</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_c_critical_section.html">CCriticalSection</a>* m_DataCS;                                 <span class="comment">//临界区</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> m_EndOfStream;                                         <span class="comment">//文件流是否结束</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> InitInternal() = 0;                                <span class="comment">//初始化内部数据</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> FlushInternal() = 0;                               <span class="comment">//Flush内部数据</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetDataInternal(<span class="keywordtype">void</span>** buffer, DWORD* bytes) = 0;  <span class="comment">//获取内部数据</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/* CStreamedInput                                                       */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_c_streamed_input.html">   68</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_streamed_input.html">CStreamedInput</a> : <span class="keyword">public</span> <a class="code" href="class_c_input.html">CInput</a></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="class_c_streamed_input.html">CStreamedInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    ~<a class="code" href="class_c_streamed_input.html">CStreamedInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> GetData(<span class="keywordtype">void</span>** buf, DWORD* Bytes);                         <span class="comment">//获得数据</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> Seek(LARGE_INTEGER* SampleNum);                            <span class="comment">//定位</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="class_c_stream.html">CStream</a>* GetStream() { <span class="keywordflow">return</span> m_pStream; }                      <span class="comment">//获得文件流</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="class_c_stream.html">CStream</a>* m_pStream;                                             <span class="comment">//文件流指针</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> m_StreamAssigned;                                          <span class="comment">//文件流是否分配</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> m_Seekable;                                                <span class="comment">//是否可定位</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    LARGE_INTEGER m_StartSample;                                    <span class="comment">//采样开始位置</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    LARGE_INTEGER m_EndSample;                                      <span class="comment">//采样结束位置</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> m_Loop;                                                    <span class="comment">//是否循环</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    LARGE_INTEGER m_TotalSamples;                                   <span class="comment">//总的采样率</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetStream(<a class="code" href="class_c_stream.html">CStream</a>* pStream);                       <span class="comment">//得到流</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> SeekInternal(LARGE_INTEGER* SampleNum) = 0;        <span class="comment">//定位内部数据</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">/* CFileInput                                                              */</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_c_file_input.html">   96</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_file_input.html">CFileInput</a> : <span class="keyword">public</span> <a class="code" href="class_c_streamed_input.html">CStreamedInput</a></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="class_c_file_input.html">CFileInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ~<a class="code" href="class_c_file_input.html">CFileInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> OpenFile() = 0;                                    <span class="comment">//打开文件</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> CloseFile() = 0;                                   <span class="comment">//关闭文件</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> SetFileName(TCHAR* pszFileName);                           <span class="comment">//设置文件名字</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">size_t</span> GetFileNameLen();                                        <span class="comment">//获得文件名长度</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    WORD GetBitsPerSample();                                        <span class="comment">//获得每秒采样率</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    DWORD GetSampleRate();                                          <span class="comment">//获得采样率</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    WORD GetChannels();                                             <span class="comment">//获得通道数</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">int</span> GetOpened();                                                <span class="comment">//文件是否被打开</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">bool</span> GetValid();                                                <span class="comment">//文件是否是可得到的</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    LARGE_INTEGER GetTotalSamples();                                <span class="comment">//获得总的采样率</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    DWORD GetTotalTime();                                           <span class="comment">//获得总时间</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">bool</span> SetStartTime(DWORD Minutes, DWORD Seconds);                <span class="comment">//设置开始时间</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">bool</span> SetEndTime(DWORD Minutes, DWORD Seconds);                  <span class="comment">//设置结束时间</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> Reset();                                                   <span class="comment">//重置</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> Jump(<span class="keywordtype">int</span> offset);                                          <span class="comment">//跳到offset位置</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="class_c_critical_section.html">CCriticalSection</a>* m_OpenCS;                                     <span class="comment">//临界区</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    TCHAR m_FileName[MAX_PATH];                                     <span class="comment">//文件名</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">size_t</span> m_FileNameLen;                                           <span class="comment">//文件名长度</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">int</span> m_Opened;                                                   <span class="comment">//文件是否打开</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">bool</span> m_Valid;                                                   <span class="comment">//文件流是否可获得</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    WORD m_BitsPerSample;                                           <span class="comment">//每秒采样率</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    DWORD m_SampleRate;                                             <span class="comment">//采样率</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    WORD m_Channels;                                                <span class="comment">//通道数</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    DWORD m_Time;                                                   <span class="comment">//时间</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> SetStream(<a class="code" href="class_c_stream.html">CStream</a>* pStream);                               <span class="comment">//设置流</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">void</span> FlushInternal();                                           <span class="comment">//Flush内部数据</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">void</span> InitInternal();                                            <span class="comment">//初始化内部数据</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">/* CWmaInput                                                                */</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> _ChannelsNumber</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    cnMaxAvailable = 0,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    cnMonoOrStereo,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    cn5dot1,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    cn7dot1</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;} ChannelsNumber;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> wmfDefault = -2;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="class_c_wma_input.html">  152</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_wma_input.html">CWmaInput</a> : <span class="keyword">public</span> <a class="code" href="class_c_file_input.html">CFileInput</a></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="struct___w_m_a___s_y_n_c___r_e_a_d_e_r.html">WMA_SYNC_READER</a>* m_Reader;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    DWORD m_Duration;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">bool</span> m_HighPrecision;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    ChannelsNumber m_OutputChannels;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">int</span> m_Format;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    SHORT CNToShortInt();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> GetDataInternal(<span class="keywordtype">void</span>** buffer, DWORD* bytes);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">bool</span> SeekInternal(LARGE_INTEGER* SampleNum);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="class_c_wma_input.html">CWmaInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    ~<a class="code" href="class_c_wma_input.html">CWmaInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">void</span> OpenFile();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> CloseFile();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> SetHighPrecision(<span class="keywordtype">bool</span> HighPrecision);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> SetOutputChannels(ChannelsNumber OutputChannels);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">bool</span> GetHasAudio();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">bool</span> GetProtected();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    DWORD GetBitrate();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">bool</span> GetIsVBR();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    DWORD GetFormatsCount();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">void</span> GetFormatSpec(<span class="keywordtype">int</span> index, <a class="code" href="struct___w_m_a_format_spec.html">WMAFormatSpec</a>* pFormatSpec);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span> SetFormat(<span class="keywordtype">int</span> iFormat);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">int</span> GetFormat();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;};</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">/* CWaveInput                                                           */</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#define BUF_SIZE 16000</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#define WaveHeaderOffs 44</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DataSizeOffs 40</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">//wav文件结构标志</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#define LookingForRIFF 0</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LookingForWave 1</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LookingForFMT 2</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LookingForFACT 3</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LookingForDATA 4</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#define WAVE_FORMAT_MP3 85</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">//wav文件的类型</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> _WaveType</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    wtUnsupported = 1,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    wtPCM = 2,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    wtDVIADPCM = 3,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    wtMSADPCM = 4,</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    wtACM = 5,</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    wtIEEEFloat = 6,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    wtExtPCM = 7,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    wtExtIEEEFloat = 8</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;} WaveType;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="struct___wave_header.html">  217</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___wave_header.html">_WaveHeader</a></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">char</span> RIFF[4]; <span class="comment">/* &#39;RIFF&#39; offset : 0000 */</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    DWORD FileSize; <span class="comment">/* FileSize - 8 offset : 0004 */</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">char</span> RIFFType[4]; <span class="comment">/* &#39;WAVE&#39;  offset : 0008 */</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">char</span> FmtChunkId[4]; <span class="comment">/* &#39;fmt &#39;   offset : 0012 */</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    DWORD FmtChunkSize; <span class="comment">/* 16      offset : 0016 */</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    WORD FormatTag; <span class="comment">/* One of WAVE_FORMAT_XXX constants    offset : 0020 */</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    WORD Channels; <span class="comment">/* 1 - mono = 2 - stereo             offset : 0022 */</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    DWORD SampleRate; <span class="comment">/* offset : 0024 */</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    DWORD BytesPerSecond; <span class="comment">/* offset : 0028 */</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    WORD BlockAlign; <span class="comment">/* offset : 0032 */</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    WORD BitsPerSample; <span class="comment">/* 8, 16 or 32 Bits/sample offset : 0034 */</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">char</span> DataChunkId[4]; <span class="comment">/* &#39;data&#39; offset : 0036*/</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    DWORD DataSize; <span class="comment">/* Data size in bytes offset : 0040 */</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;} <a class="code" href="struct___wave_header.html">WaveHeader</a>, *<a class="code" href="struct___wave_header.html">LPWaveHeader</a>;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="struct___wave_header_ex.html">  234</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___wave_header_ex.html">_WaveHeaderEx</a></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordtype">char</span> RIFF[4];</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    DWORD FileSize;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordtype">char</span> RIFFType[4];</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">char</span> FmtChunkId[4];</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    DWORD FmtChunkSize;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <a class="code" href="struct_w_a_v_e_f_o_r_m_a_t_e_x_t_e_n_s_i_b_l_e.html">WAVEFORMATEXTENSIBLE</a> Format;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordtype">char</span> DataChunkId[4];</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    DWORD DataSize;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;} <a class="code" href="struct___wave_header_ex.html">WaveHeaderEx</a>, *<a class="code" href="struct___wave_header_ex.html">LPWaveHeaderEx</a>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="struct___d_v_i_a_d_p_c_m_header.html">  246</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___d_v_i_a_d_p_c_m_header.html">_DVIADPCMHeader</a></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">char</span> RIFF[4];</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    DWORD FileSize;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">char</span> RIFFType[4];</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordtype">char</span> FmtChunkId[4];</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    DWORD FmtChunkSize;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    WORD FormatTag; <span class="comment">//WAVE_FORMAT_DVI_ADPCM</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    WORD Channels;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    DWORD SampleRate;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    DWORD BytesPerSecond;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    WORD BlockAlign;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    WORD BitsPerSample;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    WORD cbSize;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    WORD SamplesPerBlock;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">char</span> FactChunkId[4];</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    DWORD FactChunkSize;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    DWORD DataLength;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">char</span> DataChunkId[4];</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    DWORD DataSize;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;} <a class="code" href="struct___d_v_i_a_d_p_c_m_header.html">DVIADPCMHeader</a>, *<a class="code" href="struct___d_v_i_a_d_p_c_m_header.html">LPDVIADPCMHeader</a>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="struct___d_v_i___a_d_p_c_m___i_n_f_o.html">  268</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___d_v_i___a_d_p_c_m___i_n_f_o.html">_DVI_ADPCM_INFO</a></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    WORD BlockLength;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    WORD SamplesPerBlock;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    DWORD DataSize;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;} <a class="code" href="struct___d_v_i___a_d_p_c_m___i_n_f_o.html">DVI_ADPCM_INFO</a>, *<a class="code" href="struct___d_v_i___a_d_p_c_m___i_n_f_o.html">LPDVI_ADPCM_INFO</a>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="struct___d_v_i___a_d_p_c_m___s_t_a_t_e___s_t_e_r_e_o.html">  275</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___d_v_i___a_d_p_c_m___s_t_a_t_e___s_t_e_r_e_o.html">_DVI_ADPCM_STATE_STEREO</a></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    SHORT valprev_l; <span class="comment">// Previous output value</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    BYTE index_l; <span class="comment">// Index into stepsize table</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    SHORT valprev_r; <span class="comment">// Previous output value</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    BYTE index_r; <span class="comment">// Index into stepsize table</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;} <a class="code" href="struct___d_v_i___a_d_p_c_m___s_t_a_t_e___s_t_e_r_e_o.html">DVI_ADPCM_STATE_STEREO</a>, *<a class="code" href="struct___d_v_i___a_d_p_c_m___s_t_a_t_e___s_t_e_r_e_o.html">LPDVI_ADPCM_STATE_STEREO</a>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="struct___d_v_i___a_d_p_c_m___e_n_c_o_d_e___s_t_a_t_e___s_t_e_r_e_o.html">  283</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___d_v_i___a_d_p_c_m___e_n_c_o_d_e___s_t_a_t_e___s_t_e_r_e_o.html">_DVI_ADPCM_ENCODE_STATE_STEREO</a></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    SHORT PredSamp_l;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    BYTE Index_l;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    SHORT PredSamp_r;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    BYTE Index_r;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;} <a class="code" href="struct___d_v_i___a_d_p_c_m___e_n_c_o_d_e___s_t_a_t_e___s_t_e_r_e_o.html">DVI_ADPCM_ENCODE_STATE_STEREO</a>, *<a class="code" href="struct___d_v_i___a_d_p_c_m___e_n_c_o_d_e___s_t_a_t_e___s_t_e_r_e_o.html">LPDVI_ADPCM_ENCODE_STATE_STEREO</a>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="struct___m_s___a_d_p_c_m___c_o_e_f___s_e_t.html">  291</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___m_s___a_d_p_c_m___c_o_e_f___s_e_t.html">_MS_ADPCM_COEF_SET</a></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;{</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    SHORT Coef1;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    SHORT Coef2;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;} <a class="code" href="struct___m_s___a_d_p_c_m___c_o_e_f___s_e_t.html">MS_ADPCM_COEF_SET</a>, *<a class="code" href="struct___m_s___a_d_p_c_m___c_o_e_f___s_e_t.html">LPMS_ADPCM_COEF_SET</a>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="struct___m_s___a_d_p_c_m___i_n_f_o.html">  297</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___m_s___a_d_p_c_m___i_n_f_o.html">_MS_ADPCM_INFO</a></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;{</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    WORD BlockLength;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    WORD SamplesPerBlock;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    DWORD DataSize;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    WORD NumCoeff;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="struct___m_s___a_d_p_c_m___c_o_e_f___s_e_t.html">MS_ADPCM_COEF_SET</a> CoefSets[32];</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;} <a class="code" href="struct___m_s___a_d_p_c_m___i_n_f_o.html">MS_ADPCM_INFO</a>, *<a class="code" href="struct___m_s___a_d_p_c_m___i_n_f_o.html">LPMS_ADPCM_INFO</a>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="struct___m_s_a_d_p_c_m_block_header_mono.html">  306</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___m_s_a_d_p_c_m_block_header_mono.html">_MSADPCMBlockHeaderMono</a></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;{</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    BYTE predictor;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    SHORT Delta;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    SHORT Samp1;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    SHORT Samp2;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;} <a class="code" href="struct___m_s_a_d_p_c_m_block_header_mono.html">MSADPCMBlockHeaderMono</a>, *<a class="code" href="struct___m_s_a_d_p_c_m_block_header_mono.html">LPMSADPCMBlockHeaderMono</a>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="struct___m_s_a_d_p_c_m_block_header_stereo.html">  314</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___m_s_a_d_p_c_m_block_header_stereo.html">_MSADPCMBlockHeaderStereo</a></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;{</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    BYTE predictor[2];</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    SHORT Delta[2];</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    SHORT Samp1[2];</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    SHORT Samp2[2];</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;} <a class="code" href="struct___m_s_a_d_p_c_m_block_header_stereo.html">MSADPCMBlockHeaderStereo</a>, *<a class="code" href="struct___m_s_a_d_p_c_m_block_header_stereo.html">LPMSADPCMBlockHeaderStereo</a>;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="struct___d_v_i_a_d_p_c_m_block_header.html">  322</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___d_v_i_a_d_p_c_m_block_header.html">_DVIADPCMBlockHeader</a></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;{</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    SHORT Samp0;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    BYTE StepTableIndex;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    BYTE Reserved;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;} <a class="code" href="struct___d_v_i_a_d_p_c_m_block_header.html">DVIADPCMBlockHeader</a>, *<a class="code" href="struct___d_v_i_a_d_p_c_m_block_header.html">LPDVIADPCMBlockHeader</a>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">//读取wav文件的类</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="class_c_wave_input.html">  332</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_wave_input.html">CWaveInput</a> : <span class="keyword">public</span> <a class="code" href="class_c_file_input.html">CFileInput</a></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;{</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <a class="code" href="class_c_wave_input.html">CWaveInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    ~<a class="code" href="class_c_wave_input.html">CWaveInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordtype">void</span> OpenFile();                                                                <span class="comment">//打开文件</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordtype">void</span> CloseFile();                                                               <span class="comment">//关闭文件</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordtype">void</span> GetDataInternal(<span class="keywordtype">void</span>** buffer, DWORD* bytes);                              <span class="comment">//获得内部数据</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordtype">bool</span> SeekInternal(LARGE_INTEGER* SampleNum);                                    <span class="comment">//定位内部数据</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    BYTE m_Buf[BUF_SIZE];                                                           <span class="comment">//缓冲区</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    WaveType m_WavType;                                                             <span class="comment">//wav格式类型</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="comment">//wav格式类型</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="struct___d_v_i___a_d_p_c_m___i_n_f_o.html">DVI_ADPCM_INFO</a> m_DVI_ADPCM_INFO;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <a class="code" href="struct___d_v_i___a_d_p_c_m___s_t_a_t_e___s_t_e_r_e_o.html">DVI_ADPCM_STATE_STEREO</a> m_DVI_ADPCM_STATE;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <a class="code" href="struct___m_s___a_d_p_c_m___i_n_f_o.html">MS_ADPCM_INFO</a> m_MS_ADPCM_INFO;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <a class="code" href="struct___m_s_a_d_p_c_m_block_header_stereo.html">MSADPCMBlockHeaderStereo</a> m_MS_ADPCM_STATE;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    WORD m_HeaderSize;                                                              <span class="comment">//wav头大小</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="class_c_memory_stream.html">CMemoryStream</a>* m_MS;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="class_c_stream.html">CStream</a>* m_OldStream;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordtype">bool</span> m_OldStreamAssigned;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordtype">bool</span> m_ShortIEEEFloat;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordtype">bool</span> ReadDVIADPCMBlock(<span class="keywordtype">void</span>* pData);                                            <span class="comment">//读取DVIADPCM块</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordtype">bool</span> ReadMSADPCMBlock(<span class="keywordtype">void</span>* pData);                                             <span class="comment">//读取MSADPCM快</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    WaveType GetWavType();                                                          <span class="comment">//获取wav格式类型</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordtype">void</span> ReadRIFFHeader();                                                          <span class="comment">//读取RIFF头</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordtype">void</span> DecodeDVIADPCMMono(BYTE* pInData, SHORT* pOutData, DWORD *len);            <span class="comment">//对DVIADPCMMono类型进行解码</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordtype">void</span> DecodeDVIADPCMStereo(BYTE* pInData, SHORT* pOutData, DWORD* len);          <span class="comment">//对DVIADPCMStereo类型进行解码</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordtype">void</span> DecodeMSADPCMMono(BYTE* pInData, SHORT* pOutData, DWORD* len);             <span class="comment">//对MSADPCMMono类型进行解码</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordtype">void</span> DecodeMSADPCMStereo(BYTE* pInData, SHORT* pOutData, DWORD* len);           <span class="comment">//对MSADPCMStereo进行解码</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;};</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="keywordtype">bool</span> Compare4(CHAR* S1, CHAR* S2);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="keywordtype">void</span> ConvertIEEEFloatTo32(<span class="keywordtype">int</span>* InOutBuf, <span class="keywordtype">int</span> InSize);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="keywordtype">void</span> ConvertShortIEEEFloatTo32(<span class="keywordtype">int</span>* InOutBuf, <span class="keywordtype">int</span> InSize);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment">/* CMp3Input                                                               */</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="preprocessor"># define SAMPLE_DEPTH 16</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define scale(x, y) dither((x), (y))</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="structxing.html">  383</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structxing.html">xing</a></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;{</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordtype">long</span> flags;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> frames;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> bytes;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> toc[100];</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordtype">long</span> scale;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;};</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword">enum</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    XING_FRAMES = 0x00000001L,</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    XING_BYTES  = 0x00000002L,</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    XING_TOC    = 0x00000004L,</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    XING_SCALE  = 0x00000008L</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;};</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="preprocessor"># define XING_MAGIC ((&#39;X&#39; &lt;&lt; 24) | (&#39;i&#39; &lt;&lt; 16) | (&#39;n&#39; &lt;&lt; 8) | &#39;g&#39;)</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00402"></a><span class="lineno"><a class="line" href="structdither.html">  402</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structdither.html">dither</a></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;{</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    mad_fixed_t error[3];</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    mad_fixed_t random;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;};</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
+<div class="line"><a name="l00408"></a><span class="lineno"><a class="line" href="struct___i_d3_tag.html">  408</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___i_d3_tag.html">_ID3Tag</a></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;{</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordtype">char</span> m_cTAG[3];  <span class="comment">// Must equal &quot;TAG&quot;</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordtype">char</span> m_cSong[30];</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordtype">char</span> m_cArtist[30];</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordtype">char</span> m_cAlbum[30];</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordtype">char</span> m_cYear[4];</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordtype">char</span> m_cComment[30];</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_cGenre;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;} <a class="code" href="struct___i_d3_tag.html">ID3Tag</a>;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;</div>
+<div class="line"><a name="l00419"></a><span class="lineno"><a class="line" href="struct___i_d3v2_tag.html">  419</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___i_d3v2_tag.html">_ID3v2Tag</a></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;{</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordtype">char</span> m_cTAG[3];  <span class="comment">// Must equal ID3</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_cVersion[2]; <span class="comment">// Major / Minor</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_cFlags;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_cSize_Encoded[4];</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;} <a class="code" href="struct___i_d3v2_tag.html">ID3v2Tag</a>;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;</div>
+<div class="line"><a name="l00427"></a><span class="lineno"><a class="line" href="struct___i_d3v2_frame.html">  427</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___i_d3v2_frame.html">_ID3v2Frame</a></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;{</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordtype">char</span> m_cFrameID[4];</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_cSize_Encoded[4];</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> m_cFlags;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;} <a class="code" href="struct___i_d3v2_frame.html">ID3v2Frame</a>;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="keywordtype">int</span> parse_xing(<span class="keyword">struct</span> <a class="code" href="structxing.html">xing</a> *<a class="code" href="structxing.html">xing</a>, <span class="keyword">struct</span> mad_bitptr ptr, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bitlen);</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="keywordtype">int</span> scan_header(<a class="code" href="class_c_stream.html">CStream</a>* pStream, <span class="keyword">struct</span> mad_header *header, <span class="keyword">struct</span> <a class="code" href="structxing.html">xing</a> *<a class="code" href="structxing.html">xing</a>);                            <span class="comment">//读取mp3头信息</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="keywordtype">void</span> pack_pcm(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> **pcm, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nsamples, mad_fixed_t <span class="keyword">const</span> *ch1, mad_fixed_t <span class="keyword">const</span> *ch2);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;</div>
+<div class="line"><a name="l00438"></a><span class="lineno"><a class="line" href="class_c_mp3_input.html">  438</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_mp3_input.html">CMp3Input</a> : <span class="keyword">public</span> <a class="code" href="class_c_file_input.html">CFileInput</a></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;{</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <a class="code" href="class_c_mp3_input.html">CMp3Input</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    ~<a class="code" href="class_c_mp3_input.html">CMp3Input</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordtype">void</span> OpenFile();</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keywordtype">void</span> CloseFile();</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> m_size;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> m_streamsize;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_samplecount;</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    mad_timer_t m_timer;</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    mad_timer_t m_length;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> m_rate;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> m_frames;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="keyword">struct </span>mad_stream m_stream;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <span class="keyword">struct </span>mad_frame m_frame;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="keyword">struct </span>mad_synth m_synth;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keyword">struct </span><a class="code" href="structxing.html">xing</a> m_xing;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordtype">bool</span> m_vbr;             <span class="comment">//cbr:常量位速率，vbr:可变位速率</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_buffer[40000];</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_buflen;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_pcmbuffer[BUF_SIZE];</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="keywordtype">void</span> GetDataInternal(<span class="keywordtype">void</span>** buffer, DWORD* bytes);</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="keywordtype">bool</span> SeekInternal(LARGE_INTEGER* SampleNum);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;};</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="comment">/* CVorbisInput                                                            */</span></div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="comment">/************************************************************************/</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno"><a class="line" href="class_c_vorbis_input.html">  475</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_vorbis_input.html">CVorbisInput</a> : <span class="keyword">public</span> <a class="code" href="class_c_file_input.html">CFileInput</a></div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;{</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    OggVorbis_File m_OggVorbisFile;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <span class="keywordtype">int</span> m_CurrentSection;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_buffer[40000];</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_buflen;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m_pcmbuffer[BUF_SIZE];</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="keywordtype">void</span> GetDataInternal(<span class="keywordtype">void</span>** buffer, DWORD* bytes);</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="keywordtype">bool</span> SeekInternal(LARGE_INTEGER* SampleNum);</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <a class="code" href="class_c_vorbis_input.html">CVorbisInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    ~<a class="code" href="class_c_vorbis_input.html">CVorbisInput</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="keywordtype">void</span> OpenFile();</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="keywordtype">void</span> CloseFile();</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;};</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;<span class="keywordtype">size_t</span> vorbisRead(<span class="keywordtype">void</span> *buffer, <span class="keywordtype">size_t</span> size, <span class="keywordtype">size_t</span> amount, <span class="keywordtype">void</span> *file);</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;<span class="keywordtype">int</span> vorbisSeek(<span class="keywordtype">void</span> *file, ogg_int64_t newpos, <span class="keywordtype">int</span> set);</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<span class="keywordtype">int</span> vorbisClose(<span class="keywordtype">void</span> *file);</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="keywordtype">long</span> vorbisTell(<span class="keywordtype">void</span> *file);</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="structdither_html"><div class="ttname"><a href="structdither.html">dither</a></div><div class="ttdef"><b>Definition:</b> IO.h:402</div></div>
+<div class="ttc" id="class_c_stream_html"><div class="ttname"><a href="class_c_stream.html">CStream</a></div><div class="ttdef"><b>Definition:</b> Stream.h:15</div></div>
+<div class="ttc" id="struct___w_m_a_format_spec_html"><div class="ttname"><a href="struct___w_m_a_format_spec.html">_WMAFormatSpec</a></div><div class="ttdef"><b>Definition:</b> AudioStream.h:34</div></div>
+<div class="ttc" id="class_c_streamed_input_html"><div class="ttname"><a href="class_c_streamed_input.html">CStreamedInput</a></div><div class="ttdef"><b>Definition:</b> IO.h:68</div></div>
+<div class="ttc" id="class_c_wave_input_html"><div class="ttname"><a href="class_c_wave_input.html">CWaveInput</a></div><div class="ttdef"><b>Definition:</b> IO.h:332</div></div>
+<div class="ttc" id="structxing_html"><div class="ttname"><a href="structxing.html">xing</a></div><div class="ttdef"><b>Definition:</b> IO.h:383</div></div>
+<div class="ttc" id="struct___d_v_i_a_d_p_c_m_block_header_html"><div class="ttname"><a href="struct___d_v_i_a_d_p_c_m_block_header.html">_DVIADPCMBlockHeader</a></div><div class="ttdef"><b>Definition:</b> IO.h:322</div></div>
+<div class="ttc" id="struct___i_d3v2_frame_html"><div class="ttname"><a href="struct___i_d3v2_frame.html">_ID3v2Frame</a></div><div class="ttdef"><b>Definition:</b> IO.h:427</div></div>
+<div class="ttc" id="struct___d_v_i___a_d_p_c_m___e_n_c_o_d_e___s_t_a_t_e___s_t_e_r_e_o_html"><div class="ttname"><a href="struct___d_v_i___a_d_p_c_m___e_n_c_o_d_e___s_t_a_t_e___s_t_e_r_e_o.html">_DVI_ADPCM_ENCODE_STATE_STEREO</a></div><div class="ttdef"><b>Definition:</b> IO.h:283</div></div>
+<div class="ttc" id="class_c_file_input_html"><div class="ttname"><a href="class_c_file_input.html">CFileInput</a></div><div class="ttdef"><b>Definition:</b> IO.h:96</div></div>
+<div class="ttc" id="struct___m_s___a_d_p_c_m___c_o_e_f___s_e_t_html"><div class="ttname"><a href="struct___m_s___a_d_p_c_m___c_o_e_f___s_e_t.html">_MS_ADPCM_COEF_SET</a></div><div class="ttdef"><b>Definition:</b> IO.h:291</div></div>
+<div class="ttc" id="struct___m_s_a_d_p_c_m_block_header_stereo_html"><div class="ttname"><a href="struct___m_s_a_d_p_c_m_block_header_stereo.html">_MSADPCMBlockHeaderStereo</a></div><div class="ttdef"><b>Definition:</b> IO.h:314</div></div>
+<div class="ttc" id="struct___w_m_a___s_y_n_c___r_e_a_d_e_r_html"><div class="ttname"><a href="struct___w_m_a___s_y_n_c___r_e_a_d_e_r.html">_WMA_SYNC_READER</a></div><div class="ttdef"><b>Definition:</b> AudioStream.h:16</div></div>
+<div class="ttc" id="struct___d_v_i___a_d_p_c_m___s_t_a_t_e___s_t_e_r_e_o_html"><div class="ttname"><a href="struct___d_v_i___a_d_p_c_m___s_t_a_t_e___s_t_e_r_e_o.html">_DVI_ADPCM_STATE_STEREO</a></div><div class="ttdef"><b>Definition:</b> IO.h:275</div></div>
+<div class="ttc" id="struct___d_v_i___a_d_p_c_m___i_n_f_o_html"><div class="ttname"><a href="struct___d_v_i___a_d_p_c_m___i_n_f_o.html">_DVI_ADPCM_INFO</a></div><div class="ttdef"><b>Definition:</b> IO.h:268</div></div>
+<div class="ttc" id="struct___wave_header_ex_html"><div class="ttname"><a href="struct___wave_header_ex.html">_WaveHeaderEx</a></div><div class="ttdef"><b>Definition:</b> IO.h:234</div></div>
+<div class="ttc" id="class_c_memory_stream_html"><div class="ttname"><a href="class_c_memory_stream.html">CMemoryStream</a></div><div class="ttdef"><b>Definition:</b> Stream.h:84</div></div>
+<div class="ttc" id="struct___wave_header_html"><div class="ttname"><a href="struct___wave_header.html">_WaveHeader</a></div><div class="ttdef"><b>Definition:</b> IO.h:217</div></div>
+<div class="ttc" id="struct___i_d3v2_tag_html"><div class="ttname"><a href="struct___i_d3v2_tag.html">_ID3v2Tag</a></div><div class="ttdef"><b>Definition:</b> IO.h:419</div></div>
+<div class="ttc" id="struct___m_s_a_d_p_c_m_block_header_mono_html"><div class="ttname"><a href="struct___m_s_a_d_p_c_m_block_header_mono.html">_MSADPCMBlockHeaderMono</a></div><div class="ttdef"><b>Definition:</b> IO.h:306</div></div>
+<div class="ttc" id="struct___m_s___a_d_p_c_m___i_n_f_o_html"><div class="ttname"><a href="struct___m_s___a_d_p_c_m___i_n_f_o.html">_MS_ADPCM_INFO</a></div><div class="ttdef"><b>Definition:</b> IO.h:297</div></div>
+<div class="ttc" id="class_c_vorbis_input_html"><div class="ttname"><a href="class_c_vorbis_input.html">CVorbisInput</a></div><div class="ttdef"><b>Definition:</b> IO.h:475</div></div>
+<div class="ttc" id="struct___i_d3_tag_html"><div class="ttname"><a href="struct___i_d3_tag.html">_ID3Tag</a></div><div class="ttdef"><b>Definition:</b> IO.h:408</div></div>
+<div class="ttc" id="class_c_mp3_input_html"><div class="ttname"><a href="class_c_mp3_input.html">CMp3Input</a></div><div class="ttdef"><b>Definition:</b> IO.h:438</div></div>
+<div class="ttc" id="struct_w_a_v_e_f_o_r_m_a_t_e_x_t_e_n_s_i_b_l_e_html"><div class="ttname"><a href="struct_w_a_v_e_f_o_r_m_a_t_e_x_t_e_n_s_i_b_l_e.html">WAVEFORMATEXTENSIBLE</a></div><div class="ttdef"><b>Definition:</b> Utils.h:95</div></div>
+<div class="ttc" id="struct___d_v_i_a_d_p_c_m_header_html"><div class="ttname"><a href="struct___d_v_i_a_d_p_c_m_header.html">_DVIADPCMHeader</a></div><div class="ttdef"><b>Definition:</b> IO.h:246</div></div>
+<div class="ttc" id="class_c_wma_input_html"><div class="ttname"><a href="class_c_wma_input.html">CWmaInput</a></div><div class="ttdef"><b>Definition:</b> IO.h:152</div></div>
+<div class="ttc" id="class_c_critical_section_html"><div class="ttname"><a href="class_c_critical_section.html">CCriticalSection</a></div><div class="ttdef"><b>Definition:</b> CriticalSection.h:9</div></div>
+<div class="ttc" id="class_c_input_html"><div class="ttname"><a href="class_c_input.html">CInput</a></div><div class="ttdef"><b>Definition:</b> IO.h:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#000000 SIZE=3>
+<table width="100%">
+<tr>
+        <td align="center">
+                <a href="http://www.qtcn.org/bbs/read-htm-tid-55824.html"> <img style="height:40px;" src="CZPlayer.png"> </img> </a>
+        </td>
+</tr>
+<tr>
+        <td align="center">
+                Copyright (C) 2012-2015 Highway-9 Studio.
+        </td>
+</tr>

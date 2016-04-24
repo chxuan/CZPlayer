@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<AutoUpdate>
+	<!-- 需要访问的服务器地址 -->
+	<URL>http://localhost/test/</URL>
+	<!-- 需要访问的配置文件名 -->
+	<ConfigFile>update.xml</ConfigFile>
+	<!-- 更新信息（包括版本号，日期，描述） -->
+	<UpdateInfo version="4.1.0" time="2015-6-4 7:24:32">
+		<Description>修复了点击暂停按钮后再点击停止按钮软件崩溃问题</Description>
+		<Description>修复了没有选中歌曲然后点击删除后软件崩溃问题</Description>
+		<Description>增加了均衡器功能</Description>
+		<Description>增加了音乐下载功能</Description>
+		<Description>增加了音乐搜索功能</Description>
+	</UpdateInfo>
+	<!-- 需要更新的文件 标签"File"的值表示解压过后的文件名，“version”表示当前文件的版本号， “isDecompression”表示是否解压， “fileZipName”表示压缩文件名， “path”表示解压的文件路径-->
+	<FileList>
+		<File version="1" fileZipName="CZPlayer.zip" isDecompression="true" path="">CZPlayer.exe</File>
+		<File version="1" fileZipName="Qt5Gui.zip" isDecompression="true" path="">Qt5Gui.dll</File>
+	</FileList>
+	<!-- 重启程序，“isStart“为”true“表示启动程序，否则不启动，“RestartApp”的值表示要启动的程序路径 -->
+	<RestartApp isStart="true">CZPlayer.exe</RestartApp>
+</AutoUpdate>

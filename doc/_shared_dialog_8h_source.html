@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>CZPlayer: SharedDialog.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">CZPlayer
+   &#160;<span id="projectnumber">3.0.0</span>
+   </div>
+   <div id="projectbrief">CZPlayer应用程序</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_800159ee4c5072e219532c73d0742501.html">MusicList</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SharedDialog.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_shared_dialog_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *   Copyright (C) 2012-2015 Highway-9 Studio.                             *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *   787280310@qq.com                                                      *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                         *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *   This program is free software; you can redistribute it and/or modify  *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *   it under the terms of the GNU General Public License as published by  *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *   the Free Software Foundation; either version 2 of the License, or     *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *   (at your option) any later version.                                   *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *                                                                         *</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *   This program is distributed in the hope that it will be useful,       *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *   GNU General Public License for more details.                          *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *                                                                         *</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *   You should have received a copy of the GNU General Public License     *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *   along with this program; if not, write to the                         *</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *   Free Software Foundation, Inc.,                                       *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *   CUIT Highway-9 Studio, China.                                         *</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> ***************************************************************************/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef SHAREDDIALOG_H</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SHAREDDIALOG_H</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="_shared_dialog_8h.html#a8a41ea84c0815f44f296829a2a2e20c2">   43</a></span>&#160;<span class="preprocessor">#define SHAREDDIALOG_VERSION   0x030000</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">class </span>QLabel;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">class </span>QTextEdit;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">class </span>QCheckBox;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">class </span>QPushButton;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_shared_dialog.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_shared_dialog.html">SharedDialog</a> : <span class="keyword">public</span> QDialog</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_shared_dialog.html#af704936a4ed890e01b7e6de494e37cf1">SharedDialog</a>(QWidget *parent = NULL);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_shared_dialog.html#a6f9e41bbabb622d17f73e693393293e9">~SharedDialog</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_shared_dialog.html#a734164cf28e5c7ad788f354997b013da">init</a>(<span class="keyword">const</span> QString &amp;albumImagePath, </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keyword">const</span> QString &amp;musicName, </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keyword">const</span> QString &amp;albumUrlPath);       </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> handleCheckBoxStateChanged(<span class="keywordtype">int</span> state);                                 </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> handleSharedMusic();                                                   </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    QString m_albumUrlPath;                 </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    QString m_musicName;                    </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    QLabel *m_albumLabel;                   </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    QTextEdit *m_textEdit;                  </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    QLabel *m_sharedLabel;                  </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    QCheckBox *m_xinlangweiboCheckBox;      </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    QLabel *m_xinlangweiboLabel;            </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    QCheckBox *m_tengxunweiboCheckBox;      </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    QLabel *m_tengxunweiboLabel;            </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    QCheckBox *m_qqkongjianCheckBox;        </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    QLabel *m_qqkongjianLabel;              </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    QCheckBox *m_renrenCheckBox;            </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    QLabel *m_renrenLabel;                  </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    QCheckBox *m_kaixinCheckBox;            </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    QLabel *m_kaixinLabel;                  </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    QCheckBox *m_doubanCheckBox;            </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QLabel *m_doubanLabel;                  </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QCheckBox *m_souhuweiboCheckBox;        </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    QLabel *m_souhuweiboLabel;              </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    QCheckBox *m_qqhaoyouCheckBox;          </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    QLabel *m_qqhaoyouLabel;                </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    QPushButton *m_shareButton;             </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    QPushButton *m_cancelButton;            </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> openBrowser(<span class="keyword">const</span> QString &amp;url);                       </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> createUI();                </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">void</span> createConnect();   </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif //SHAREDDIALOG_H</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="class_shared_dialog_html_af704936a4ed890e01b7e6de494e37cf1"><div class="ttname"><a href="class_shared_dialog.html#af704936a4ed890e01b7e6de494e37cf1">SharedDialog::SharedDialog</a></div><div class="ttdeci">SharedDialog(QWidget *parent=NULL)</div><div class="ttdef"><b>Definition:</b> SharedDialog.cpp:62</div></div>
+<div class="ttc" id="class_shared_dialog_html_a734164cf28e5c7ad788f354997b013da"><div class="ttname"><a href="class_shared_dialog.html#a734164cf28e5c7ad788f354997b013da">SharedDialog::init</a></div><div class="ttdeci">void init(const QString &amp;albumImagePath, const QString &amp;musicName, const QString &amp;albumUrlPath)</div><div class="ttdef"><b>Definition:</b> SharedDialog.cpp:74</div></div>
+<div class="ttc" id="class_shared_dialog_html_a6f9e41bbabb622d17f73e693393293e9"><div class="ttname"><a href="class_shared_dialog.html#a6f9e41bbabb622d17f73e693393293e9">SharedDialog::~SharedDialog</a></div><div class="ttdeci">~SharedDialog(void)</div><div class="ttdef"><b>Definition:</b> SharedDialog.cpp:69</div></div>
+<div class="ttc" id="class_shared_dialog_html"><div class="ttname"><a href="class_shared_dialog.html">SharedDialog</a></div><div class="ttdef"><b>Definition:</b> SharedDialog.h:55</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#000000 SIZE=3>
+<table width="100%">
+<tr>
+        <td align="center">
+                <a href="http://www.qtcn.org/bbs/read-htm-tid-55824.html"> <img style="height:40px;" src="CZPlayer.png"> </img> </a>
+        </td>
+</tr>
+<tr>
+        <td align="center">
+                Copyright (C) 2012-2015 Highway-9 Studio.
+        </td>
+</tr>
