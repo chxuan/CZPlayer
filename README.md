@@ -1,4 +1,4 @@
-CZPlayer: Qt-based music player
+CZPlayer: Qt-based music player with spectrum
 ===============================================
 
 
