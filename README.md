@@ -1,41 +1,64 @@
-CZPlayer4.0
-===================
+CZPlayer: Qt-based music player
+===============================================
 
 
-CZPlayer是基于Qt开发的一款功能强大的音乐播放器，该播放器的论坛地址请点击[here](http://www.qtcn.org/bbs/read-htm-tid-55824.html)，目前CZPlayer已经是第四个版本了。
+Intro
+-----
 
-----------
+I've used a lot of music players, but they are not able to display the spectrum, so I intend to do a show with a spectrum of music player, CZPlayer is comming now...
 
-一、运行截图
--------------
-![enter image description here](https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot.png)
+Features
+------------
 
-二、功能列表
--------------
+ - Supports a variety of formats (mp3, wav, wma, ogg)
+ - Display spectrum 
+ - Mini widget
+ - Global hotkeys
+ - Theme music lyrics configuration (sky blue, black metal, romantic purple, autumn yellow, ruby red, etc.)
+ - Database functions, save music information
+ - Share songs to the QQ space, Sina weibo,etc.
+ - Real-time display lyrics, download lyrics and album download
+ - Search and download songs
+ - Music stations
+ - Online upgrade
+ - Minimize to tray
+ - Run single instance
+ - Save and load playlists
+ - Drag the loaded song and playlist folders
+ - etc...
 
- - 支持多种音乐格式播放(mp3、wav、wma、ogg)
- - 频谱显示
- - 迷你界面
- - 实现全局热键，随心所欲的切歌
- - 音乐歌词主题配置（天空蓝、金属黑、浪漫紫、秋色黄、宝石红等）
- - 数据库功能，保存音乐信息
- - 随时随地分享歌曲到QQ空间、新浪微博等
- - 实时显示歌词、下载歌词、下载专辑图片
- - 实现在线搜索歌曲并下载
- - 音乐电台，各种电台任你点播
- - 在线升级功能
- - 最小化到托盘
- - 单实例启动
- - 保存以及加载播放列表
- - 拖动加载歌曲、歌曲文件夹以及播放列表
- - 还有一些功能，就不详细的列出来了 
+Development environment
+------------
 
-三、开发环境
--------------
-该播放器的开发平台为Windows7，QtCreator + VS2013作为集成开发工具，所使用的Qt版本是Qt5.3.2，数据库采用SQLite，DirectSound作为播放引擎，使用到的解码库有libmad、libogg以及libvorbis。
+ - development platform for `Windows7`
+ - `QtCreator` + `VS2013` as an IDE
+ - Qt version used `Qt5.3.2`
+ - Play engine used `DirectSound`
+ - Database used `SQLite`
+ - Decode libs used `libmad`, `libogg` and `libvorbis`
 
- 
+Screenshots
+------------
+
+### Main widget
+![此处输入图片的描述][1]
+
+### Mini widget
+![此处输入图片的描述][2]
+
+### Max widget
+![此处输入图片的描述][3]
+
+### Settings widget
+![此处输入图片的描述][4]
+
+License
+------------
+This software is licensed under the [MIT license][5]. © 2012 chxuan
 
 
-
-
+  [1]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/mainWidget.png
+  [2]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/miniWidget.png
+  [3]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/maxWidget.png
+  [4]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/settingWidget.gif
+  [5]: https://github.com/chxuan/CZPlayer/blob/master/LICENSE
