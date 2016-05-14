@@ -54,7 +54,7 @@ Screenshots
 
 License
 ------------
-This software is licensed under the [MIT license][5]. © 2012 chxuan
+This software is licensed under the [MIT license][5]. © 2013 chxuan
 
 
   [1]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/mainWidget.png
