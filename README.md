@@ -1,6 +1,6 @@
-CZPlayer: Qt-based music player with spectrum
+CZPlayer: Qt-based music player
 ===============================================
-
+![此处输入图片的描述][1]
 
 Intro
 -----
@@ -41,24 +41,25 @@ Screenshots
 ------------
 
 ### Main widget
-![此处输入图片的描述][1]
-
-### Mini widget
 ![此处输入图片的描述][2]
 
-### Max widget
+### Mini widget
 ![此处输入图片的描述][3]
 
-### Settings widget
+### Max widget
 ![此处输入图片的描述][4]
+
+### Settings widget
+![此处输入图片的描述][5]
 
 License
 ------------
-This software is licensed under the [MIT license][5]. © 2013 chxuan
+This software is licensed under the [MIT license][6]. © 2012 chxuan
 
 
-  [1]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/mainWidget.png
-  [2]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/miniWidget.png
-  [3]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/maxWidget.png
-  [4]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/settingWidget.gif
-  [5]: https://github.com/chxuan/CZPlayer/blob/master/LICENSE
+  [1]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/Resources/images/CZPlayerBlack.png
+  [2]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/mainWidget.png
+  [3]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/miniWidget.png
+  [4]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/maxWidget.png
+  [5]: https://raw.githubusercontent.com/chxuan/CZPlayer/master/screenshot/settingWidget.gif
+  [6]: https://github.com/chxuan/CZPlayer/blob/master/LICENSE
